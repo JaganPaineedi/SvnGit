@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="Streamline">
+      <DataSourceReference>Streamline</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>375ba46d-6558-4f59-a288-281fffeb65c1</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="dsPreventionServicesNote">
+      <Query>
+        <DataSourceName>Streamline</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@DocumentVersionId">
+            <Value>=Parameters!DocumentVersionId.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>csp_RDLCustomDocumentPreventionServicesNotes</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="OrganizationName">
+          <DataField>OrganizationName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientName">
+          <DataField>ClientName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientID">
+          <DataField>ClientID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EffectiveDate">
+          <DataField>EffectiveDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClinicianName">
+          <DataField>ClinicianName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Signature">
+          <DataField>Signature</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="SignatureDate">
+          <DataField>SignatureDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BeginTime">
+          <DataField>BeginTime</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Duration">
+          <DataField>Duration</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Location">
+          <DataField>Location</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VerificationStyle">
+          <DataField>VerificationStyle</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NumberOfParticipants">
+          <DataField>NumberOfParticipants</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DescriptionOfPreventionActivity">
+          <DataField>DescriptionOfPreventionActivity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Textbox Name="Textbox12">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Type of Service: (</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>Prevention Education</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>)</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox12</rd:DefaultName>
+            <Top>5.67724cm</Top>
+            <Left>0.10265cm</Left>
+            <Height>0.6cm</Height>
+            <Width>7.8975cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox13">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Description of Prevention Activity: </Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Fields!DescriptionOfPreventionActivity.Value</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox13</rd:DefaultName>
+            <Top>6.87791cm</Top>
+            <Left>0.10265cm</Left>
+            <Height>1.10271cm</Height>
+            <Width>15.835cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Rectangle Name="Rectangle1">
+            <ReportItems>
+              <Textbox Name="Textbox2">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Consumer/ School Name: </Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=Fields!ClientName.Value</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Left</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox2</rd:DefaultName>
+                <Top>0.19182cm</Top>
+                <Left>0.29105cm</Left>
+                <Height>0.62646cm</Height>
+                <Width>8.10918cm</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox3">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Consumer/ School ID: </Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=Fields!ClientID.Value</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox3</rd:DefaultName>
+                <Top>0.19182cm</Top>
+                <Left>8.57662cm</Left>
+                <Height>0.6cm</Height>
+                <Width>7.25838cm</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox4">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Date: </Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=Fields!EffectiveDate.Value</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox4</rd:DefaultName>
+                <Top>0.99467cm</Top>
+                <Left>0.29105cm</Left>
+                <Height>0.6cm</Height>
+                <Width>7.60645cm</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox6">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Service Provider: </Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=Fields!ClinicianName.Value</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value xml:space="preserve"> </Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox6</rd:DefaultName>
+                <Top>0.99467cm</Top>
+                <Left>8.12271cm</Left>
+                <Height>0.6cm</Height>
+                <Width>8.13563cm</Width>
+                <ZIndex>3</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox7">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Begin Time: </Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=Fields!BeginTime.Value</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox7</rd:DefaultName>
+                <Top>1.77106cm</Top>
+                <Left>0.29105cm</Left>
+                <Height>0.6cm</Height>
+                <Width>7.60645cm</Width>
+                <ZIndex>4</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox8">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Duration: </Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=Fields!Duration.Value</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox8</rd:DefaultName>
+                <Top>1.77106cm</Top>
+                <Left>8.12271cm</Left>
+                <Height>0.6cm</Height>
+                <Width>8.13563cm</Width>
+                <ZIndex>5</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox10">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Location: </Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=Fields!Location.Value</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox10</rd:DefaultName>
+                <Top>2.54745cm</Top>
+                <Left>0.29105cm</Left>
+                <Height>0.6cm</Height>
+                <Width>7.60645cm</Width>
+                <ZIndex>6</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox11">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Number of Participants: </Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=Fields!NumberOfParticipants.Value</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox11</rd:DefaultName>
+                <Top>2.54745cm</Top>
+                <Left>8.12271cm</Left>
+                <Height>0.6cm</Height>
+                <Width>8.13563cm</Width>
+                <ZIndex>7</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Top>1.88112cm</Top>
+            <Left>0.10265cm</Left>
+            <Height>3.32021cm</Height>
+            <Width>16.25834cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+                <Width>3pt</Width>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Textbox Name="Textbox49">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=IIF(Fields!VerificationStyle.Value = "S", "Signature:", "")</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox16</rd:DefaultName>
+            <Top>3.29809in</Top>
+            <Left>0.10265cm</Left>
+            <Height>0.35416in</Height>
+            <Width>0.90117in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Subreport Name="Subreport1">
+            <ReportName>RDLSubReportSignatures</ReportName>
+            <Parameters>
+              <Parameter Name="DocumentVersionId">
+                <Value>=Parameters!DocumentVersionId.Value</Value>
+              </Parameter>
+            </Parameters>
+            <Top>9.61249cm</Top>
+            <Left>0.15557cm</Left>
+            <Height>0.73271cm</Height>
+            <Width>16.20542cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Subreport>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>PREVENTION SERVICES NOTE</Value>
+                    <Style>
+                      <FontFamily>Tahoma</FontFamily>
+                      <FontSize>22pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>0cm</Top>
+            <Left>3.89615cm</Left>
+            <Height>1.5cm</Height>
+            <Width>11.81333cm</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Image Name="Harbor">
+            <Source>Embedded</Source>
+            <Value>Harbor</Value>
+            <Sizing>FitProportional</Sizing>
+            <Top>0cm</Top>
+            <Left>0.77405cm</Left>
+            <Height>1.5cm</Height>
+            <Width>3.21438cm</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+        </ReportItems>
+        <Height>4.10416in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundImage>
+            <Source>External</Source>
+            <Value>=IIf(Parameters!DocumentsInProgressShowWatermark.Value="Y",Parameters!DocumentsInProgressWatermarkImageLocation.Value,"")</Value>
+          </BackgroundImage>
+        </Style>
+      </Body>
+      <Width>6.48958in</Width>
+      <Page>
+        <LeftMargin>0.25in</LeftMargin>
+        <RightMargin>0.25in</RightMargin>
+        <TopMargin>0.25in</TopMargin>
+        <BottomMargin>0.25in</BottomMargin>
+        <ColumnSpacing>0.05118in</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="DocumentVersionId">
+      <DataType>Integer</DataType>
+      <Prompt>Document Version Id</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DocumentsInProgressShowWatermark">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>DocumentsInProgressShowWatermark</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="DocumentsInProgressWatermarkImageLocation">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>DocumentsInProgressWatermarkImageLocation</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="checkbox_checked">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAATdEVYdFNvZnR3YXJlAEdyZWVuc2hvdCCZWG7CAAAAcUlEQVQ4T6WSQQ6AMAgEeRpP43kePfgfDCqEGtSlknBpdrpLC+mPImNFpNXuFzAzK9LbukTWAUYmmIKJDh9twwZCsIviUS4Qhl3ojvnC19gZyHE9yefMlSMMm/A+ewt++vMyth2iPawnslmV5lybydoBQX/pM3OGHDcAAAAASUVORK5CYII=</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="checkbox_unchecked">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAYAAADJViUEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAATdEVYdFNvZnR3YXJlAEdyZWVuc2hvdCCZWG7CAAAARklEQVQ4T2P4TwFgAOltaGggCcPsg2t2cHD4Twy+cuEE3K0omonxwahmaFSBQpoYMJwCDOQXYjFK8iQmoLCpASdPcgFFmgES8GPHu4oa9wAAAABJRU5ErkJggg==</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="radio_checked">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAMAAAAMs7fIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAABhRex9WfyxfhS1ghi5hhzNlijVnjDpqjjxskEJwkkp2l0t3mE96mVF8m1eAnliBn16FomeMqGqOqHaWrYOht4SiuI6pvZCrv5KtwZevwpqyxaO4yKi9za/D0bfI1b7O2sDN1sXT3sfU3cnW39Hb49bf5dTe5tvk6uDj5uLp7uXr7+/v7+nv8/Hx8fPz8/H09/T09Pb29vb29/n5+fv7+////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOwsIrwAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjQ+jcx2AAAAnUlEQVQoU3XQaQ+CMAwG4CkbHojO+wZB8WSbO+D//zS3VWJiwvtpedY0bVH9H9QqLM+/f1BzCnAcdybMvb0swowLqdbY1TlJwkfpRJ/JGyTIypIjK2a58nLvc86RjTbFyMtxLoQDKxXxkk6llCAahGGllAXb50Kh8/CgIYbuQW74anx2UTNhQjavqipo9GykZrNBrzve+o3ad/8d5QMVBjBcPpWS6AAAAABJRU5ErkJggg==</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="radio_unchecked">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURRhRex9WfyxfhS1ghi5hhzNlijVnjDpqjjxskEJwkkp2l0t3mE96mVF8m1eAnliBn16FomeMqGqOqHaWrYOht4SiuI6pvZCrv5KtwZevwpqyxaO4yKi9za/D0bfI1b7O2sDN1sXT3sfU3cnW39Hb49bf5dTe5tvk6uDj5uLp7uXr7+/v7+nv8/Hx8fPz8/H09/T09Pb29vb29/n5+fv7+////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFMxh00AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjQ+jcx2AAAAjElEQVQYV1XPaROCIBCAYRLsMIvu29SyUzQF/P9/zV3Waer9xDPLMAtr/mNElaZ0cI49HoZsqjov/aQoq3rD4Q7MI/+Zo/VFfNBekpPNag1+DArIORuDT4sSQ1sBPs8qF1ijFa8pba4S3xsdNWXkAX3nN+PaB7RfJLZvazMZvLp91XzY70123/1/vtgCi14lNaFHpJsAAAAASUVORK5CYII=</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="Harbor">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>60a52d7f-1e09-4954-b7dd-c03b3af205f4</rd:ReportID>
+</Report>

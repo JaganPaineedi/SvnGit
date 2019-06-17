@@ -1,0 +1,3677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Image Name="Image9">
+        <Source>Embedded</Source>
+        <Value>Harbor</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.04042in</Top>
+        <Left>1.30208in</Left>
+        <Height>0.34027in</Height>
+        <Width>0.80208in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Comprehensive Health Evaluation</Value>
+                <Style>
+                  <FontSize>16pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>0.04042in</Top>
+        <Left>2.17361in</Left>
+        <Height>0.34027in</Height>
+        <Width>3.49999in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Bottom</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Subreport Name="Subreport5">
+        <ReportName>RDLSubReportHarborServiceNoteHeaderNoDxGoals</ReportName>
+        <Parameters>
+          <Parameter Name="DocumentVersionId">
+            <Value>=Parameters!DocumentVersionId.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>0.48833in</Top>
+        <Left>0.28125in</Left>
+        <Height>0.19792in</Height>
+        <Width>6.80205in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Textbox Name="HomeServicesTeam">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Current Mental Health Diagnosis</Value>
+                <Style>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.75569in</Top>
+        <Left>0.28125in</Left>
+        <Height>0.22569in</Height>
+        <Width>2.55208in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CurrentMentalHealthDiagnoses">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!CurrentMentalHealthDiagnoses.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CurrentMentalHealthDiagnoses</rd:DefaultName>
+        <Top>1.05083in</Top>
+        <Left>0.29514in</Left>
+        <Height>0.1875in</Height>
+        <Width>6.78816in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Subreport Name="Subreport2">
+        <ReportName>SubReportHealthEvaluationDiagnosis</ReportName>
+        <Parameters>
+          <Parameter Name="DocumentVersionId">
+            <Value>=Parameters!DocumentVersionId.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>1.29389in</Top>
+        <Left>0.27084in</Left>
+        <Height>0.1875in</Height>
+        <Width>6.81246in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Textbox Name="HomeServicesTeam2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Current Developmental Disabilities</Value>
+                <Style>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.55083in</Top>
+        <Left>0.27084in</Left>
+        <Height>0.25in</Height>
+        <Width>2.55208in</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="HomeServicesTeam3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Suiside/Threats to Personal Safety Risk</Value>
+                <Style>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>2.08208in</Top>
+        <Left>0.27084in</Left>
+        <Height>0.25in</Height>
+        <Width>3.05208in</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CurrentDDDiagnoses">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!CurrentDDDiagnoses.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CurrentDDDiagnoses</rd:DefaultName>
+        <Top>1.82861in</Top>
+        <Left>0.27082in</Left>
+        <Height>0.19792in</Height>
+        <Width>6.81248in</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CurrentDDDiagnoses2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Any past or Current Suicide Ideation </Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CurrentDDDiagnoses</rd:DefaultName>
+        <Top>2.37375in</Top>
+        <Left>0.27082in</Left>
+        <Height>0.24305in</Height>
+        <Width>3.0521in</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image3">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!RiskSuicideIdeation.Value = "Y", "radio_checked", "radio_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>2.68625in</Top>
+        <Left>0.22914in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox14">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Yes</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>2.68625in</Top>
+        <Left>0.48955in</Left>
+        <Height>0.15972in</Height>
+        <Width>0.38542in</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image4">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!RiskSuicideIdeation.Value = "N", "radio_checked", "radio_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>2.68625in</Top>
+        <Left>1.11109in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox15">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>No</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>2.68625in</Top>
+        <Left>1.35762in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.31945in</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="HomeServicesTeam4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Substance/Tobacco :Current or Historic</Value>
+                <Style>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>3.17928in</Top>
+        <Left>0.23957in</Left>
+        <Height>0.25in</Height>
+        <Width>3.05208in</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox65">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Alcohol Use:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox65</rd:DefaultName>
+        <Top>3.47095in</Top>
+        <Left>0.23957in</Left>
+        <Height>0.25in</Height>
+        <Width>1.46875in</Width>
+        <ZIndex>15</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="AlcoholUse">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!AlcoholUse.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>AlcoholUse</rd:DefaultName>
+        <Top>3.45706in</Top>
+        <Left>1.76388in</Left>
+        <Height>0.25in</Height>
+        <Width>5.29856in</Width>
+        <ZIndex>16</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox67">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Tobacco Use</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox67</rd:DefaultName>
+        <Top>3.76262in</Top>
+        <Left>0.22914in</Left>
+        <Height>0.25in</Height>
+        <Width>1.03126in</Width>
+        <ZIndex>17</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image22">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!TobaccoCurrentEveryDay.Value = "Y", "checkbox_checked", "checkbox_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>4.06818in</Top>
+        <Left>0.20828in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>18</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Image Name="Image23">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!TobaccoUsesSmokeless.Value = "Y", "checkbox_checked", "checkbox_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>4.06818in</Top>
+        <Left>4.67007in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>19</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Image Name="Image26">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!TobaccoCurrentSomeDay.Value = "Y", "checkbox_checked", "checkbox_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>4.08206in</Top>
+        <Left>2.41315in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>20</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Image Name="Image27">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!TobaccoCurrentStatusUnknown.Value = "Y", "checkbox_checked", "checkbox_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>4.29733in</Top>
+        <Left>0.20829in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>21</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Image Name="Image28">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!TobaccoFormerSmoke.Value = "Y", "checkbox_checked", "checkbox_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>4.29733in</Top>
+        <Left>2.41315in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>22</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Image Name="Image29">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!TobaccoNeverSmoker.Value = "Y", "checkbox_checked", "checkbox_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>4.29733in</Top>
+        <Left>4.6701in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>23</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox68">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Current Everyday Smoker</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox68</rd:DefaultName>
+        <Top>4.05428in</Top>
+        <Left>0.52077in</Left>
+        <Height>0.17361in</Height>
+        <Width>1.6875in</Width>
+        <ZIndex>24</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox69">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Current Someday Smoker</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox69</rd:DefaultName>
+        <Top>4.05428in</Top>
+        <Left>2.73951in</Left>
+        <Height>0.17361in</Height>
+        <Width>1.72222in</Width>
+        <ZIndex>25</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox70">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Uses Smokeless Tobacco</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox70</rd:DefaultName>
+        <Top>4.05428in</Top>
+        <Left>5.03117in</Left>
+        <Height>0.17361in</Height>
+        <Width>1.71875in</Width>
+        <ZIndex>26</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox71">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Current Status Unknown</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox71</rd:DefaultName>
+        <Top>4.26956in</Top>
+        <Left>0.5208in</Left>
+        <Height>0.17361in</Height>
+        <Width>1.6875in</Width>
+        <ZIndex>27</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox72">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Former Smoker</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox72</rd:DefaultName>
+        <Top>4.26956in</Top>
+        <Left>2.73954in</Left>
+        <Height>0.17361in</Height>
+        <Width>1.72219in</Width>
+        <ZIndex>28</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox73">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Never Smoker</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox73</rd:DefaultName>
+        <Top>4.26956in</Top>
+        <Left>5.02426in</Left>
+        <Height>0.17361in</Height>
+        <Width>1in</Width>
+        <ZIndex>29</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image30">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!TobaccoUnknownEverSmoked.Value = "Y", "checkbox_checked", "checkbox_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>4.5265in</Top>
+        <Left>0.20481in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>30</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox74">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Unknown if ever Smoked</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox74</rd:DefaultName>
+        <Top>4.48484in</Top>
+        <Left>0.51039in</Left>
+        <Height>0.17361in</Height>
+        <Width>1.6875in</Width>
+        <ZIndex>31</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox75">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Other Drug/Substance Use</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox75</rd:DefaultName>
+        <Top>4.68623in</Top>
+        <Left>0.20481in</Left>
+        <Height>0.25in</Height>
+        <Width>2.94509in</Width>
+        <ZIndex>32</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox77">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Substance Use History Questions</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox77</rd:DefaultName>
+        <Top>5.25915in</Top>
+        <Left>0.19787in</Left>
+        <Height>0.22222in</Height>
+        <Width>3.88953in</Width>
+        <ZIndex>33</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CurrentDDDiagnoses15">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Has the client ever been referred for substance abuse or tobacco cessation treatment?</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CurrentDDDiagnoses</rd:DefaultName>
+        <Top>5.52304in</Top>
+        <Left>0.19442in</Left>
+        <Height>0.23958in</Height>
+        <Width>4.70828in</Width>
+        <ZIndex>34</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image31">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!SubstanceUseEverReferredTreatment.Value = "Y", "radio_checked", "radio_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>5.53693in</Top>
+        <Left>5.1076in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>35</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox32">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Yes</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>5.53693in</Top>
+        <Left>5.38538in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.38541in</Width>
+        <ZIndex>36</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image32">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!SubstanceUseEverReferredTreatment.Value = "N", "radio_checked", "radio_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>5.53693in</Top>
+        <Left>5.86455in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>37</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox33">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>No</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>5.53693in</Top>
+        <Left>6.15621in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.52083in</Width>
+        <ZIndex>38</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox82">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>If Yes,Comment</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox82</rd:DefaultName>
+        <Top>5.80428in</Top>
+        <Left>0.19442in</Left>
+        <Height>0.25in</Height>
+        <Width>1.57292in</Width>
+        <ZIndex>39</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="SubstanceUseEverReferredTreatmentComment">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!SubstanceUseEverReferredTreatmentComment.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>SubstanceUseEverReferredTreatmentComment</rd:DefaultName>
+        <Top>5.7904in</Top>
+        <Left>1.83678in</Left>
+        <Height>0.25in</Height>
+        <Width>5.22566in</Width>
+        <ZIndex>40</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CurrentDDDiagnoses16">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Is the client currently in substance abuse treatment or receiving tobacco cessation treatment? </Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CurrentDDDiagnoses</rd:DefaultName>
+        <Top>6.09595in</Top>
+        <Left>0.18745in</Left>
+        <Height>0.23958in</Height>
+        <Width>5.15278in</Width>
+        <ZIndex>41</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image33">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!SubstanceUseCurrentTreatment.Value = "Y", "radio_checked", "radio_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>6.12373in</Top>
+        <Left>5.43398in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>42</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox36">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Yes</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>6.10984in</Top>
+        <Left>5.71176in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.39238in</Width>
+        <ZIndex>43</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image34">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!SubstanceUseCurrentTreatment.Value = "N", "radio_checked", "radio_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>6.10984in</Top>
+        <Left>6.19093in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>44</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox37">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>No</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>6.10984in</Top>
+        <Left>6.48259in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.52083in</Width>
+        <ZIndex>45</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox83">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>If Yes,Comment</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox82</rd:DefaultName>
+        <Top>6.39109in</Top>
+        <Left>0.18745in</Left>
+        <Height>0.25in</Height>
+        <Width>1.57989in</Width>
+        <ZIndex>46</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="SubstanceUseCurrentTreatmentComment">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!SubstanceUseCurrentTreatmentComment.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>SubstanceUseCurrentTreatmentComment</rd:DefaultName>
+        <Top>6.39109in</Top>
+        <Left>1.83678in</Left>
+        <Height>0.23611in</Height>
+        <Width>5.22566in</Width>
+        <ZIndex>47</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CurrentDDDiagnoses17">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Is the client currently in an AOD rehabitation facility or anticipating transitioning in or out of an AOD rehabitation facility in the next 90 days?</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CurrentDDDiagnoses</rd:DefaultName>
+        <Top>6.68275in</Top>
+        <Left>0.19789in</Left>
+        <Height>0.23958in</Height>
+        <Width>5.14234in</Width>
+        <ZIndex>48</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image35">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!SubstanceUseCurrentTreatment.Value = "Y", "radio_checked", "radio_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>6.69664in</Top>
+        <Left>5.4444in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>49</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox38">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Yes</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>6.68275in</Top>
+        <Left>5.72218in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.38541in</Width>
+        <ZIndex>50</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image36">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!SubstanceUseCurrentTreatment.Value = "N", "radio_checked", "radio_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>6.68275in</Top>
+        <Left>6.20135in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>51</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox39">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>No</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>6.68275in</Top>
+        <Left>6.49301in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.52083in</Width>
+        <ZIndex>52</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox84">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>If Yes,Comment</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox82</rd:DefaultName>
+        <Top>6.964in</Top>
+        <Left>0.19789in</Left>
+        <Height>0.25in</Height>
+        <Width>1.56945in</Width>
+        <ZIndex>53</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CurrentAODFacilityComment">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!CurrentAODFacilityComment.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CurrentAODFacilityComment</rd:DefaultName>
+        <Top>6.964in</Top>
+        <Left>1.8472in</Left>
+        <Height>0.25in</Height>
+        <Width>5.21524in</Width>
+        <ZIndex>54</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="HomeServicesTeam5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Health Conditions</Value>
+                <Style>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>7.25567in</Top>
+        <Left>0.18746in</Left>
+        <Height>0.25in</Height>
+        <Width>3.05208in</Width>
+        <ZIndex>55</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox97">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Does the client report any of the following</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox97</rd:DefaultName>
+        <Top>7.56122in</Top>
+        <Left>0.19789in</Left>
+        <Height>0.20833in</Height>
+        <Width>3.08335in</Width>
+        <ZIndex>56</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image37">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!ClientReportsHighCholesterol.Value = "Y", "checkbox_checked", "checkbox_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>7.839in</Top>
+        <Left>0.19789in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>57</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Image Name="Image38">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!ClientReportsCardiovascularDisease.Value = "Y", "checkbox_checked", "checkbox_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>8.91539in</Top>
+        <Left>0.18745in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>58</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Image Name="Image39">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!ClientReportsAsthmaCOPDChronicInfection.Value = "Y", "checkbox_checked", "checkbox_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>8.48483in</Top>
+        <Left>0.19439in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>59</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Image Name="Image40">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!ClientReportsDiabetes.Value = "Y", "checkbox_checked", "checkbox_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>8.05428in</Top>
+        <Left>0.18745in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>60</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Image Name="Image41">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!ClientReportsChronicPain.Value = "Y", "checkbox_checked", "checkbox_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>8.70011in</Top>
+        <Left>0.19442in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>61</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox76">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>High Cholesterol</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox68</rd:DefaultName>
+        <Top>7.82511in</Top>
+        <Left>0.48955in</Left>
+        <Height>0.17361in</Height>
+        <Width>1.6875in</Width>
+        <ZIndex>62</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox78">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Asthma/COPD/Chronic Upper Respiratory Infections</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox69</rd:DefaultName>
+        <Top>8.45706in</Top>
+        <Left>0.47912in</Left>
+        <Height>0.17361in</Height>
+        <Width>4.29515in</Width>
+        <ZIndex>63</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox79">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Cardiovascular disease</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox70</rd:DefaultName>
+        <Top>8.91539in</Top>
+        <Left>0.47912in</Left>
+        <Height>0.1875in</Height>
+        <Width>2.31252in</Width>
+        <ZIndex>64</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox80">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Diabetes</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox71</rd:DefaultName>
+        <Top>8.04038in</Top>
+        <Left>0.48953in</Left>
+        <Height>0.17361in</Height>
+        <Width>1.6875in</Width>
+        <ZIndex>65</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox81">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Chronic Pain</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox72</rd:DefaultName>
+        <Top>8.67234in</Top>
+        <Left>0.48955in</Left>
+        <Height>0.17361in</Height>
+        <Width>1in</Width>
+        <ZIndex>66</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image43">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!ClientReportsHypertension.Value = "Y", "checkbox_checked", "checkbox_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>8.26956in</Top>
+        <Left>0.18745in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>67</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox86">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Hypertension</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox74</rd:DefaultName>
+        <Top>8.25567in</Top>
+        <Left>0.47912in</Left>
+        <Height>0.17361in</Height>
+        <Width>1.6875in</Width>
+        <ZIndex>68</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox105">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Height:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox105</rd:DefaultName>
+        <Top>9.15844in</Top>
+        <Left>0.21873in</Left>
+        <Height>0.22223in</Height>
+        <Width>0.54166in</Width>
+        <ZIndex>69</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="ClientHeight">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!ClientHeight.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ClientHeight</rd:DefaultName>
+        <Top>9.15844in</Top>
+        <Left>0.81595in</Left>
+        <Height>0.23611in</Height>
+        <Width>0.46529in</Width>
+        <ZIndex>70</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox107">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Weight:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox107</rd:DefaultName>
+        <Top>9.15844in</Top>
+        <Left>2.28123in</Left>
+        <Height>0.22223in</Height>
+        <Width>0.65625in</Width>
+        <ZIndex>71</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox108">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>BMI:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox108</rd:DefaultName>
+        <Top>9.15844in</Top>
+        <Left>4.1701in</Left>
+        <Height>0.22223in</Height>
+        <Width>0.375in</Width>
+        <ZIndex>72</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="ClientWeight">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!ClientWeight.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ClientWeight</rd:DefaultName>
+        <Top>9.15844in</Top>
+        <Left>2.99304in</Left>
+        <Height>0.22223in</Height>
+        <Width>0.49409in</Width>
+        <ZIndex>73</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="ClientBMI">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!ClientBMI.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ClientBMI</rd:DefaultName>
+        <Top>9.15844in</Top>
+        <Left>4.58677in</Left>
+        <Height>0.22223in</Height>
+        <Width>0.80209in</Width>
+        <ZIndex>74</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox111">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Date of Most Recent Metabolic Syndrome Screening:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox111</rd:DefaultName>
+        <Top>9.42233in</Top>
+        <Left>0.20831in</Left>
+        <Height>0.25in</Height>
+        <Width>3.30617in</Width>
+        <ZIndex>75</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="MostRecentMetabolicScreeningDate">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!MostRecentMetabolicScreeningDate.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>MostRecentMetabolicScreeningDate</rd:DefaultName>
+        <Top>9.42233in</Top>
+        <Left>3.55615in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>76</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox113">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Result of Metabolic Syndrome Screening</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox113</rd:DefaultName>
+        <Top>9.714in</Top>
+        <Left>0.20831in</Left>
+        <Height>0.25in</Height>
+        <Width>2.92076in</Width>
+        <ZIndex>77</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox114">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Waist Circumference:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox114</rd:DefaultName>
+        <Top>10.00567in</Top>
+        <Left>0.21873in</Left>
+        <Height>0.25in</Height>
+        <Width>1.48959in</Width>
+        <ZIndex>78</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox115">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>HDL:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox115</rd:DefaultName>
+        <Top>10.00567in</Top>
+        <Left>5.493in</Left>
+        <Height>0.25in</Height>
+        <Width>0.40976in</Width>
+        <ZIndex>79</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox117">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Triglyceride Level:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox117</rd:DefaultName>
+        <Top>10.00567in</Top>
+        <Left>2.9861in</Left>
+        <Height>0.25in</Height>
+        <Width>1.23261in</Width>
+        <ZIndex>80</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="ClientWaistCircumference">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!ClientWaistCircumference.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ClientWaistCircumference</rd:DefaultName>
+        <Top>10.00567in</Top>
+        <Left>1.74999in</Left>
+        <Height>0.25in</Height>
+        <Width>0.54513in</Width>
+        <ZIndex>81</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="ClientTriglycerideLevel">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!ClientTriglycerideLevel.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ClientTriglycerideLevel</rd:DefaultName>
+        <Top>10.00567in</Top>
+        <Left>4.26037in</Left>
+        <Height>0.25in</Height>
+        <Width>0.5625in</Width>
+        <ZIndex>82</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="ClientHDL">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!ClientHDL.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ClientHDL</rd:DefaultName>
+        <Top>10.00567in</Top>
+        <Left>5.94443in</Left>
+        <Height>0.25in</Height>
+        <Width>0.51039in</Width>
+        <ZIndex>83</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox122">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Any other health conditions?</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox122</rd:DefaultName>
+        <Top>10.60289in</Top>
+        <Left>0.20831in</Left>
+        <Height>0.25in</Height>
+        <Width>1.83332in</Width>
+        <ZIndex>84</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="AnyOtherHealthCondition">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!AnyOtherHealthCondition.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>10.61678in</Top>
+        <Left>2.11107in</Left>
+        <Height>0.25in</Height>
+        <Width>4.95137in</Width>
+        <ZIndex>85</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CurrentDDDiagnoses18">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Is the client's lab work, monitoring tests, and any other ordered testing from the client's PCP, any specialists, and Harbor treatment providers up to date</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CurrentDDDiagnoses</rd:DefaultName>
+        <Top>10.89456in</Top>
+        <Left>0.21181in</Left>
+        <Height>0.23958in</Height>
+        <Width>5.43749in</Width>
+        <ZIndex>86</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image42">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!LabWorkOtherTestsUpToDate.Value = "Y", "radio_checked", "radio_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>10.89456in</Top>
+        <Left>5.71176in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>87</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox40">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Yes</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>10.89456in</Top>
+        <Left>5.98954in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.309in</Width>
+        <ZIndex>88</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image44">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!LabWorkOtherTestsUpToDate.Value = "N", "radio_checked", "radio_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>10.88067in</Top>
+        <Left>6.3541in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>89</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox41">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>No</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>10.88067in</Top>
+        <Left>6.64576in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.30208in</Width>
+        <ZIndex>90</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox87">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>If No,Comment</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox82</rd:DefaultName>
+        <Top>11.1758in</Top>
+        <Left>0.21181in</Left>
+        <Height>0.25in</Height>
+        <Width>2.12149in</Width>
+        <ZIndex>91</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="LabWorkOtherTestsComment">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!SubstanceUseEverReferredTreatmentComment.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>11.1758in</Top>
+        <Left>2.40274in</Left>
+        <Height>0.25in</Height>
+        <Width>4.6597in</Width>
+        <ZIndex>92</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CurrentDDDiagnoses19">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Is the client in long term care or anticipating transitioning to or out of a long term care facility within the next 90 days?</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CurrentDDDiagnoses</rd:DefaultName>
+        <Top>11.46747in</Top>
+        <Left>0.20484in</Left>
+        <Height>0.23958in</Height>
+        <Width>5.47219in</Width>
+        <ZIndex>93</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image45">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!LongTermCareCurrent.Value = "Y", "radio_checked", "radio_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>11.48136in</Top>
+        <Left>5.70481in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>94</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox42">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Yes</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>11.46747in</Top>
+        <Left>5.98259in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.37499in</Width>
+        <ZIndex>95</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image46">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!LongTermCareCurrent.Value = "N", "radio_checked", "radio_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>11.46747in</Top>
+        <Left>6.46176in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>96</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox43">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>No</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>11.46747in</Top>
+        <Left>6.75342in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.30902in</Width>
+        <ZIndex>97</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox88">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>If Yes,Comment</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox82</rd:DefaultName>
+        <Top>11.76261in</Top>
+        <Left>0.20484in</Left>
+        <Height>0.25in</Height>
+        <Width>2.12846in</Width>
+        <ZIndex>98</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="LongTermCareComment">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!SubstanceUseCurrentTreatmentComment.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>11.76261in</Top>
+        <Left>2.40274in</Left>
+        <Height>0.23611in</Height>
+        <Width>4.6597in</Width>
+        <ZIndex>99</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CurrentDDDiagnoses20">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Has the client been hospitalized in the past 90 days or does the client anticipate being hospitalized within the next 90 days?</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CurrentDDDiagnoses</rd:DefaultName>
+        <Top>12.05427in</Top>
+        <Left>0.21181in</Left>
+        <Height>0.23958in</Height>
+        <Width>5.60761in</Width>
+        <ZIndex>100</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image47">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!HospitalCareCurrent.Value = "Y", "radio_checked", "radio_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>12.05427in</Top>
+        <Left>5.8472in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>101</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox44">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Yes</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>12.04038in</Top>
+        <Left>6.12498in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.29858in</Width>
+        <ZIndex>102</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image48">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!HospitalCareCurrent.Value = "N", "radio_checked", "radio_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>12.04038in</Top>
+        <Left>6.46523in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>103</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox45">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>No</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>12.04038in</Top>
+        <Left>6.73952in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.32292in</Width>
+        <ZIndex>104</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox89">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>If Yes,Comment</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox82</rd:DefaultName>
+        <Top>12.33552in</Top>
+        <Left>0.21528in</Left>
+        <Height>0.25in</Height>
+        <Width>2.11802in</Width>
+        <ZIndex>105</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="HospitalCareComment">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!CurrentAODFacilityComment.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>12.32163in</Top>
+        <Left>2.40274in</Left>
+        <Height>0.25in</Height>
+        <Width>4.6597in</Width>
+        <ZIndex>106</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="HomeServicesTeam6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Social Service Needs</Value>
+                <Style>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>12.62719in</Top>
+        <Left>0.20484in</Left>
+        <Height>0.25in</Height>
+        <Width>3.05208in</Width>
+        <ZIndex>107</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="HomeServicesTeam7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Client Participation</Value>
+                <Style>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>13.10636in</Top>
+        <Left>0.21873in</Left>
+        <Height>0.25in</Height>
+        <Width>3.06251in</Width>
+        <ZIndex>108</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image58">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!ClientGuardianParticipatedInPlan.Value = "Y", "checkbox_checked", "checkbox_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>13.4258in</Top>
+        <Left>0.20831in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>109</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox156">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Client/Guardian participated in this evaluation and agrees to use the information in this evaluation to update his/her Integrated Care Plan.</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox156</rd:DefaultName>
+        <Top>13.39802in</Top>
+        <Left>0.5208in</Left>
+        <Height>0.35417in</Height>
+        <Width>6.54164in</Width>
+        <ZIndex>110</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Subreport Name="Subreport1">
+        <ReportName>RDLSubReportSignatures</ReportName>
+        <Parameters>
+          <Parameter Name="DocumentVersionId">
+            <Value>=Fields!DocumentVersionId.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>13.77996in</Top>
+        <Left>0.22914in</Left>
+        <Height>0.14583in</Height>
+        <Width>6.8333in</Width>
+        <ZIndex>111</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Inches</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>9.15844in</Top>
+        <Left>1.29513in</Left>
+        <Height>0.22223in</Height>
+        <Width>0.71179in</Width>
+        <ZIndex>112</ZIndex>
+        <Visibility>
+          <Hidden>=IIF(IsNothing(Fields!ClientHeight.Value),True,False)</Hidden>
+        </Visibility>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>lbs</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>9.15844in</Top>
+        <Left>3.50102in</Left>
+        <Height>0.20833in</Height>
+        <Width>0.38826in</Width>
+        <ZIndex>113</ZIndex>
+        <Visibility>
+          <Hidden>=IIF(IsNothing(Fields!ClientWeight.Value),True,False)</Hidden>
+        </Visibility>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox116">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Blood Pressure:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox115</rd:DefaultName>
+        <Top>10.31122in</Top>
+        <Left>0.20892in</Left>
+        <Height>0.25in</Height>
+        <Width>1.07232in</Width>
+        <ZIndex>114</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="ClientBloodPressure">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!ClientBloodPressure.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ClientBloodPressure</rd:DefaultName>
+        <Top>10.31122in</Top>
+        <Left>1.30901in</Left>
+        <Height>0.25in</Height>
+        <Width>0.66667in</Width>
+        <ZIndex>115</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Inches</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>10.00567in</Top>
+        <Left>2.33678in</Left>
+        <Height>0.25in</Height>
+        <Width>0.57987in</Width>
+        <ZIndex>116</ZIndex>
+        <Visibility>
+          <Hidden>=IIF(IsNothing(Fields!ClientWaistCircumference.Value),True,False)</Hidden>
+        </Visibility>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox8">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>mg/dL</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox8</rd:DefaultName>
+        <Top>10.00567in</Top>
+        <Left>4.85065in</Left>
+        <Height>0.25in</Height>
+        <Width>0.53121in</Width>
+        <ZIndex>117</ZIndex>
+        <Visibility>
+          <Hidden>=IIF(IsNothing(Fields!ClientTriglycerideLevel.Value),True,False)</Hidden>
+        </Visibility>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox9">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>mg/dL</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>10.00567in</Top>
+        <Left>6.48259in</Left>
+        <Height>0.25in</Height>
+        <Width>0.45835in</Width>
+        <ZIndex>118</ZIndex>
+        <Visibility>
+          <Hidden>=IIF(IsNothing(Fields!ClientHDL.Value),True,False)</Hidden>
+        </Visibility>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox10">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>mm Hg</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox10</rd:DefaultName>
+        <Top>10.31122in</Top>
+        <Left>2.01735in</Left>
+        <Height>0.25in</Height>
+        <Width>0.62843in</Width>
+        <ZIndex>119</ZIndex>
+        <Visibility>
+          <Hidden>=IIF(IsNothing(Fields!ClientBloodPressure.Value),True,False)</Hidden>
+        </Visibility>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="SubstanceUseOther">
+        <CanGrow>true</CanGrow>
+        <CanShrink>true</CanShrink>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!SubstanceUseOther.Value, "csp_RDLCustomHealthEvaluation")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>SubstanceUseOther</rd:DefaultName>
+        <Top>4.9779in</Top>
+        <Left>0.20828in</Left>
+        <Height>0.23958in</Height>
+        <Width>6.54164in</Width>
+        <ZIndex>120</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Subreport Name="Subreport3">
+        <ReportName>CustomHealthEvaluationPlanPESNeeds</ReportName>
+        <Parameters>
+          <Parameter Name="DocumentVersionId">
+            <Value>=Parameters!DocumentVersionId.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>12.91886in</Top>
+        <Left>0.19787in</Left>
+        <Height>0.17708in</Height>
+        <Width>6.86457in</Width>
+        <ZIndex>121</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Subreport Name="Subreport4">
+        <ReportName>SubReportSuicideThreatsHealthEvaluation</ReportName>
+        <Parameters>
+          <Parameter Name="DocumentVersionId">
+            <Value>=Parameters!DocumentVersionId.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>2.91541in</Top>
+        <Left>0.22914in</Left>
+        <Height>0.19442in</Height>
+        <Width>6.8333in</Width>
+        <ZIndex>122</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+    </ReportItems>
+    <Height>14.26958in</Height>
+    <Style />
+  </Body>
+  <Width>7.18625in</Width>
+  <Page>
+    <PageHeader>
+      <Height>0.32292in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox4">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!ClientName.Value, "csp_RDLCustomHealthEvaluation") + " ("
++ cstr(First(Fields!ClientId.Value, "csp_RDLCustomHealthEvaluation")) + ")"</Value>
+                  <Style>
+                    <FontFamily>Verdana</FontFamily>
+                    <FontSize>9pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>0.04514in</Top>
+          <Left>3.65147in</Left>
+          <Height>0.25in</Height>
+          <Width>2.73392in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <LeftMargin>0.25in</LeftMargin>
+    <RightMargin>0.25in</RightMargin>
+    <TopMargin>0.25in</TopMargin>
+    <BottomMargin>0.25in</BottomMargin>
+    <ColumnSpacing>0.05118in</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="Streamline">
+      <DataSourceReference>Streamline</DataSourceReference>
+      <rd:SecurityType>DataBase</rd:SecurityType>
+      <rd:DataSourceID>b62ca999-e81f-48a9-8884-e8b1908c321f</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="csp_RDLCustomHealthEvaluation">
+      <Query>
+        <DataSourceName>Streamline</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@DocumentVersionId">
+            <Value>=Parameters!DocumentVersionId.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>csp_RDLCustomHealthEvaluation</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="DocumentVersionId">
+          <DataField>DocumentVersionId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CreatedDate">
+          <DataField>CreatedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedBy">
+          <DataField>ModifiedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedDate">
+          <DataField>ModifiedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="RecordDeleted">
+          <DataField>RecordDeleted</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeletedBy">
+          <DataField>DeletedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeletedDate">
+          <DataField>DeletedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="CurrentMentalHealthDiagnoses">
+          <DataField>CurrentMentalHealthDiagnoses</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrentDDDiagnoses">
+          <DataField>CurrentDDDiagnoses</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskReportedByClient">
+          <DataField>RiskReportedByClient</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskSuicideIdeation">
+          <DataField>RiskSuicideIdeation</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskSuicideIdeationComment">
+          <DataField>RiskSuicideIdeationComment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskSuicideIntent">
+          <DataField>RiskSuicideIntent</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskSuicideIntentComment">
+          <DataField>RiskSuicideIntentComment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskSuicidePriorAttempt">
+          <DataField>RiskSuicidePriorAttempt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskSuicidePriorAttemptsComment">
+          <DataField>RiskSuicidePriorAttemptsComment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskPriorHospitalization">
+          <DataField>RiskPriorHospitalization</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskPriorHospitalizationComment">
+          <DataField>RiskPriorHospitalizationComment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskPhysicalAggressionSelf">
+          <DataField>RiskPhysicalAggressionSelf</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskPhysicalAggressionSelfComment">
+          <DataField>RiskPhysicalAggressionSelfComment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskVerbalAggressionOther">
+          <DataField>RiskVerbalAggressionOther</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskVerbalAggressionOthersComment">
+          <DataField>RiskVerbalAggressionOthersComment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskPhysicalAggressionObject">
+          <DataField>RiskPhysicalAggressionObject</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskPhysicalAggressionObjectsComment">
+          <DataField>RiskPhysicalAggressionObjectsComment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskPhysicalAggressionPeople">
+          <DataField>RiskPhysicalAggressionPeople</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskPhysicalAggressionPeopleComment">
+          <DataField>RiskPhysicalAggressionPeopleComment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskReportRiskTaking">
+          <DataField>RiskReportRiskTaking</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskReportRiskTakingComment">
+          <DataField>RiskReportRiskTakingComment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskThreatClientPersonalSafety">
+          <DataField>RiskThreatClientPersonalSafety</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RiskThreatClientPersonalSafetyComment">
+          <DataField>RiskThreatClientPersonalSafetyComment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AlcoholUse">
+          <DataField>AlcoholUse</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TobaccoCurrentEveryDay">
+          <DataField>TobaccoCurrentEveryDay</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TobaccoCurrentSomeDay">
+          <DataField>TobaccoCurrentSomeDay</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TobaccoUsesSmokeless">
+          <DataField>TobaccoUsesSmokeless</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TobaccoCurrentStatusUnknown">
+          <DataField>TobaccoCurrentStatusUnknown</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TobaccoFormerSmoke">
+          <DataField>TobaccoFormerSmoke</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TobaccoNeverSmoker">
+          <DataField>TobaccoNeverSmoker</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TobaccoUnknownEverSmoked">
+          <DataField>TobaccoUnknownEverSmoked</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SubstanceUseOther">
+          <DataField>SubstanceUseOther</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SubstanceUseEverReferredTreatment">
+          <DataField>SubstanceUseEverReferredTreatment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SubstanceUseEverReferredTreatmentComment">
+          <DataField>SubstanceUseEverReferredTreatmentComment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SubstanceUseCurrentTreatment">
+          <DataField>SubstanceUseCurrentTreatment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SubstanceUseCurrentTreatmentComment">
+          <DataField>SubstanceUseCurrentTreatmentComment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrentAODFacility">
+          <DataField>CurrentAODFacility</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrentAODFacilityComment">
+          <DataField>CurrentAODFacilityComment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientReportsHighCholesterol">
+          <DataField>ClientReportsHighCholesterol</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientReportsDiabetes">
+          <DataField>ClientReportsDiabetes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientReportsHypertension">
+          <DataField>ClientReportsHypertension</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientReportsAsthmaCOPDChronicInfection">
+          <DataField>ClientReportsAsthmaCOPDChronicInfection</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientReportsChronicPain">
+          <DataField>ClientReportsChronicPain</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientReportsCardiovascularDisease">
+          <DataField>ClientReportsCardiovascularDisease</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientHeight">
+          <DataField>ClientHeight</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientWeight">
+          <DataField>ClientWeight</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientBMI">
+          <DataField>ClientBMI</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MostRecentMetabolicScreeningDate">
+          <DataField>MostRecentMetabolicScreeningDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ClientWaistCircumference">
+          <DataField>ClientWaistCircumference</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientTriglycerideLevel">
+          <DataField>ClientTriglycerideLevel</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientHDL">
+          <DataField>ClientHDL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientBloodPressure">
+          <DataField>ClientBloodPressure</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AnyOtherHealthCondition">
+          <DataField>AnyOtherHealthCondition</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LabWorkOtherTestsUpToDate">
+          <DataField>LabWorkOtherTestsUpToDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LabWorkOtherTestsComment">
+          <DataField>LabWorkOtherTestsComment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LongTermCareCurrent">
+          <DataField>LongTermCareCurrent</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LongTermCareComment">
+          <DataField>LongTermCareComment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="HospitalCareCurrent">
+          <DataField>HospitalCareCurrent</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="HospitalCareComment">
+          <DataField>HospitalCareComment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SocialServiceNeedHousing">
+          <DataField>SocialServiceNeedHousing</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SocialServiceNeedEmployment">
+          <DataField>SocialServiceNeedEmployment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SocialServiceNeedAccessHealthcare">
+          <DataField>SocialServiceNeedAccessHealthcare</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SocialServiceNeedEducationalProblem">
+          <DataField>SocialServiceNeedEducationalProblem</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SocialServiceNeedLegalAid">
+          <DataField>SocialServiceNeedLegalAid</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SocialServiceNeedFoodClothing">
+          <DataField>SocialServiceNeedFoodClothing</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SocialServiceNeedAssistBenefitsApplication">
+          <DataField>SocialServiceNeedAssistBenefitsApplication</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SocialServiceNeedCriminalJustice">
+          <DataField>SocialServiceNeedCriminalJustice</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SocialServiceNeedOther">
+          <DataField>SocialServiceNeedOther</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SocialServiceNeedOtherComment">
+          <DataField>SocialServiceNeedOtherComment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientGuardianParticipatedInPlan">
+          <DataField>ClientGuardianParticipatedInPlan</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientName">
+          <DataField>ClientName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientId">
+          <DataField>ClientId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="DocumentVersionId">
+      <DataType>Integer</DataType>
+      <Prompt>Document Version Id</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="checkbox_unchecked">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAYAAADJViUEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAATdEVYdFNvZnR3YXJlAEdyZWVuc2hvdCCZWG7CAAAARklEQVQ4T2P4TwFgAOltaGggCcPsg2t2cHD4Twy+cuEE3K0omonxwahmaFSBQpoYMJwCDOQXYjFK8iQmoLCpASdPcgFFmgES8GPHu4oa9wAAAABJRU5ErkJggg==</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="radio_unchecked">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURRhRex9WfyxfhS1ghi5hhzNlijVnjDpqjjxskEJwkkp2l0t3mE96mVF8m1eAnliBn16FomeMqGqOqHaWrYOht4SiuI6pvZCrv5KtwZevwpqyxaO4yKi9za/D0bfI1b7O2sDN1sXT3sfU3cnW39Hb49bf5dTe5tvk6uDj5uLp7uXr7+/v7+nv8/Hx8fPz8/H09/T09Pb29vb29/n5+fv7+////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFMxh00AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjQ+jcx2AAAAjElEQVQYV1XPaROCIBCAYRLsMIvu29SyUzQF/P9/zV3Waer9xDPLMAtr/mNElaZ0cI49HoZsqjov/aQoq3rD4Q7MI/+Zo/VFfNBekpPNag1+DArIORuDT4sSQ1sBPs8qF1ijFa8pba4S3xsdNWXkAX3nN+PaB7RfJLZvazMZvLp91XzY70123/1/vtgCi14lNaFHpJsAAAAASUVORK5CYII=</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="Harbor">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAGkAAAA4CAIAAABxMkE/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAApdSURBVHhe7VsJUFTHFk3VF1HcQFHZjAuLgIIK8t1QPy6RqmgqRBM1iutHJUbjgooLVUZAVFQwZZIKiokLEaHKBRFRU5+4p74bQcQVF1QUN0TcTVX+GS917f/emzcLMzokQz3Hofve27dPd9++ffrx3p/WH2MReM9YRaven1bsjJ8EVuys2BmPgPGa1Z13f7z6Q/IY74tFarq3ca9nV6/WP2rRI/poMHZysCy/RH1QDhw4kJyUPG/uvE/CPvFw97CpZcNIyb9AjK2pYWf5oOjpoQp2KjApVv0tsHv18tXLFy+fP3teUlKyPHG5j4+PoTD9vbB79vRZ3n/y5syeE9I7pFPHTq4urra1bU0CGRv5i8y7W6W3du3aFR8XP3PGzNDQUBdnF9PCVK15V/GwQvqUV2AVUJTBl4pymcBrlfIH5XpGIj3F0NbVK1ePHD6SsysnLjauV89ebwGmamGnqLwqeRV1+NvV32rrALaqx5WP9cRFLoY49fTJU1go+L0AC9DZ2fldIWX8Putg7yBRRknpzVLq7c0bN5s1bSa3/tvR306dPIVQbRB2AGtn1s6JEyZ27dLV18cXlmvb1LYcyAyOd1FRUaL3WCxyOOZGzxVlxoweow9kly5e2vzz5ug50QArODjYwUE6SBaIGrmk716BrZ0UsGHt379fGyi/7PvF3t6eJGdMnyERe/L4ydmis3v37M3MyJwVNcvf399icdHHMX2x27B+A5n7aNBHD+4/UFyGKESVt7c3ScYsiHlU8QglAGv0qNH2Dasw1cetGiGjL3aZmZlif+7fuy+fethVRZnWrVoHBAS0x0+79h07dMT/+Ozgj39Vn1Ti194Pn3j8/TAR/TWSr+VZRVPqpynnRzQlSrIpssam
+/PyqmkDrYrnoFcuwVx1e/7xp9LVXLIbvS5cs1etMhuCtEzvMMlEGB0N94l2NltGNHbpnBHYrV6w0Ny5379zlHNPcbSnar2HYnTh+ImJ8hGNjR5rjx/577J2gRo3WMOxw3rKzs+PgkH8q34qdlDdVQQSJjhU7A/ASoUSMq8HYIR2RzwvJPmvWvaIGY9fWqy1OmpLHu21VVkwds2Kn2UnEHAWkK8ifkSNGJi5PvFx8OTo6enH84mtXr+GM9dXUr3bn7GZSwIqdFDtPT8/c3bkjRoxYsXIFIJs/f/6ypctAqMyeNXv69Ok4fjk7VdFEVuyk2Hl5eWFyhYeHJyUlXbuiwW7RokUgI0GiTJs2bd/efZx5qWBX+aiy7HbZnbI7oJu07ac4HePkxwdnnIuRCbOwPN4hBMPmvbv39M+WyQ08iNTqiQ4IRCZxYf/2rdvUimH5XUZGBgyhvYflD188f4EuwSh9QVfBlGBFq8e7T4d8ihytYYOGjRo2er/F+9+s+kbud9aOLFyGNmncBGZRm7A4wbGJIxjDLyK/IGEROzTa5Z9dmjdr3qB+A8i0atkqdlGszqSvX99+5AYep+ZOoL/AQipugMOGDnNzdQsKCkJtYWEh7KMhfCJVMgw79Kedbzsfbx/Fx9dXQ1Vqw67wdCG8lHAkIJZ/XPcjO70kYYmXpxfLYIS/Xvi1qAIBEbuxY8Yqki4482N0FRHcvm07Xbxix5s0cVL/fv3pVyAy5csprIJpHvZxmF3dqjwcX4qLi1u4teDmPD08DcMOmgvmLdA2qtgx2LRkzV68cBFV2JoxiQ4eOAiGqrFDYxLGlGFefuqUqZETI8ESUlXGlgwJaQzyXcQON9BRM6PAG6anpw8fNtzW9s1lGKYVVqXE1aysLLKctDKJq04XnAbWVI7wTeUI4p8P/zzkXyHco57BPcVxQrsGYwceVBt2cEgRO/QB5fXr1ceFFuvm5uaSMG7/gKxoEyiwncOHDiNEYKUD6/U/
+rZes2fPnzouKiBuIA6wbFhYm1iICUNWQIUMkXYAiFi/V/pr3K9cCQbY29LOhKE/fnI4BwwIyON7BkAq59P133ytihzwG5Xy/wZ4FdQ4i+ePHjoudGT9uPJVjSXK5uA9wK/LzLADCRGYB3JmwBbwpQdMcV0jy4d+0cRNp9ejeg2uxWbGpkmslVA51Oh0YPO9SUlK0zbvUtamK2PXt0xeMplwrclIkya9JWSPWYsum8oSEBMW2VLCD/MYNG1lg4cKFbAERDeXdu3VXtInZzVoiPcOF8vtSg7HbunWrNuyys7MVsVu7Zu2o8FFyLVxFkzw2BLGWr5bi4+ONwA4qWFZkuWWLlmQB6RSVqIw9aGGSifh3BLdrSuwQ6bVhd/TIUUXstMnjJp/kwf2bFrt1qevYE6RvWHq8Nalkc7ixI63evXqbBTvkNdqwuHD+gkHYJS5LNBN2eXl57AneDCsrK8NOhZK6depqcx7lSNdJC7mIWbAT83uJHyKVovNMhjAf3CPYTNgBLMYO6QsGtY5tHZS0ad1GBTvstpTQYes3C3YqbaNKn3mHY0OfkD4saY41K3qCzAbjRAlwYGCgiv9Ip3lpmx47GxsbdexoePEozrsrl6/g9INu4JSDK0HOgU0e70Ts0jalnTxxkrzq1rWbiv9YN3wuMj127u7u6tgFdArQhl1RYRGtCMw7OkiYL96J2IH4Yexw8lXxHzk8nxpNj92AAQPUsQsfGa6IHd76onJ0gy28HezOFJ5h7HCG1WfegacwPXaTJ09Wxy4uLk6OHZYqFdJJ/i1gJ54HQPMAPjoXIz1Wj3f2jTTvfiA9ND12OndPsBRy7PgVKVApitjFxMSI5dXPjUtLq86h4HtgGfwSv96v8j4gjn0EceiAUNNjh9ihPu/Ac8ixw86AQmwRcE4RO3ASpsUOLxuTG8nJmlc7cALlVwhTftB6piy+VExa48aOMz12Ou/hwedIsMM4UwmGVDLmHO/Ao5kWO2YlDh08
+RJYHDx5MboD11Db8cINkCgo0TBc9nEsZeZ7dsX0HmZAQHnInkIXSG+VMVfFVNLDTNu8GDRxkWuxAPcAHkYBA7kaONXVsqsijVFZqiDI8gQH/lwNWF7stW7bQxJEELDl2N67foMgSG1tFfPNGgTVLzCU/2DrIM1dXV7Ec/C2VS/I++VyQGCSBtLQ06OL4BdpZNPtB/w/ILHgauefbtm6jWjB0Yi1jJz9Q6cWjYIuACeS9uFdUj3doABs8hMX3Prl53KWJ6phuXCVS5Mx99uujvL5YC7S43B8aPEkMhRiullhRJDjJArBGLfAV38zEOmUVCc8KFd3Y5efndw7sDBPIbEXiVxFEpJd0rPHw8ADvSH6ASWcP8B1RD/dMoGGdnN5cX+CWEn3Dhrh69WrxWgMQZO/Mltx+sTV8ATkIbhmtgI8EyUpJhnjzIPoJdp51J0RMuF5yHbV7cvfg8gHlbi5u/MoDWszJyeGpilowtampqefOnmODurHjxjCe2i5Q2BxCCQKK2DcgBX4CPRQL8R15QNGZIqaIUUKviuKgJnnwpwFghyTraOCHA4G+xCZ+xZUI3mdWWRzIk9GKRBGhEGSiqAWW2MXFRe4MqFMOl7qxs8g/yLQspwz+G1DLcv+demPFznj4rdgZj93/ADO8qQf4UxfwAAAAAElFTkSuQmCC</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="checkbox_checked">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAATdEVYdFNvZnR3YXJlAEdyZWVuc2hvdCCZWG7CAAAAcUlEQVQ4T6WSQQ6AMAgEeRpP43kePfgfDCqEGtSlknBpdrpLC+mPImNFpNXuFzAzK9LbukTWAUYmmIKJDh9twwZCsIviUS4Qhl3ojvnC19gZyHE9yefMlSMMm/A+ewt++vMyth2iPawnslmV5lybydoBQX/pM3OGHDcAAAAASUVORK5CYII=</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="radio_checked">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAMAAAAMs7fIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAABhRex9WfyxfhS1ghi5hhzNlijVnjDpqjjxskEJwkkp2l0t3mE96mVF8m1eAnliBn16FomeMqGqOqHaWrYOht4SiuI6pvZCrv5KtwZevwpqyxaO4yKi9za/D0bfI1b7O2sDN1sXT3sfU3cnW39Hb49bf5dTe5tvk6uDj5uLp7uXr7+/v7+nv8/Hx8fPz8/H09/T09Pb29vb29/n5+fv7+////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOwsIrwAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjQ+jcx2AAAAnUlEQVQoU3XQaQ+CMAwG4CkbHojO+wZB8WSbO+D//zS3VWJiwvtpedY0bVH9H9QqLM+/f1BzCnAcdybMvb0swowLqdbY1TlJwkfpRJ/JGyTIypIjK2a58nLvc86RjTbFyMtxLoQDKxXxkk6llCAahGGllAXb50Kh8/CgIYbuQW74anx2UTNhQjavqipo9GykZrNBrzve+o3ad/8d5QMVBjBcPpWS6AAAAABJRU5ErkJggg==</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>9335432a-06ea-45e3-a2b1-a96c15ee6839</rd:ReportID>
+</Report>

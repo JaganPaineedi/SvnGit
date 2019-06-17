@@ -1,0 +1,166 @@
+/********************************************************************************                                                     
+--    
+-- Copyright: Streamline Healthcare Solutions    
+-- "Psychiatric Evaluation"  
+-- Purpose: Script for Task #329 - Keypoint Customizations  
+--    
+-- Author:  Neelima
+-- Date:    18-05-2015
+-- ***** AIMS****    
+ -- *****History****  
+/*       Date           Author				Purpose                   */
+----------------------------------------------------------------------------------
+/*       26 Jun 2015	Avi Goyal	        What : Validate script copied from Psychiatric Diagnostic Evaluation Note 
+											Why : Task# 20 Project:Key Point - Customizations */  
+/*		 02-03-2016     Lakshmi             Validations removed as per the task Camino - Customizations #10.1																						*/																			
+*********************************************************************************/  
+
+DELETE
+FROM DocumentValidations WHERE DocumentCodeId = 60000 and TableName = 'CustomDocumentPsychiatricAIMSs'
+
+--INSERT [dbo].[DocumentValidations] ([Active],[DocumentCodeId],[DocumentType],[TableName],[TabOrder],[ColumnName],[ValidationLogic],[ValidationDescription],[ValidationOrder],[ErrorMessage])
+--VALUES 
+--	(
+--	N'Y'
+--	,60000
+--	,NULL
+--	,N'CustomDocumentPsychiatricAIMSs'
+--	,4
+--	,N'Exam'
+--	,N'FROM CustomDocumentPsychiatricAIMSs CDPA WHERE ISNULL(CDPA.MuscleFacialExpression,'''') = '''' AND ISNULL(CDPA.RecordDeleted,''N'')=''N'' AND CDPA.DocumentVersionId = @DocumentVersionId'
+--	,N'Muscle of Facial Expressions  is required'
+--	,CAST(19 AS DECIMAL(18, 0))
+--	,N'AIMS - Muscle of Facial Expressions  is required'
+--	),
+--	(
+--	N'Y'
+--	,60000
+--	,NULL
+--	,N'CustomDocumentPsychiatricAIMSs'
+--	,4
+--	,N'Exam'
+--	,N'FROM CustomDocumentPsychiatricAIMSs CDPA WHERE ISNULL(CDPA.LipsPerioralArea,'''') = '''' AND ISNULL(CDPA.RecordDeleted,''N'')=''N'' AND CDPA.DocumentVersionId = @DocumentVersionId'
+--	,N'Lips and Perioral Area  is required'
+--	,CAST(20 AS DECIMAL(18, 0))
+--	,N'AIMS - Lips and Perioral Area  is required'
+--	),
+--	(
+--	N'Y'
+--	,60000
+--	,NULL
+--	,N'CustomDocumentPsychiatricAIMSs'
+--	,4
+--	,N'Exam'
+--	,N'FROM CustomDocumentPsychiatricAIMSs CDPA WHERE ISNULL(CDPA.Jaw,'''') = '''' AND ISNULL(CDPA.RecordDeleted,''N'')=''N'' AND CDPA.DocumentVersionId = @DocumentVersionId'
+--	,N'Jaw  is required'
+--	,CAST(21 AS DECIMAL(18, 0))
+--	,N'AIMS - Jaw  is required'
+--	),
+--	(
+--	N'Y'
+--	,60000
+--	,NULL
+--	,N'CustomDocumentPsychiatricAIMSs'
+--	,4
+--	,N'Exam'
+--	,N'FROM CustomDocumentPsychiatricAIMSs CDPA WHERE ISNULL(CDPA.Tongue,'''') = '''' AND ISNULL(CDPA.RecordDeleted,''N'')=''N'' AND CDPA.DocumentVersionId = @DocumentVersionId'
+--	,N'Tongueis required'
+--	,CAST(22 AS DECIMAL(18, 0))
+--	,N'AIMS - Tongue is required'
+--	),
+--	(
+--	N'Y'
+--	,60000
+--	,NULL
+--	,N'CustomDocumentPsychiatricAIMSs'
+--	,4
+--	,N'Exam'
+--	,N'FROM CustomDocumentPsychiatricAIMSs CDPA WHERE ISNULL(CDPA.ExtremityMovementsUpper,'''') = '''' AND ISNULL(CDPA.RecordDeleted,''N'')=''N'' AND CDPA.DocumentVersionId = @DocumentVersionId'
+--	,N'Muscle of Facial Expressions  is required'
+--	,CAST(23 AS DECIMAL(18, 0))
+--	,N'AIMS - Upper movements is required'
+--	),
+--	(
+--	N'Y'
+--	,60000
+--	,NULL
+--	,N'CustomDocumentPsychiatricAIMSs'
+--	,4
+--	,N'Exam'
+--	,N'FROM CustomDocumentPsychiatricAIMSs CDPA WHERE ISNULL(CDPA.ExtremityMovementsLower,'''') = '''' AND ISNULL(CDPA.RecordDeleted,''N'')=''N'' AND CDPA.DocumentVersionId = @DocumentVersionId'
+--	,N'Lips and Perioral Area is required'
+--	,CAST(24 AS DECIMAL(18, 0))
+--	,N'AIMS - Lower movements is required'
+--	),
+--	(
+--	N'Y'
+--	,60000
+--	,NULL
+--	,N'CustomDocumentPsychiatricAIMSs'
+--	,4
+--	,N'Exam'
+--	,N'FROM CustomDocumentPsychiatricAIMSs CDPA WHERE ISNULL(CDPA.NeckShouldersHips,'''') = '''' AND ISNULL(CDPA.RecordDeleted,''N'')=''N'' AND CDPA.DocumentVersionId = @DocumentVersionId'
+--	,N'Neck, Shoulders, Hips is required'
+--	,CAST(25 AS DECIMAL(18, 0))
+--	,N'AIMS - Neck, Shoulders, Hips is required'
+--	),
+--	(
+--	N'Y'
+--	,60000
+--	,NULL
+--	,N'CustomDocumentPsychiatricAIMSs'
+--	,4
+--	,N'Exam'
+--	,N'FROM CustomDocumentPsychiatricAIMSs CDPA WHERE ISNULL(CDPA.SeverityAbnormalMovements,'''') = '''' AND ISNULL(CDPA.RecordDeleted,''N'')=''N'' AND CDPA.DocumentVersionId = @DocumentVersionId'
+--	,N' Severity of Abnormal Movements is required'
+--	,CAST(26 AS DECIMAL(18, 0))
+--	,N'AIMS - Severity of Abnormal Movements is required'
+--	),
+--	(
+--	N'Y'
+--	,60000
+--	,NULL
+--	,N'CustomDocumentPsychiatricAIMSs'
+--	,4
+--	,N'Exam'
+--	,N'FROM CustomDocumentPsychiatricAIMSs CDPA WHERE ISNULL(CDPA.IncapacitationAbnormalMovements,'''') = '''' AND ISNULL(CDPA.RecordDeleted,''N'')=''N'' AND CDPA.DocumentVersionId = @DocumentVersionId'
+--	,N' Incapacitation Due to Abnormal Movements is required'
+--	,CAST(27 AS DECIMAL(18, 0))
+--	,N'AIMS - Incapacitation Due to Abnormal Movements is required'
+--	),
+--	(
+--	N'Y'
+--	,60000
+--	,NULL
+--	,N'CustomDocumentPsychiatricAIMSs'
+--	,4
+--	,N'Exam'
+--	,N'FROM CustomDocumentPsychiatricAIMSs CDPA WHERE ISNULL(CDPA.PatientAwarenessAbnormalMovements,'''') = '''' AND ISNULL(CDPA.RecordDeleted,''N'')=''N'' AND CDPA.DocumentVersionId = @DocumentVersionId'
+--	,N' Patient’s Awareness of Abnormal Movements Rate Only Patient’s Report is required'
+--	,CAST(28 AS DECIMAL(18, 0))
+--	,N'AIMS - Patient’s Awareness of Abnormal Movements Rate Only Patient’s Report is required'
+--	),
+--	(
+--	N'Y'
+--	,60000
+--	,NULL
+--	,N'CustomDocumentPsychiatricAIMSs'
+--	,4
+--	,N'Exam'
+--	,N'FROM CustomDocumentPsychiatricAIMSs CDPA WHERE ISNULL(CDPA.CurrentProblemsTeeth,'''') = '''' AND ISNULL(CDPA.RecordDeleted,''N'')=''N'' AND CDPA.DocumentVersionId = @DocumentVersionId'
+--	,N' Current problems with teeth and/or dentures is required'
+--	,CAST(29 AS DECIMAL(18, 0))
+--	,N'AIMS - Current problems with teeth and/or dentures is required'
+--	),
+--	(
+--	N'Y'
+--	,60000
+--	,NULL
+--	,N'CustomDocumentPsychiatricAIMSs'
+--	,4
+--	,N'Exam'
+--	,N'FROM CustomDocumentPsychiatricAIMSs CDPA WHERE ISNULL(CDPA.DoesPatientWearDentures,'''') = '''' AND ISNULL(CDPA.RecordDeleted,''N'')=''N'' AND CDPA.DocumentVersionId = @DocumentVersionId'
+--	,N' Does patient usually wear dentures is required'
+--	,CAST(30 AS DECIMAL(18, 0))
+--	,N'AIMS - Does patient usually wear dentures is required'
+--	)

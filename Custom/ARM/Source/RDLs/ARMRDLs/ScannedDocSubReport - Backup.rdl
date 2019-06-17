@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="Streamline">
+      <rd:DataSourceID>6fe0e944-6c34-462c-aac4-291ae91646fb</rd:DataSourceID>
+      <DataSourceReference>Streamline</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>10in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="ImageRecordItemId">
+      <DataType>Integer</DataType>
+      <Prompt>ImageRecordItemId</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>7.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:ReportID>d7a0fc28-dea9-480f-a93e-5ba974f98a45</rd:ReportID>
+  <PageWidth>7in</PageWidth>
+  <DataSets>
+    <DataSet Name="DataSourceScannedDocument">
+      <Fields>
+        <Field Name="ItemImage">
+          <DataField>ItemImage</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>Streamline</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>csp_RDLSCGetScannedImage</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@ImageRecordItemId">
+            <Value>=Parameters!ImageRecordItemId.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>7.875in</Width>
+  <Body>
+    <ReportItems>
+      <Rectangle Name="rectangle1">
+        <ReportItems>
+          <Image Name="image1">
+            <Sizing>FitProportional</Sizing>
+            <MIMEType>image/png</MIMEType>
+            <Source>Database</Source>
+            <Style />
+            <Value>=Fields!ItemImage.Value</Value>
+          </Image>
+        </ReportItems>
+      </Rectangle>
+    </ReportItems>
+    <Height>9.75in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <PageHeight>10in</PageHeight>
+</Report>

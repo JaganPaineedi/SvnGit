@@ -1,0 +1,1 @@
+update documentcodes set TableList = 'CustomDocumentHealthHomeServiceNotes,CustomDocumentHealthHomeCarePlanDiagnoses,CurrentDiagnoses' where DocumentCodeId=2000270 

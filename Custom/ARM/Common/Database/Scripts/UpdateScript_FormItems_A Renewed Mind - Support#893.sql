@@ -1,0 +1,1 @@
+Update FormItems Set ItemType = 5366 Where ItemType = 5361 AND ItemLabel = 'Score' AND ItemColumnName = 'Score'

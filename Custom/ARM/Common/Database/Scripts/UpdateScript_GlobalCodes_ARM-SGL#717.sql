@@ -1,0 +1,1 @@
+Update GlobalCodes Set Active = 'N' Where GlobalcodeId IN (25709,25710) And CodeName IN ('Harbor1','Harbor2')

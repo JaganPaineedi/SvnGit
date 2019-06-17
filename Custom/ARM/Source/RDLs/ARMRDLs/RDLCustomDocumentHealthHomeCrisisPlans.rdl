@@ -1,0 +1,2391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!ClientName.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans") + " ("
++ cstr(First(Fields!ClientId.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")) + ")"</Value>
+                <Style>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>9pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>0.05208in</Top>
+        <Left>4.02412in</Left>
+        <Height>0.21875in</Height>
+        <Width>2.38793in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Health Home Service </Value>
+                <Style>
+                  <FontSize>16pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>Crisis Management and Contingency Plan</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>0.48402in</Top>
+        <Left>0.13083in</Left>
+        <Height>0.28472in</Height>
+        <Width>6.41885in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Bottom</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Subreport Name="Subreport5">
+        <ReportName>RDLSubReportHarborServiceNoteHeaderNoDxGoals</ReportName>
+        <Parameters>
+          <Parameter Name="DocumentVersionId">
+            <Value>=Parameters!DocumentVersionId.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>0.97221in</Top>
+        <Left>0.02086in</Left>
+        <Height>0.19792in</Height>
+        <Width>7.89in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Textbox Name="HomeServicesTeam">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Current Mental Health Diagnoses</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.48957in</Top>
+        <Left>0.02086in</Left>
+        <Height>0.22569in</Height>
+        <Width>3.32049in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Subreport Name="Subreport1">
+        <ReportName>RDLSubReportSignatures</ReportName>
+        <Parameters>
+          <Parameter Name="DocumentVersionId">
+            <Value>=Fields!DocumentVersionId.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>12.01071in</Top>
+        <Left>0.05296cm</Left>
+        <Height>0.125in</Height>
+        <Width>7.89in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Textbox Name="Textbox127">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Clinician </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>facilitating plan development</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox127</rd:DefaultName>
+        <Top>3.14852cm</Top>
+        <Left>0.05299cm</Left>
+        <Height>0.6cm</Height>
+        <Width>6.1424cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="ClinicianFacilitatingDischarge">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!ClinicianFacilitatingDischarge.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ClinicianFacilitatingDischarge</rd:DefaultName>
+        <Top>3.14852cm</Top>
+        <Left>6.30122cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.57143cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="HomeServicesTeam3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Current Developmental Disabilities</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>2.33337in</Top>
+        <Left>0.02086in</Left>
+        <Height>0.22569in</Height>
+        <Width>3.32049in</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CurrentDDDiagnoses">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!CurrentDDDiagnoses.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>6.57057cm</Top>
+        <Left>0.05298cm</Left>
+        <Height>0.6cm</Height>
+        <Width>16.23363cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="HomeServicesTeam4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Medications</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>2.86473in</Top>
+        <Left>0.02278in</Left>
+        <Height>0.22569in</Height>
+        <Width>3.32049in</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CurrentMedication">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!CurrentMedication.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>7.95549cm</Top>
+        <Left>0.05786cm</Left>
+        <Height>0.6cm</Height>
+        <Width>16.22875cm</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="HomeServicesTeam5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Physician/Support Contacts</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>3.40997in</Top>
+        <Left>0.02278in</Left>
+        <Height>0.22569in</Height>
+        <Width>3.32049in</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox13">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Primary Care Physician Name : </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>3.66344in</Top>
+        <Left>0.05786cm</Left>
+        <Height>0.25in</Height>
+        <Width>2.00455in</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="PrimaryCarePhysician">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!PrimaryCarePhysician.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>PrimaryCarePhysician</rd:DefaultName>
+        <Top>9.30513cm</Top>
+        <Left>5.25525cm</Left>
+        <Height>0.635cm</Height>
+        <Width>5.29576cm</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox14">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Pharmacy Name:</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>3.95511in</Top>
+        <Left>0.05787cm</Left>
+        <Height>0.25in</Height>
+        <Width>1.18857in</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox15">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Phone Number </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>3.66344in</Top>
+        <Left>10.65684cm</Left>
+        <Height>0.25in</Height>
+        <Width>1.04274in</Width>
+        <ZIndex>15</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox16">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Phone(s)</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>4.24677in</Top>
+        <Left>10.65684cm</Left>
+        <Height>0.25in</Height>
+        <Width>1.04274in</Width>
+        <ZIndex>16</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox17">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>First Support Contact Name: </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>4.24677in</Top>
+        <Left>0.05787cm</Left>
+        <Height>0.25in</Height>
+        <Width>1.90732in</Width>
+        <ZIndex>17</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox18">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Phone Number</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>3.95511in</Top>
+        <Left>10.65684cm</Left>
+        <Height>0.25in</Height>
+        <Width>1.04274in</Width>
+        <ZIndex>18</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox19">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Phone(s)</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>4.52455in</Top>
+        <Left>10.65684cm</Left>
+        <Height>0.25in</Height>
+        <Width>1.04274in</Width>
+        <ZIndex>19</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox20">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Secondary Support Contact Name:</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>4.52455in</Top>
+        <Left>0.05787cm</Left>
+        <Height>0.25in</Height>
+        <Width>2.24066in</Width>
+        <ZIndex>20</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="PharmacyName">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!PharmacyName.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>PharmacyName</rd:DefaultName>
+        <Top>10.04597cm</Top>
+        <Left>3.25323cm</Left>
+        <Height>0.6cm</Height>
+        <Width>7.29778cm</Width>
+        <ZIndex>21</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="FirstSupportContactName">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!FirstSupportContactName.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>FirstSupportContactName</rd:DefaultName>
+        <Top>10.78708cm</Top>
+        <Left>5.07886cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.43687cm</Width>
+        <ZIndex>22</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="SecondarySupportContactName">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!SecondarySupportContactName.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>SecondarySupportContactName</rd:DefaultName>
+        <Top>11.49291cm</Top>
+        <Left>5.89025cm</Left>
+        <Height>0.63444cm</Height>
+        <Width>4.66076cm</Width>
+        <ZIndex>23</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="PrimaryCarePhysicianPhone">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!PrimaryCarePhysicianPhone.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>PrimaryCarePhysicianPhone</rd:DefaultName>
+        <Top>9.30513cm</Top>
+        <Left>13.41124cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.28391cm</Width>
+        <ZIndex>24</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="PharmacyPhone">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!PharmacyPhone.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>PharmacyPhone</rd:DefaultName>
+        <Top>10.04625cm</Top>
+        <Left>13.41124cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.28391cm</Width>
+        <ZIndex>25</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="FirstSupportContactPhone">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!FirstSupportContactPhone.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>FirstSupportContactPhone</rd:DefaultName>
+        <Top>10.8218cm</Top>
+        <Left>13.41124cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.28391cm</Width>
+        <ZIndex>26</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="SecondarySupportContactPhone">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!SecondarySupportContactPhone.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>SecondarySupportContactPhone</rd:DefaultName>
+        <Top>11.49291cm</Top>
+        <Left>13.41124cm</Left>
+        <Height>0.63444cm</Height>
+        <Width>3.28391cm</Width>
+        <ZIndex>27</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="HomeServicesTeam6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Personal/FamilyConcerns</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>5.06596in</Top>
+        <Left>0.02278in</Left>
+        <Height>0.22569in</Height>
+        <Width>3.32049in</Width>
+        <ZIndex>28</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox21">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Description of immediate needs:</Value>
+                <Style>
+                  <TextDecoration>Underline</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.31943in</Top>
+        <Left>0.05296cm</Left>
+        <Height>0.25in</Height>
+        <Width>5.0115in</Width>
+        <ZIndex>29</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="DescriptionImmediateNeed">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!DescriptionImmediateNeed.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>DescriptionImmediateNeed</rd:DefaultName>
+        <Top>14.25218cm</Top>
+        <Left>0.05787cm</Left>
+        <Height>0.6cm</Height>
+        <Width>14.3717cm</Width>
+        <ZIndex>30</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox22">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Current Treatments and Healthcare Services: </Value>
+                <Style>
+                  <TextDecoration>Underline</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.88898in</Top>
+        <Left>0.05787cm</Left>
+        <Height>0.25in</Height>
+        <Width>5.0115in</Width>
+        <ZIndex>31</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CurrentTreatment">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!CurrentTreatment.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CurrentTreatment</rd:DefaultName>
+        <Top>15.69885cm</Top>
+        <Left>0.05787cm</Left>
+        <Height>0.6cm</Height>
+        <Width>14.3717cm</Width>
+        <ZIndex>32</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox23">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Personal/Family Safety Concerns:</Value>
+                <Style>
+                  <TextDecoration>Underline</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>6.45854in</Top>
+        <Left>0.05298cm</Left>
+        <Height>0.25in</Height>
+        <Width>5.0115in</Width>
+        <ZIndex>33</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="PersonalSafetyConcern">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!PersonalSafetyConcern.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>PersonalSafetyConcern</rd:DefaultName>
+        <Top>17.14551cm</Top>
+        <Left>0.05787cm</Left>
+        <Height>0.6cm</Height>
+        <Width>14.3717cm</Width>
+        <ZIndex>34</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox24">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Situations that may trigger a mental health crisis:</Value>
+                <Style>
+                  <TextDecoration>Underline</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>7.0538in</Top>
+        <Left>0.05787cm</Left>
+        <Height>0.25in</Height>
+        <Width>5.0115in</Width>
+        <ZIndex>35</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="SituationsTriggerCrisis">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!SituationsTriggerCrisis.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>SituationsTriggerCrisis</rd:DefaultName>
+        <Top>18.6575cm</Top>
+        <Left>0.05787cm</Left>
+        <Height>0.6cm</Height>
+        <Width>14.3717cm</Width>
+        <ZIndex>36</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox25">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>In a mental health crisis, interventions preferred:</Value>
+                <Style>
+                  <TextDecoration>Underline</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>7.60947in</Top>
+        <Left>0.05787cm</Left>
+        <Height>0.25in</Height>
+        <Width>5.0115in</Width>
+        <ZIndex>37</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="InterventionsPreferred">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!InterventionsPreferred.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>InterventionsPreferred</rd:DefaultName>
+        <Top>20.06889cm</Top>
+        <Left>0.05787cm</Left>
+        <Height>0.6cm</Height>
+        <Width>14.3717cm</Width>
+        <ZIndex>38</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Subreport Name="Subreport3">
+        <ReportName>SubReportHealthHomeMHCrisisPlanSteps</ReportName>
+        <Parameters>
+          <Parameter Name="DocumentVersionId">
+            <Value>=Parameters!DocumentVersionId.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>20.77472cm</Top>
+        <Left>0.05787cm</Left>
+        <Height>0.64146cm</Height>
+        <Width>7.89in</Width>
+        <ZIndex>39</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Textbox Name="HomeServicesTeam7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Planning for Other Types of Crisis</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>8.47323in</Top>
+        <Left>0.02278in</Left>
+        <Height>0.22569in</Height>
+        <Width>3.32049in</Width>
+        <ZIndex>40</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox26">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Situations that may lead to appropriate emergency department/ Rescue Mental Health utilization: </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>8.74059in</Top>
+        <Left>0.05298cm</Left>
+        <Height>0.25in</Height>
+        <Width>6.52882in</Width>
+        <ZIndex>41</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="SpecialSituationsPlan">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=IIF(Fields!SituationsAppropriateToEmergencyDepartmentNA.Value="Y","N/A",Fields!SituationsAppropriateToEmergencyDepartment.Value)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>SpecialSituationsPlan</rd:DefaultName>
+        <Top>22.94193cm</Top>
+        <Left>0.05787cm</Left>
+        <Height>0.6cm</Height>
+        <Width>11.44743cm</Width>
+        <ZIndex>42</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox27">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Other types of Crisis, I may encounter (ex. high risk of homelessness, high risk health conditions, pet/ loved one illness) and my plan for them</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>9.31015in</Top>
+        <Left>0.05787cm</Left>
+        <Height>0.25in</Height>
+        <Width>6.55011in</Width>
+        <ZIndex>43</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Subreport Name="Subreport4">
+        <ReportName>SubRportCrisisPlans</ReportName>
+        <Parameters>
+          <Parameter Name="DocumentVersionId">
+            <Value>=Parameters!DocumentVersionId.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>24.38862cm</Top>
+        <Left>0.05298cm</Left>
+        <Height>0.56208cm</Height>
+        <Width>7.89in</Width>
+        <ZIndex>44</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Textbox Name="Textbox28">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Special Situations Planning (ex. care of a dependent, pet, or a house if client is hospitalized or in long </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>term care) </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>9.85089in</Top>
+        <Left>0.06964cm</Left>
+        <Height>0.25in</Height>
+        <Width>6.52226in</Width>
+        <ZIndex>45</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="HomeServicesTeam8">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Professional Involvement </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>10.40655in</Top>
+        <Left>0.02086in</Left>
+        <Height>0.22569in</Height>
+        <Width>3.32049in</Width>
+        <ZIndex>46</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox29">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Care Manager Name:</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>10.67391in</Top>
+        <Left>0.05298cm</Left>
+        <Height>0.25in</Height>
+        <Width>1.43858in</Width>
+        <ZIndex>47</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox30">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>After Hours Professional Contact:</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>11.25724in</Top>
+        <Left>0.05786cm</Left>
+        <Height>0.25in</Height>
+        <Width>2.12608in</Width>
+        <ZIndex>48</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox31">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Qualified Health Home Specialist Name: </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>10.96558in</Top>
+        <Left>0.05786cm</Left>
+        <Height>0.25in</Height>
+        <Width>2.59136in</Width>
+        <ZIndex>49</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox32">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Phone(s)</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>10.67391in</Top>
+        <Left>10.53876cm</Left>
+        <Height>0.25in</Height>
+        <Width>1.0115in</Width>
+        <ZIndex>50</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox33">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Phone(s)</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>10.96558in</Top>
+        <Left>10.53876cm</Left>
+        <Height>0.25in</Height>
+        <Width>1.0115in</Width>
+        <ZIndex>51</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox34">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Phone(s) </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>11.25724in</Top>
+        <Left>10.53876cm</Left>
+        <Height>0.25in</Height>
+        <Width>1.0115in</Width>
+        <ZIndex>52</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CareManagerName">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!CareManagerName.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CareManagerName</rd:DefaultName>
+        <Top>27.11173cm</Top>
+        <Left>3.81281cm</Left>
+        <Height>0.6cm</Height>
+        <Width>6.54956cm</Width>
+        <ZIndex>53</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="QualifiedHealthHomeSpecialistName">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!QualifiedHealthHomeSpecialistName.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>QualifiedHealthHomeSpecialistName</rd:DefaultName>
+        <Top>27.85284cm</Top>
+        <Left>6.74575cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.58135cm</Width>
+        <ZIndex>54</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="QualifiedHealthHomeSpecialistName1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!AfterHoursProfessionalContactName.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>QualifiedHealthHomeSpecialistName1</rd:DefaultName>
+        <Top>28.6284cm</Top>
+        <Left>5.56393cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.79844cm</Width>
+        <ZIndex>55</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CareManagerPhone">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!CareManagerPhone.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CareManagerPhone</rd:DefaultName>
+        <Top>27.11117cm</Top>
+        <Left>13.21379cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.42239cm</Width>
+        <ZIndex>56</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="QualifiedHealthHomeSpecialistPhone">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!QualifiedHealthHomeSpecialistPhone.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>QualifiedHealthHomeSpecialistPhone</rd:DefaultName>
+        <Top>27.85228cm</Top>
+        <Left>13.21379cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.42239cm</Width>
+        <ZIndex>57</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="QualifiedHealthHomeSpecialistPhone1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!AfterHoursProfessionalContactPhone.Value, "csp_RDLCustomDocumentHealthHomeCrisisPlans")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>QualifiedHealthHomeSpecialistPhone1</rd:DefaultName>
+        <Top>28.5934cm</Top>
+        <Left>13.21379cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.42239cm</Width>
+        <ZIndex>58</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="HomeServicesTeam9">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Client Participation</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>11.54891in</Top>
+        <Left>0.02085in</Left>
+        <Height>0.17708in</Height>
+        <Width>3.06251in</Width>
+        <ZIndex>59</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image58">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!ClientGuardianParticipatedInPlan.Value = "Y", "checkbox_checked", "checkbox_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>11.76766in</Top>
+        <Left>0.02085in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>60</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox156">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Client/ Guardian participated in this plan and agrees to use the information in this plan to update his/her Crisis Plan.</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox156</rd:DefaultName>
+        <Top>11.73988in</Top>
+        <Left>0.33334in</Left>
+        <Height>0.20139in</Height>
+        <Width>5.41622in</Width>
+        <ZIndex>61</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Subreport Name="Subreport7">
+        <ReportName>SubReportHealthHomeDocumentsFamilyCommunitySupports</ReportName>
+        <Parameters>
+          <Parameter Name="DocumentVersionId">
+            <Value>=Parameters!DocumentVersionId.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>12.29428cm</Top>
+        <Left>0.05296cm</Left>
+        <Height>0.46742cm</Height>
+        <Width>7.89in</Width>
+        <ZIndex>62</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Subreport Name="Subreport8">
+        <ReportName>SubReportHealthEvaluationDiagnosis</ReportName>
+        <Parameters>
+          <Parameter Name="DocumentVersionId">
+            <Value>=Parameters!DocumentVersionId.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>5.16843cm</Top>
+        <Left>0.05296cm</Left>
+        <Height>0.6525cm</Height>
+        <Width>7.89in</Width>
+        <ZIndex>63</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+      <Image Name="Image61">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!SpecialSituationsPlanNA.Value = "Y", "checkbox_checked", "checkbox_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>10.13042in</Top>
+        <Left>4.5852in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>64</ZIndex>
+        <Visibility>
+          <Hidden>=IIf(Fields!SpecialSituationsPlanNA.Value = "Y",True,False)</Hidden>
+        </Visibility>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox48">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>N/A</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>10.09558in</Top>
+        <Left>4.83172in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.38889in</Width>
+        <ZIndex>65</ZIndex>
+        <Visibility>
+          <Hidden>=IIf(Fields!SpecialSituationsPlanNA.Value = "Y",True,False)</Hidden>
+        </Visibility>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="SpecialSituationsPlan1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=IIF(Fields!SpecialSituationsPlanNA.Value="Y","N/A",Fields!SpecialSituationsPlan.Value)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>SpecialSituationsPlan1</rd:DefaultName>
+        <Top>25.74861cm</Top>
+        <Left>0.05786cm</Left>
+        <Height>0.6cm</Height>
+        <Width>11.44744cm</Width>
+        <ZIndex>66</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image62">
+        <Source>Embedded</Source>
+        <Value>=IIF(Fields!SituationsAppropriateToEmergencyDepartmentNA.Value = "Y", "checkbox_checked", "checkbox_unchecked")</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>9.06003in</Top>
+        <Left>4.5852in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.23263in</Width>
+        <ZIndex>67</ZIndex>
+        <Visibility>
+          <Hidden>=IIf(Fields!SituationsAppropriateToEmergencyDepartmentNA.Value = "Y", True, False)</Hidden>
+        </Visibility>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox49">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>N/A</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>9.02519in</Top>
+        <Left>4.83172in</Left>
+        <Height>0.17361in</Height>
+        <Width>0.38889in</Width>
+        <ZIndex>68</ZIndex>
+        <Visibility>
+          <Hidden>=IIf(Fields!SituationsAppropriateToEmergencyDepartmentNA.Value = "Y", True, False)</Hidden>
+        </Visibility>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Subreport Name="Subreport9">
+        <ReportName>SubReportCurrentDiagnosis</ReportName>
+        <Parameters>
+          <Parameter Name="DocumentVersionId">
+            <Value>=Parameters!DocumentVersionId.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>4.39694cm</Top>
+        <Left>0.02367cm</Left>
+        <Height>0.6525cm</Height>
+        <Width>7.89in</Width>
+        <ZIndex>69</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Subreport>
+    </ReportItems>
+    <Height>12.21905in</Height>
+    <Style />
+  </Body>
+  <Width>7.91278in</Width>
+  <Page>
+    <LeftMargin>0.25in</LeftMargin>
+    <RightMargin>0.25in</RightMargin>
+    <TopMargin>0.25in</TopMargin>
+    <BottomMargin>0.25in</BottomMargin>
+    <ColumnSpacing>0.05118in</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="Streamline">
+      <DataSourceReference>streamline</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>e679adeb-0f4c-487a-9ee4-8ed1e77a390e</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="csp_RDLCustomDocumentHealthHomeCrisisPlans">
+      <Query>
+        <DataSourceName>Streamline</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@DocumentVersionId">
+            <Value>=Parameters!DocumentVersionId.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>csp_RDLCustomDocumentHealthHomeCrisisPlans</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="DocumentVersionId">
+          <DataField>DocumentVersionId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CreatedDate">
+          <DataField>CreatedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedBy">
+          <DataField>ModifiedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedDate">
+          <DataField>ModifiedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="RecordDeleted">
+          <DataField>RecordDeleted</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeletedBy">
+          <DataField>DeletedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeletedDate">
+          <DataField>DeletedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ClinicianFacilitatingDischarge">
+          <DataField>ClinicianFacilitatingDischarge</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrentMentalHealthDiagnoses">
+          <DataField>CurrentMentalHealthDiagnoses</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrentDDDiagnoses">
+          <DataField>CurrentDDDiagnoses</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrentMedication">
+          <DataField>CurrentMedication</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PrimaryCarePhysician">
+          <DataField>PrimaryCarePhysician</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PrimaryCarePhysicianPhone">
+          <DataField>PrimaryCarePhysicianPhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PharmacyName">
+          <DataField>PharmacyName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PharmacyPhone">
+          <DataField>PharmacyPhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FirstSupportContactName">
+          <DataField>FirstSupportContactName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FirstSupportContactPhone">
+          <DataField>FirstSupportContactPhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SecondarySupportContactName">
+          <DataField>SecondarySupportContactName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SecondarySupportContactPhone">
+          <DataField>SecondarySupportContactPhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DescriptionImmediateNeed">
+          <DataField>DescriptionImmediateNeed</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrentTreatment">
+          <DataField>CurrentTreatment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PersonalSafetyConcern">
+          <DataField>PersonalSafetyConcern</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SituationsTriggerCrisis">
+          <DataField>SituationsTriggerCrisis</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InterventionsPreferred">
+          <DataField>InterventionsPreferred</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SituationsAppropriateToEmergencyDepartment">
+          <DataField>SituationsAppropriateToEmergencyDepartment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SpecialSituationsPlan">
+          <DataField>SpecialSituationsPlan</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SpecialSituationsPlanNA">
+          <DataField>SpecialSituationsPlanNA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CareManagerName">
+          <DataField>CareManagerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CareManagerPhone">
+          <DataField>CareManagerPhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QualifiedHealthHomeSpecialistName">
+          <DataField>QualifiedHealthHomeSpecialistName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QualifiedHealthHomeSpecialistPhone">
+          <DataField>QualifiedHealthHomeSpecialistPhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AfterHoursProfessionalContactName">
+          <DataField>AfterHoursProfessionalContactName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientName">
+          <DataField>ClientName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AfterHoursProfessionalContactPhone">
+          <DataField>AfterHoursProfessionalContactPhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientId">
+          <DataField>ClientId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SituationsAppropriateToEmergencyDepartmentNA">
+          <DataField>SituationsAppropriateToEmergencyDepartmentNA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientGuardianParticipatedInPlan">
+          <DataField>ClientGuardianParticipatedInPlan</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="DocumentVersionId">
+      <DataType>Integer</DataType>
+      <Prompt>Document Version Id</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="Harbor">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="checkbox_checked">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAATdEVYdFNvZnR3YXJlAEdyZWVuc2hvdCCZWG7CAAAAcUlEQVQ4T6WSQQ6AMAgEeRpP43kePfgfDCqEGtSlknBpdrpLC+mPImNFpNXuFzAzK9LbukTWAUYmmIKJDh9twwZCsIviUS4Qhl3ojvnC19gZyHE9yefMlSMMm/A+ewt++vMyth2iPawnslmV5lybydoBQX/pM3OGHDcAAAAASUVORK5CYII=</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="checkbox_unchecked">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAYAAADJViUEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAATdEVYdFNvZnR3YXJlAEdyZWVuc2hvdCCZWG7CAAAARklEQVQ4T2P4TwFgAOltaGggCcPsg2t2cHD4Twy+cuEE3K0omonxwahmaFSBQpoYMJwCDOQXYjFK8iQmoLCpASdPcgFFmgES8GPHu4oa9wAAAABJRU5ErkJggg==</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="radio_checked">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAMAAAAMs7fIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAABhRex9WfyxfhS1ghi5hhzNlijVnjDpqjjxskEJwkkp2l0t3mE96mVF8m1eAnliBn16FomeMqGqOqHaWrYOht4SiuI6pvZCrv5KtwZevwpqyxaO4yKi9za/D0bfI1b7O2sDN1sXT3sfU3cnW39Hb49bf5dTe5tvk6uDj5uLp7uXr7+/v7+nv8/Hx8fPz8/H09/T09Pb29vb29/n5+fv7+////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOwsIrwAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjQ+jcx2AAAAnUlEQVQoU3XQaQ+CMAwG4CkbHojO+wZB8WSbO+D//zS3VWJiwvtpedY0bVH9H9QqLM+/f1BzCnAcdybMvb0swowLqdbY1TlJwkfpRJ/JGyTIypIjK2a58nLvc86RjTbFyMtxLoQDKxXxkk6llCAahGGllAXb50Kh8/CgIYbuQW74anx2UTNhQjavqipo9GykZrNBrzve+o3ad/8d5QMVBjBcPpWS6AAAAABJRU5ErkJggg==</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="radio_unchecked">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURRhRex9WfyxfhS1ghi5hhzNlijVnjDpqjjxskEJwkkp2l0t3mE96mVF8m1eAnliBn16FomeMqGqOqHaWrYOht4SiuI6pvZCrv5KtwZevwpqyxaO4yKi9za/D0bfI1b7O2sDN1sXT3sfU3cnW39Hb49bf5dTe5tvk6uDj5uLp7uXr7+/v7+nv8/Hx8fPz8/H09/T09Pb29vb29/n5+fv7+////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFMxh00AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjQ+jcx2AAAAjElEQVQYV1XPaROCIBCAYRLsMIvu29SyUzQF/P9/zV3Waer9xDPLMAtr/mNElaZ0cI49HoZsqjov/aQoq3rD4Q7MI/+Zo/VFfNBekpPNag1+DArIORuDT4sSQ1sBPs8qF1ijFa8pba4S3xsdNWXkAX3nN+PaB7RfJLZvazMZvLp91XzY70123/1/vtgCi14lNaFHpJsAAAAASUVORK5CYII=</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="Harbor2">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAKkAAABdCAIAAABRtNF3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAvVSURBVHhe7Z09qF1FEMcDptAmYMRO26BFUAIpFNKJjUlr6hSBdAraaGMq04WAlunVlAFTGANpTKOdSKqUBvzolID6QH+6YbPOzM7O+br33Hf3ccGX6549s/Ofr52Z3Xfk4K+D/jncHHjw4MGNL258+MGHb77x5tGnjrLYv//7OXK4l72HqwPpzz/7/N133n39tddBWn869ofE2j388SE6/f5776PTx44dM8EWX3bsdxL7X3/59daXty5/dPnsW2eff+75CNJd73cS6d9/+/3eN/euXr16/u3zL77w4jikO/a7gf133373yaefXLhw4cSJE3Mh3bFfI/Y/fP/D9evXL168ePLkyeWQ7thvH/scfp8+fXqTSHfsN439iPB7YwLR4/w5pSGF3yRPpoTfHfs5IVkosUP4fefrO7OH3x37NWK/mfC7Y7997LcVfm8Be5Ya/6ABWLzSlvJPvhw0w0KmeNy0Ofw+c+bMxri/3Rc9ifWG0kH2uOQyZYOhM8DucThNfyqF3wRlIB3Mfg9d3frHP8EeLgzKDJNlLDEg6omv9vizx8lYERVPRzEyw26F33E2Thxp7PEiecT79+9rpmPzI9RE0JoyBu9z9+7d3Q2/IzycZYyBPabYmZpygg9M6guofXANU3A1nz1k4fcsuEYmsXM7tSeFna+hiCutzSAixBFycOjD7whss4yxsdeFQqKBoTiZ1cahk6wn+z0Lu1c1iY29KDNQYhqKWRqvyxX+PDn7vT8brS1Kg4096eiSptHYnzp1qpwHS1Bi38PvLQLPq23s6RowyUIvIwaAYebj7CFpSdiJOsd2UdnM2xfBHoWuUU97Aj/4gvxDFykf/il+qX2fR841IM3j0DBlwOzUakaJVwSpZSdv
+Y09j7xS9r2E/ImCMmJk+ZjQHjP78hbBHQkdT2R9cggMd++3XDJfANTJnx97GniQSRYqNFR0iUM0+pmP/L/bAnA6qiYIWPVizc3w9E3bsD5w9FTKxHqhmp6Rjf4Cus+cxC/kd+8d1uWBup7bHW3+cr2sQHft9wV53H3Xs9wV7nY3u2O8L9gRTIu7r2D/GPrjZ3V1/37E/mJjTrdXx1h/rdeyr2E+sLXbsZ9+gT5ywvb+n6ooloH2KTXC6AIIaPJ13YMnBcWJjCnToOm2c3PdC5yTfkxDld5Ej69hPhGr2x9vYgxlAAjbYA2rqv0gtWbRlkvVMxVk6PkiLIiJ8jyhwG4zYLnfsZwdv4oRt7NF7sCeCA/vUEK2x//OPP9H7Ent+79hPxGbpxzv2/6vj9T3e//p2kr8v9Z56FyL5yquv4Owx+xhzPELWe8Zj89H77u+XVtyJ87f1HmivfHwF7PHr+Pt0W2Ny8Dh7sh/8Avb4BdwB/p5/gj2/i+NdQ/09MzMn/gVRQ7CIMYMJhswRiEEE9VkilsOc9B/rCX29J9TNJLFMSArWOJogwVioglQIY8lwWJx2bc6QB0AkS2O28hEAYk4mhyH5+zb2Qzmep+Z9JSvj2ENfbT+ZTE7zI2bI42GxmDnJcf7UsHdIogA4Gifei5I4m+e0aWqulwE///QzkOepsL75Kf2KRHAbe14Pg5h30A+PiCMWEexreaGSO888/UyNF4ipOFyQHkzjUQiTyyWbxAAsB7YtktgQpw8iaEUWm16dguvah3Xp+9lwuGl8TWoxYG3sIyuPjGliHz/IbR4JNVFPhGGBhBESBNf0PnIquZwq7gL0qUXAwJ+SMkFtzGYCE3vn/gDG37x50+mXj2IftDyJPhNFH3txhDsxAodau4dOH+tMR4DNWwQgyeER76phnxiHTjMGVNJ1l76gR86bCuBLH5wpMY+0avgTMbVVO6TC8Cj2g67JMM/iO9iXSimClJqt1vxC4JKAaivt
+H/Bz/D2om6rMu3yFc0y0OOWOPDmDBXjZkudHkMgkbaWzT085q05uLop9RJwzQWYpz8E+r7DGCFYouJBOltQ+Wt6zU0cuS+/APx3sxf8Vr8P1mIrln2AsH2meV9HXIZhGAsJ0GMuLLl26lGhGH8qYIH0ZxT4SvDhMhI4a9rls6DNCc3kQ9now79V8FG9p1u9rNc+aqgiXEeEq7kZQZU6uAxrN8LRRz/cobBn7kmKfEfgCwQJn8yn8X+nR/bcMxZ7ZTNN67uw5/SIBD3IQwZ4xgqpa2C+G3f7qtj9/CHt8W5DKPEyrqan32fz62xjTpjkGWZQSfJ/qmKum3qdnTcuvOSZ8RHxToK2LCYcgoxmeh7D3natJh+55NbHPjrxJqGaxk1ER+132C0HZHaH3zGxeMcfSxEtrG8smbTp+0hGx5k+TpSHsmyGJpl5bwpq/Txxprl+vTTM3T7Jh7E3VFylIEa7GDX5alNhWmKmkRfR+KKHQqvfBNewR4eD8wos72rx57HU4IgRaJCqGpoH1Fk5ryyLYx2OlTJCOTpt5vabqv/zSy+XyVoW9qfplQB4PVE0+6FSPPiu4CPZxf5np1vWD6dgL1Vkb9jq5lkNFvfluCroYoF2+VshFsB9qoKBby+mhx16b5by/EJowYt+k7YouaS6CffBWxVJUdVr30GOvo/2smiL6GceKZri3CPaDkvlJArSNGrfgNBtWRJfU1mbzdf41J3eFt2omM0yPoMta/h5ynj3eUOeUxgsxHIe9jhnztGvDXi85719EKDDuykJdpD602Gv3KYRp/djnPgNBuWgWCqpWc5u3iM0PEueLYVzv/TamXdR7gcqIPTO8bWZ258d+XFAKreP688uneHXZD7nyPZ62+Vm/Z8Fed18tbvPLdrZBBmBov57YBOvL9ncO+5x1n8XmbwH7YGusFotBGxuxJzRL1DuHfa44COyDOWzBUhH2ans8v80fRyh0C1odfy82hLXi5s5hn/MiApVx
+6iT8vbbH82NfaxJq2n8RskV6tqDeiYN2DvtsvUToM6ImDrdF+V8nCebHPt74IKRBpHVr2Avz4IjUyrF/9OhRrUKv/4xQU3P0ABE/NRvOZsjtjEjmJ7qFC/fr94lrfqOAwN4Rys3XcPV6S5usM1QjsBcJIt2SNb/e+72qzhqEFzexF37BLxiuXO9Fd0apl7qyNaJE0mz7mR/7eFuZloOSGhN7oaB+f5zA3uxbSjRsRe+FPy6LILqJdmgUJRTJTLrMj/0I65QfaWI/iNyVYy/qbH7iZWi4JyyHmRUexEzIa/frLYe9rvX5BUOBvbMj2Lzei7VoteaYRNNoO6x2jIqpabxrhlhvCvbl3kbbfF3j972gwN6phm0e+9qp78w9ferW8Vm+96xl2WfQ+7JepA+ADRKFcluicxH6ULTTest741XwzWNf8r0mlLpvPchM/sJvOX/tT8vOgH2Zix2dzE+rKqfSHk7rvf/3dgX2jssUjR5xDRPsC0bjbE/KB2uIalkPNkKK5dTmF8Q3N2iGvy97BMZ1mGTiyn2tNiHmmXhHFeJ6I8KueL1csC+Y2yif8v/Uhr4koan6QmIcRAXxzT/6YWBfStm4DpO8HrF9991YIr2mCuZ59FpsODp/Lh7kn80DyKWcRWof+hU+/OV4xy7qeKJpVAzsy5cN3YaKZQjA9OlJ8xyrDlBr15OYvDBP/zfVKw3QwDgBM2JRAh9sTjHJq50rLef3r3XRFd5mrPYE+3S3jDBKfvDVZKhYZ7qWSEBrsjvd6pbmz0dedLMiz167do0xCAcfqHU6vRAUpoIAR5VNYviShHzp+1mXqFAPco7mHT6Ql+05FIqDPjUg822XNcphCAbATJo9xr72ZNNn+PA7fx81m+vgZUZJxU34E/HORRhidY4xSyPNK0xqLOL7ERpiXpVQe4UjWA5VzdCvgX0zVmyqfo240lU34S9F0JyQbQ+KiGQ0fzBstT1Stvnpdc69apmGiIN3WNTsR0Wg
+/b0GwVlzyQxgmI6NDH/fhHOhAfC6DDMBCdaYK4fjWcuxB1MqDmItTCtiCKQfB1S6wkRYcAsQ4RWyyEtFHoyXNhNzkcmdMY+xT//pP3vIgSN7uOa+5K73+y4DXe/3VwI69h37/eXA/q68633Hfn85sL8r/weXb4fCK835JQAAAABJRU5ErkJggg==</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>76deb978-55a6-45be-b13c-e33278c8ed0c</rd:ReportID>
+</Report>

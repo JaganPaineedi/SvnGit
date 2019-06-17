@@ -1,0 +1,5 @@
+
+update DocumentCodes 
+set DiagnosisDocument = 'Y',
+tablelist='CustomDocumentDiagnosticAssessments,CustomDocumentAssessmentNeeds,CustomDocumentAssessmentReferrals,CustomDocumentAssessmentTransferServices,CustomDocumentMentalStatuses,CustomTreatmentPlans,CustomTPGoals,CustomTPNeeds,CustomTPGoalNeeds,CustomTPObjectives,CustomTPServices,CustomDocumentCrisisInterventionNotes,DocumentDiagnosisCodes,DocumentDiagnosis,DocumentDiagnosisFactors' 
+where DocumentCodeId=1486

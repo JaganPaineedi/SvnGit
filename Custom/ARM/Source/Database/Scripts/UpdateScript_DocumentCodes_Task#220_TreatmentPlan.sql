@@ -1,0 +1,4 @@
+
+update documentcodes set TableList ='CustomTreatmentPlans,CustomTPGoals,CustomTPNeeds,CustomTPGoalNeeds,CustomTPObjectives,CustomTPServices,CurrentDiagnoses' where DocumentCodeId=1483
+update documentcodes set TableList ='CustomTreatmentPlans,CustomTPGoals,CustomTPNeeds,CustomTPGoalNeeds,CustomTPObjectives,CustomTPServices,CurrentDiagnoses' where DocumentCodeId=1484
+update documentcodes set TableList ='CustomTreatmentPlans,CustomTPGoals,CustomTPNeeds,CustomTPGoalNeeds,CustomTPObjectives,CustomTPServices,CurrentDiagnoses' where DocumentCodeId=1485

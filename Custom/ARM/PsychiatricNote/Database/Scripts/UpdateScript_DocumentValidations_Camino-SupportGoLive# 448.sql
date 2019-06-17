@@ -1,0 +1,1 @@
+Update DocumentValidations Set Active = 'N' Where DocumentCodeID = 60000 AND TableName = 'CustomDocumentPsychiatricNoteGenerals' AND ColumnName = 'MedicalHistoryComments' AND ValidationDescription = 'History – Medical History comment box is required'

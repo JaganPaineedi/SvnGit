@@ -1,0 +1,1 @@
+Update SystemConfigurations Set HideCustomAuthorizationControls = 'Y'
