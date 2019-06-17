@@ -1,0 +1,75 @@
+﻿<h3 style="color:red;">{{title}}</h3>
+
+<div class="box-body no-padding">
+    <div id="calendar"></div>
+</div>
+
+<script type="text/ng-template" id="myModalContent.html">
+    <form name="mcform" novalidate class="css-form" ng-disabled="true">
+        <div class="modal-header">
+            <input required type="text" ng-model="appointment.subject" class="form-control-scmobile" name="name" autofocus />
+        </div>
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row top-buffer">
+                    <div class="col-xs-4">Location</div>
+                    <div class="col-xs-8">
+                        <select required class="form-control-scmobile" ng-model="appointment.locationId" ng-options="location.locationId as location.locationName for location in locations | orderBy:'locationName'">
+                            <option value="">Select Location</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row top-buffer">
+                    <div class="col-xs-4">Specific Location</div>
+                    <div class="col-xs-8"><input type="text" ng-model="appointment.specificLocation" name="name" value="" class="form-control-scmobile" /></div>
+                </div>
+                <div class="row top-buffer">
+                    <div class="col-xs-4">Start Time</div>
+                    <div class="col-xs-8">
+                        <!--<input required type="date" ng-model="appointment.startFormatted" datatype="date" name="start" value="" class="form-control-scmobile" />-->
+                        <input type="date" class="form-control-scmobile-date" ng-model="appointment.startFormatted" required>
+                        <input type="time" class="form-control-scmobile-time" ng-model="appointment.startFormatted" required ng-disabled="!appointment.startFormatted" name="start">
+                    </div>
+                </div>
+                <div class="row top-buffer">
+                    <div class="col-xs-4">End Time</div>
+                    <div class="col-xs-8">
+                        <!--<input required type="text" ng-model="appointment.endFormatted" datatype="date" name="end" value="" class="form-control-scmobile" />-->
+                        <input type="date" class="form-control-scmobile-date" ng-model="appointment.endFormatted" required>
+                        <input type="time" class="form-control-scmobile-time" ng-model="appointment.endFormatted" required ng-disabled="!appointment.endFormatted" name="end">
+                    </div>
+                </div>
+                <div class="row top-buffer">
+                    <div class="col-xs-4">Appointment Type</div>
+                    <div class="col-xs-8">
+                        <select required class="form-control-scmobile" ng-model="appointment.appointmentType" ng-options="appointmentType.globalCodeId as appointmentType.codeName for appointmentType in appointmentTypes
+                                | filter: { globalCodeId: '!' + 4761 }
+                                | filter: { globalCodeId: '!' + 4763 }
+                                | filter: { globalCodeId: '!' + 4764 }
+                                | orderBy : ['sortOrder', 'codeName', 'color']"></select>
+                    </div>
+                </div>
+                <div class="row top-buffer">
+                    <div class="col-xs-4">Show Time As</div>
+                    <div class="col-xs-8">
+                        <select required class="form-control-scmobile" ng-model="appointment.showTimeAs" ng-options="showTime.globalCodeId as showTime.codeName for showTime in showTimeAs | orderBy:'codeName'"></select>
+                    </div>
+                </div>
+                <div class="row top-buffer">
+                    <div class="col-xs-4">Staff</div>
+                    <div class="col-xs-8"><input type="text" class="form-control-scmobile" ng-model="appointment.staffName" disabled id="clinician" value="{{appointment.staffName}}" /></div>
+                </div>
+                <div class="row top-buffer">
+                    <div class="col-xs-4">Description</div>
+                    <div class="col-xs-8"><input type="text" ng-model="appointment.description" id="clinician" class="form-control-scmobile" value="{{appointment.description}}" /></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-sm btn-success" ng-disabled="mcform.$invalid" type="submit" ng-click="ok()">SAVE</button>
+            <button class="btn btn-sm btn-default" type="button" ng-click="cancel()">CANCEL</button>
+            <button class="btn btn-sm btn-danger" ng-disabled="cannotdelete" type="button" ng-click="delete()">DELETE</button>
+        </div>
+    </form>
+</script>

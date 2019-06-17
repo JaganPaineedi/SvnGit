@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SmartCare Rx 3.5 Change Log</title>
+</head>
+<body>
+    <h2>
+        Smartcare Rx 3.5 Change Log</h2>
+    <h3>
+        Version 3.5.x.2 (July 8, 2013)</h3>
+    <p>
+        Release Date: July 30, 2012 - ? (rolling release)</p>
+    <ol>
+        <li><strong>July 30, 2012:</strong><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;Updated ClientMedicationOrder code behind to default the
+            prescriber drop down to first blank selection when the prescriber id is not found
+            in the drop down.</li>
+        <li><strong>August 2, 2012:</strong><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;Created a new field called PharmacyValue that uses PharmacyText
+            if it is not null otherwise it uses Pharmacy. Updated MedicationOrderDetail page
+            to use PharmacyValue instead of the field Pharmacy.</li>
+        <li><strong>August 7, 2012:</strong><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;Updated code to check for a empty or blank string for each
+            column that is being returned for the growth chart data because the dbnull value
+            is being converted to "".</li>
+        <li><strong>August 8, 2012:</strong><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;Added a message to the prescribe page to let the user know
+            they have to click the prescribe button in order to prescribe the medication.</li>
+        <li><strong>August 13, 2012:</strong><ol>
+            <li>Changed button order for select and cancel buttons (Medication, Allergies,
+            Comments).</li>
+        <li>Added code to clear out popup screen to hide previous data while the src is loading.</li>
+        <li>Changed the size of the Allergy Comment popup so the buttons are displayed.</li></ol>
+    </li>
+    <li><strong>August 15, 2012:</strong><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Commented out code that set the user name to the last person
+        that was logged into the system. Now it should default to the IE default.</li>
+        <li><strong>August 17, 2012:</strong><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Switched the select and cancel buttons on the client search.</li>
+    <li><strong>August 23, 2012:</strong><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;Modified the medication list (current and history) to make the list more readable.</li>    
+        <li><strong>September 4, 2012:</strong><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;Modified the medication list (current and history) to make the list more readable - Set percent widths for the instruction and discontinued reason columns.</li>    
+        <li><strong>September 24, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Added a JS function to the Medication Prescribe page to disable the fax print button.</li>
+        <li><strong>October 11, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Updated the User Preference dataset to include a missing column from the Staff table (also updated the sproc ssp_MMCheckPermissionsForMedication).</li>
+        <li><strong>October 19, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Added code to clear out the instruction row id when the user clicked the clear button. The instruction row id was populated when the user clicked a medication row to modify but then chose to enter a new medication.</li>
+        <li><strong>October 22, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Added code to pass the pharmacy id to the validation stored procedure so it can check to see if the user is trying to change the sure script id on update.</li>
+        <li><strong>October 26, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Fixed issue that allowed a user to click the prescribe button before the medication row was saved.</li>
+        <li><strong>October 26, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Added functionality to clear out the medication drop down when a user starts to enter new text.</li>
+        <li><strong>October 26, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Added functionality that allows the staff to automatically sign a consent if the staff no sign flag is on.</li>
+        <li><strong>November 5, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Added missing column RefreshView to the consent dataset.</li>
+        <li><strong>November 6, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Updated Position of the footer and expanded the medication list height.</li>
+        <li><strong>November 16, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Added Rx Source drop down.</li>
+        <li><strong>November 26, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Adjusted the Personal Information, Health Data, Health Data Graphs and Growth Chart Tabs.</li>
+        <li><strong>November 27, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Fixed issue with saving Titration Template error.</li>        
+        <li><strong>November 27, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Fixed issue with client consent signature process where patients were not being required to sign vis-a-vis a previous app improvement.</li>        
+        <li><strong>December 7, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Hid magnifying glasses on New Order screen next to Drug and also next to Dx/Purpose fields.</li>     
+        <li><strong>December 10, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Made 'Date Initialized' a required field when adding Non Ordered Locally medication.</li>     
+        <li><strong>December 11, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Made changes to allow for DxCodes of at least 15 characters to be used.</li>        
+        <li><strong>December 19, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Added functionality to use the FAXCom server.</li>        
+        <li><strong>December 31, 2012:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Updated Patient Consent dataset due to change in the Documents table.</li>
+        <li><strong>January 2, 2013:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Set Allow AutoCalculate flag to Y for Titration Templates and added additional parameter to function call so Titration information can be updated when the user clicked the radio button to edit.</li>        
+        <li><strong>January 6, 2013:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Enabled Active Directory passwords for signing Verbal Orders.</li>        
+        <li><strong>March 5, 2013:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Added Check to see if the directory exists before trying to retrieve files from it.</li>  
+        <li><strong>March 11, 2013:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Added embedded reports to Rx so the reports from the report server are being generated from within Rx instead of passing the user to the Report Server. Changed Version number to 3.5x.1</li>      
+        <li><strong>March 11, 2013:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Fixed issue with Outbound Prescriptions flashing on the screen when the user clicks the client search button.</li>
+        <li><strong>March 13, 2013:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Added code to delete record deleted rows from ScriptDrugs, ScriptDrugStrengths and Instruction when the user deletes the row</li>
+        <li><strong>April 8, 2013:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Added code to allow fax data to be sent to image server based on the web config setting</li>
+        <li><strong>April 9, 2013:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Fixed Verbal Order page by removing the RDL width property, setting the left and right sections to equal 50% and setting a min width for the left side list.</li>
+        <li><strong>April 15, 2013:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Fixed issue with hard coded health data that only allowed the first six items to show up in the popup.</li>
+        <li><strong>April 26, 2013:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Added the ability to pull information from the SystemConfigurations table instead of the web config for settins such as reporting server</li>
+        <li><strong>May 22, 2013:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Fixed issue with the same side affect showing up for the each medication in the list</li>
+        <li><strong>June 14, 2013:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Fixed issue with hard coded Health Data that was used in calculations and fixed the issue with hard coded Health Data that determined the number of decimal places in input fields.</li>
+        <li><strong>June 27, 2013:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Fixed logic regarding prescribing and refilling medications.</li>
+        <li><strong>July 8, 2013:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Changed Application version to 3.5.x.2.</li>
+        <li><strong>September 7, 2013:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Updated script ordering process to prevent Multi-Instruction orders from being submitted via E-scribing when instruction dates do not match.</li>
+        <li><strong>October 29, 2013:</strong><br />&nbsp;&nbsp;&nbsp;&nbsp;Adjusted faxing logic so that Zetafaxes still store the ZFAPI fax ID in the database instead of just True/False.  This will allow the FaxStatusChecker to work properly.</li>
+    </ol>
+</body>
+</html>

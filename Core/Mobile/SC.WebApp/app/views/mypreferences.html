@@ -1,0 +1,31 @@
+﻿<h3 style="color:red;">{{currentContext.title}}</h3>
+
+<div class="panel">
+    <div class="panel-body">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>
+                        Home Page
+                    </td>
+                    <td>
+                        <select ng-model="currentContext.myPreference.defaultMobileHomePageId" ng-options="dashboard.mobileDashboardId as dashboard.dashboardName for dashboard in currentContext.dashboardItems">
+                            <option value="">Select Home Page</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Primary Program
+                    </td>
+                    <td>
+                        {{currentContext.myPreference.programName}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="pull-right offset3">
+    <button id="btnSave" model="savebutton" name="save" class="btn btn-sm btn-success" ng-click="save()">SAVE</button>
+</div>

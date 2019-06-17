@@ -1,0 +1,1 @@
+UPDATE Screens SET ScreenToolbarURL=NULL WHERE ScreenId = 1161

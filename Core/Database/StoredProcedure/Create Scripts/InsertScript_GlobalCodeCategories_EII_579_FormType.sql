@@ -1,0 +1,32 @@
+IF NOT EXISTS(SELECT 1 FROM GlobalCodeCategories WHERE Category = 'FORMCOLLECTIONTYPE')
+BEGIN
+		INSERT INTO [GlobalCodeCategories]
+				([Category]
+				,[CategoryName]
+				,[Active]
+				,[AllowAddDelete]
+				,[AllowCodeNameEdit]
+				,[AllowSortOrderEdit]
+				,[Description]
+				,[UserDefinedCategory]
+				,[HasSubcodes]
+				,[UsedInPracticeManagement]
+				,[UsedInCareManagement]
+				,[ExternalReferenceId]
+				)
+			VALUES
+				('FORMCOLLECTIONTYPE'
+				,'FORMCOLLECTIONTYPE'
+				,'Y'
+				,'Y'
+				,'Y'
+				,'Y'
+				,NULL
+				,'Y'
+				,'Y'
+				,NULL
+				,NULL
+				,NULL
+				)
+END
+GO

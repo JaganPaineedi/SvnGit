@@ -1,0 +1,48 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<asp:DropDownList runat="server" CssClass="ddlist">
+</asp:DropDownList>
+
+<asp:CheckBox runat="server" style="height:25px;font-size:8.50pt;font-family:Microsoft Sans Serif;text-decoration:none;" />
+      
+<asp:TextBox  runat="server" CssClass="Textbox" height="17px">
+</asp:TextBox>
+
+<asp:TextBox  runat="server" CssClass="Textbox" SkinId="ReadOnlyTextBox" height="19px">
+</asp:TextBox>
+
+<asp:Button  runat="server" ForeColor="black"  Font-Names="Microsoft Sans Serif" Height="24px"
+Font-Size="8.25pt"></asp:Button>
+
+<asp:GridView runat="server" AutoGenerateColumns="false"
+GridLines="None" ShowFooter="true">
+<AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
+<RowStyle CssClass="GridViewRowStyle" />
+<HeaderStyle CssClass="GridViewHeaderText" height="20px"/>
+<PagerStyle CssClass="GridViewPagerText" />
+ <PagerSettings Mode="NumericFirstLast" Position="Bottom" Visible="true" />
+</asp:GridView>
+
+<asp:GridView runat="server"  SkinId="ContractRules" AutoGenerateColumns="false"
+GridLines="Horizontal" ShowFooter="false">
+<AlternatingRowStyle CssClass="GridViewAlternatingRowStyle" />
+<RowStyle CssClass="GridViewRowStyle" />
+<HeaderStyle CssClass="GridViewHeaderText" height="20px"/>
+<PagerStyle CssClass="GridViewPagerText" />
+ <PagerSettings Mode="NumericFirstLast" Position="Bottom" Visible="true" />
+ 
+</asp:GridView>

@@ -1,0 +1,47 @@
+.offline-ui, .offline-ui *, .offline-ui:before, .offline-ui:after, .offline-ui *:before, .offline-ui *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.offline-ui {
+    display: none;
+    position: fixed;
+    background: white;
+    z-index: 2000;
+    display: inline-block;
+}
+
+.offline-ui .offline-ui-retry {
+    display: none;
+}
+
+.offline-ui.offline-ui-up {
+    display: block;
+}
+
+.offline-ui.offline-ui-down {
+    display: block;
+}
+
+.offline-ui {
+    font-family: "Lucida Grande", sans-serif;
+    font-size: 25px;
+    padding: 0px 10px 8px;
+    background: #f6f6f6;
+    color: #ffffff;
+    bottom: 0;
+}
+
+.offline-ui .offline-ui-content:after {
+    content: "\f05a";
+    font-family: FontAwesome;
+}
+
+.offline-ui.offline-ui-up .offline-ui-content:after {
+    color: #09f209;
+}
+
+.offline-ui.offline-ui-down .offline-ui-content:after {
+    color: #ff0000;
+}

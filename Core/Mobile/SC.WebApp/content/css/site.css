@@ -1,0 +1,604 @@
+﻿/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+.text-muted {
+    margin: 20px 0;
+}
+
+.form-login {
+    max-width: 330px;
+    padding: 0px 15px 5px 15px;
+    margin: 0 auto;
+}
+
+    .form-login .form-login-heading {
+        margin-bottom: 10px;
+    }
+
+    .form-login .form-control {
+        position: relative;
+        height: auto;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+        .form-login .form-control:focus {
+            z-index: 2;
+        }
+
+    .form-login input[type="password"] {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+input.search-query {
+    padding-left: 26px;
+}
+
+.form-search {
+    position: relative;
+}
+
+    .form-search:before {
+        display: block;
+        width: 14px;
+        height: 14px;
+        content: "\e003";
+        font-family: 'Glyphicons Halflings';
+        background-position: -48px 0;
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        opacity: .5;
+        z-index: 1000;
+    }
+
+
+.centered-text {
+    text-align: center;
+}
+
+.icon-online {
+    color: #33CB58;
+}
+
+.icon-offline {
+    color: #EE442D;
+}
+
+#mapBody {
+    width: 100%;
+    height: 420px;
+}
+
+#calendar {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/*Login Screen Style*/
+
+.card-container.card {
+    max-width: 350px;
+    padding: 40px 40px;
+}
+
+
+.card {
+    background-color: #F7F7F7;
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+}
+
+.btn.btn-signin {
+    background-color: #F04124;
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.modal-wide .modal-dialog {
+    width: 90%; /* or whatever you wish */
+}
+
+
+.view-animate-container {
+    position: relative;
+    background: white;
+    overflow: hidden;
+}
+
+.view-animate {
+    padding: 10px;
+}
+
+    .view-animate.ng-enter, .view-animate.ng-leave {
+        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+        display: block;
+        width: 100%;
+        border-left: 1px solid black;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px;
+    }
+
+    .view-animate.ng-enter {
+        left: 100%;
+    }
+
+        .view-animate.ng-enter.ng-enter-active {
+            left: 0;
+        }
+
+    .view-animate.ng-leave.ng-leave-active {
+        left: -100%;
+    }
+
+.online {
+    height: 30px;
+    margin-top: 10px;
+}
+
+div.offline-ui-waiting:before {
+    font-family: FontAwesome;
+    content: "\f127";
+    display: inline-block;
+    vertical-align: middle;
+    font-size: xx-large;
+    color: #ff0000;
+}
+
+
+div.offline-ui-up:before {
+    font-family: FontAwesome;
+    content: "\f0c1";
+    display: inline-block;
+    vertical-align: middle;
+    font-size: xx-large;
+    color: #33cc33;
+}
+
+div.offline-ui-down:before {
+    font-family: FontAwesome;
+    content: "\f127";
+    display: inline-block;
+    vertical-align: middle;
+    font-size: xx-large;
+    color: #ff0000;
+}
+
+#processingImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: grey;
+    opacity: .8;
+    display: none;
+}
+
+.ajax-loader {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    margin-left: -32px; /* -1 * image width / 2 */
+    margin-top: -32px; /* -1 * image height / 2 */
+    display: block;
+    width: 70px;
+}
+
+.smartcaretoolbar {
+    /*border: 1px solid #ccc4c4;*/
+    float: right;
+    border-radius: 5px;
+}
+
+.toolbarIcon {
+    float: right;
+    margin: 30px 0 10px 10px;
+    cursor: pointer;
+}
+
+.closeButton {
+    color: #FF0000;
+}
+
+.saveButton {
+    color: #10C910;
+}
+
+.newButton {
+    color: #92BAFC;
+}
+
+/*Bootstrap Overrides Start*/
+.glyphicon {
+    font-size: 15px;
+}
+
+.thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 21px;
+    line-height: 1.42857143;
+    background-color: #ffffff;
+    border: 0px solid #dddddd;
+    border-radius: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.img-thumbnail {
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #ffffff;
+    border: 0px solid #dddddd;
+    border-radius: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+.popover {
+    max-width: 100%; /* Max Width of the popover (depending on the container!) */
+}
+
+.panel-body {
+    padding: 5px 0px 5px 10px;
+}
+
+.panel-heading {
+    cursor: pointer;
+}
+
+.top-buffer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.dropdown-sm {
+    width: 195px;
+}
+/*Bootstrap Overrides End*/
+
+/*.panel-group {
+    margin-bottom: 21px;
+    margin-top: 25px;
+}*/
+
+.customTable {
+    width: 100%;
+    display: table;
+    border-collapse: collapse;
+    border-color: grey;
+    margin-top: 10px;
+}
+
+    .customTable td {
+        padding: 8px;
+        border-top: 1px solid #dddddd;
+    }
+
+.addAppointment {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.form-control-scmobile {
+    width: 100%;
+    max-width: 300px;
+    height: 27px;
+    padding: 3px 12px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #6f6f6f;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.form-control-scmobile-textarea {
+    width: 100%;
+    /*max-width: 300px;*/
+    /*height: 27px;*/
+    padding: 3px 12px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #6f6f6f;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.form-control-scmobile-date {
+    width: 58%;
+    max-width: 200px;
+    height: 27px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #6f6f6f;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.form-control-scmobile-time {
+    width: 40%;
+    max-width: 100px;
+    height: 27px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #6f6f6f;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.css-form .ng-invalid.ng-touched {
+    border-color: #f90d0d;
+}
+
+.css-form .ng-valid.ng-touched {
+    border-color: #4ac64a;
+}
+
+/* Put your css in here */
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak,
+.ng-hide {
+    display: none !important;
+}
+
+ng\:form {
+    display: block;
+}
+
+.ng-animate-block-transitions {
+    transition: 0s all !important;
+    -webkit-transition: 0s all !important;
+}
+
+/* show the element during a show/hide animation when the
+ * animation is ongoing, but the .ng-hide class is active */
+.ng-hide-add-active, .ng-hide-remove {
+    display: block !important;
+}
+
+/**
+ * angular-ui-notification - Angular.js service providing simple notifications using Bootstrap 3 styles with css transitions for animating
+ * @author Alex_Crack
+ * @version v0.1.0
+ * @link https://github.com/alexcrack/angular-ui-notification
+ * @license MIT
+ */
+.ui-notification {
+    position: fixed;
+    z-index: 9999;
+    width: 300px;
+    cursor: pointer;
+    -webkit-transition: all ease .5s;
+    -o-transition: all ease .5s;
+    transition: all ease .5s;
+    color: #fff;
+    border-radius: 0;
+    background: #337ab7;
+    /*box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);*/
+}
+
+    .ui-notification.killed {
+        -webkit-transition: opacity ease 1s;
+        -o-transition: opacity ease 1s;
+        transition: opacity ease 1s;
+        opacity: 0;
+    }
+
+    .ui-notification > h3 {
+        font-size: 14px;
+        font-weight: bold;
+        display: block;
+        margin: 10px 10px 0 10px;
+        padding: 0 0 5px 0;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, .3);
+    }
+
+    .ui-notification a {
+        color: #fff;
+    }
+
+        .ui-notification a:hover {
+            text-decoration: underline;
+        }
+
+    .ui-notification > .message {
+        margin: 1px 1px 1px 1px;
+    }
+
+    .ui-notification.warning {
+        color: #fff;
+        background: #f0ad4e;
+    }
+
+    .ui-notification.error {
+        color: #fff;
+        background: #d9534f;
+    }
+
+    .ui-notification.success {
+        color: #fff;
+        background: #5cb85c;
+    }
+
+    .ui-notification.info {
+        color: #fff;
+        background: #5bc0de;
+    }
+/*.ui-notification:hover
+{
+    opacity: .7;
+}*/
+
+.img-logo {
+    height: 40px;
+}
+
+
+.active{color : black;}
+/* More media queries for Apple devices visit http://stephen.io/mediaqueries/ */
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+    .img-responsive, .thumbnail > img, .thumbnail a > img {
+        width: 50%;
+        height: auto;
+    }
+
+    .img-logo {
+        width: 100%;
+        height: auto;
+        padding-top: 10px;
+    }
+    .fc button {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 1px 2px 2px 2px;
+        font-size: 15px;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+    .img-responsive, .thumbnail > img, .thumbnail a > img {
+        width: 50%;
+        height: auto;
+    }
+
+    .img-logo {
+        width: 100%;
+        height: auto;
+        padding-top: 10px;
+    }
+    .fc button {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 1px 2px 2px 2px;
+        font-size: 15px; 
+        white-space: nowrap;
+        cursor: pointer;
+    }
+}
+
+.spanSmallFont {
+    font-size:small;
+}
+
+@media only screen and (min-width : 1024px) {
+/* media queries for lap big screens */
+.navbar>.container .navbar-brand:hover { cursor:pointer; }
+.navbar>.container .navbar-brand {
+    /* padding-top: 0px; */
+    padding-bottom: 1px;
+    /* margin-left: 80px; */
+    padding-left: 40px;
+    padding-right: 40px;
+    /* font-size: 30px; */
+    border-bottom-width: 7px;
+    border-bottom-color: white;
+}
+}
+
+@media only screen and (min-width : 768px) and (max-width : 1004px) {
+/* media queries for lap big screens */
+.navbar>.container .navbar-brand {
+    /* padding-top: 0px; */
+    /*padding-bottom: 1px;*/
+    /* margin-left: 80px; */
+    padding-left: 20px;
+    padding-right: 20px;
+    /* font-size: 30px; */
+}
+}
+
+#CustomFieldPanelBody {
+    padding: 5px 40px 5px 10px;
+}

@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="RDLDiscontinueDataSet_csp_RDLDiscontinueMedicationNotice">
+      <rd:DataSourceID>9a36c05d-297c-49cd-9cdf-cc81ffaac15c</rd:DataSourceID>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=vtcdbtest02.ventechcenter.org;Initial Catalog=SummitStreamlineTrain</ConnectString>
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="ClientMedicationId">
+      <DataType>Integer</DataType>
+      <Prompt>ClientMedicationId</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Method">
+      <DataType>String</DataType>
+      <Prompt>Method</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PharmacyId">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>PharmacyId</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="InitiatedBy">
+      <DataType>Integer</DataType>
+      <Prompt>InitiatedBy</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.25in</RightMargin>
+  <LeftMargin>0.25in</LeftMargin>
+  <BottomMargin>0.25in</BottomMargin>
+  <rd:ReportID>0c57c25e-10b3-4290-bb95-578a6fdefe47</rd:ReportID>
+  <EmbeddedImages>
+    <EmbeddedImage Name="newlogo">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <DataSets>
+    <DataSet Name="RDLDiscontinueDataSet_csp_RDLDiscontinueMedicationNotice">
+      <Fields>
+        <Field Name="ClientMedicationId">
+          <DataField>ClientMedicationId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="OrganizationName">
+          <DataField>OrganizationName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LocationName">
+          <DataField>LocationName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LocationAddress">
+          <DataField>LocationAddress</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LocationPhone">
+          <DataField>LocationPhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LocationFax">
+          <DataField>LocationFax</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientName">
+          <DataField>ClientName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClientDOB">
+          <DataField>ClientDOB</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="DiscontinueDate">
+          <DataField>DiscontinueDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="AllergyList">
+          <DataField>AllergyList</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MedicationName">
+          <DataField>MedicationName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StrengthInstructionList">
+          <DataField>StrengthInstructionList</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PrescriberName">
+          <DataField>PrescriberName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PharmacyName">
+          <DataField>PharmacyName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PharmacyAddress">
+          <DataField>PharmacyAddress</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PharmacyPhone">
+          <DataField>PharmacyPhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PharmacyFax">
+          <DataField>PharmacyFax</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InitiatedBy">
+          <DataField>InitiatedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Message1">
+          <DataField>Message1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Message2">
+          <DataField>Message2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Message3">
+          <DataField>Message3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransmissionID">
+          <DataField>TransmissionID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DiscontinuedReason">
+          <DataField>DiscontinuedReason</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>RDLDiscontinueDataSet_csp_RDLDiscontinueMedicationNotice</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dbo.csp_RDLDiscontinueMedicationNotice</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Width>7.5in</Width>
+  <Body>
+    <ReportItems>
+      <Table Name="table4">
+        <ZIndex>6</ZIndex>
+        <DataSetName>RDLDiscontinueDataSet_csp_RDLDiscontinueMedicationNotice</DataSetName>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox13">
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!LocationName.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox14">
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!LocationAddress.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox15">
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>="Phone: " &amp; Fields!LocationPhone.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox16">
+                      <rd:DefaultName>textbox16</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>14pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=First(Fields!OrganizationName.Value) &amp; " Medication Discontinuation Notice"</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>7.5in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>1in</Height>
+      </Table>
+      <Table Name="table3">
+        <ZIndex>5</ZIndex>
+        <DataSetName>RDLDiscontinueDataSet_csp_RDLDiscontinueMedicationNotice</DataSetName>
+        <Visibility>
+          <Hidden>=IIF(Parameters!Method.Value = "F", False, True)</Hidden>
+        </Visibility>
+        <Top>1.25in</Top>
+        <Width>7.25in</Width>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="PharmacyName">
+                      <rd:DefaultName>PharmacyName</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!PharmacyName.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="PharmacyAddress">
+                      <rd:DefaultName>PharmacyAddress</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!PharmacyAddress.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox7">
+                      <rd:DefaultName>textbox7</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>="Fax: " &amp; Fields!PharmacyFax.Value &amp; space(13) &amp; "Phone: " &amp; Fields!PharmacyPhone.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>To:</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>7.25in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>1in</Height>
+        <Left>0.125in</Left>
+      </Table>
+      <Table Name="table2">
+        <ZIndex>4</ZIndex>
+        <DataSetName>RDLDiscontinueDataSet_csp_RDLDiscontinueMedicationNotice</DataSetName>
+        <Top>3.25in</Top>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ClientName">
+                      <rd:DefaultName>ClientName</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>="Name: " &amp; Fields!ClientName.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ClientDOB">
+                      <rd:DefaultName>ClientDOB</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>="DOB: " &amp; Format(Fields!ClientDOB.Value, "d")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="AllergyList">
+                      <rd:DefaultName>AllergyList</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>="Allergies: " &amp; Fields!AllergyList.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Patient Information</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>5.5in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>0.75in</Height>
+      </Table>
+      <Textbox Name="textbox12">
+        <rd:DefaultName>textbox12</rd:DefaultName>
+        <Top>2.625in</Top>
+        <Style>
+          <FontFamily>Verdana</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+        <Height>0.375in</Height>
+        <Value>Please be advised the following medication(s) / dosage(s) have been discontinued.  Please cancel any outstanding refills.  This medication should not be dispensed until a new order is received from this prescriber.</Value>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <rd:DefaultName>textbox2</rd:DefaultName>
+        <Top>2.375in</Top>
+        <Width>2in</Width>
+        <Style>
+          <FontFamily>Verdana</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+        <Height>0.25in</Height>
+        <Value>To Whom It May Concern,</Value>
+      </Textbox>
+      <Table Name="table1">
+        <ZIndex>1</ZIndex>
+        <DataSetName>RDLDiscontinueDataSet_csp_RDLDiscontinueMedicationNotice</DataSetName>
+        <Top>4.125in</Top>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="MedicationName">
+                      <rd:DefaultName>MedicationName</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!MedicationName.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="StrengthInstructionList">
+                      <rd:DefaultName>StrengthInstructionList</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!StrengthInstructionList.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="PrescriberName">
+                      <rd:DefaultName>PrescriberName</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!PrescriberName.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="DiscontinueDate">
+                      <rd:DefaultName>DiscontinueDate</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <Format>d</Format>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!DiscontinueDate.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox17">
+                      <rd:DefaultName>textbox17</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Discontinued Reason</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox18">
+                      <rd:DefaultName>textbox18</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox19">
+                      <rd:DefaultName>textbox19</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox20">
+                      <rd:DefaultName>textbox20</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <Format>d</Format>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.63492cm</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>4</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox25">
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!DiscontinuedReason.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.63492cm</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>11</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Medication</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>10</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Dosage(s)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox9">
+                      <rd:DefaultName>textbox9</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>9</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Prescriber</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>8</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Discontinue Date</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>1.625in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.5in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.125in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.25in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>1.25in</Height>
+        <Footer>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox8">
+                      <rd:DefaultName>textbox8</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Notice Initiated By:</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="InitiatedBy">
+                      <rd:DefaultName>InitiatedBy</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=First(Fields!InitiatedBy.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox10">
+                      <rd:DefaultName>textbox10</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox11">
+                      <rd:DefaultName>textbox11</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Verdana</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Footer>
+      </Table>
+      <Textbox Name="TransmissionID">
+        <rd:DefaultName>TransmissionID</rd:DefaultName>
+        <Top>5.875in</Top>
+        <Width>2.875in</Width>
+        <Style>
+          <FontFamily>Verdana</FontFamily>
+          <FontSize>6pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Value>=First(Fields!TransmissionID.Value)</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>6.125in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Image Name="image1">
+        <Sizing>AutoSize</Sizing>
+        <Width>1.75in</Width>
+        <Source>Embedded</Source>
+        <Style />
+        <Left>2.875in</Left>
+        <Value>newlogo</Value>
+      </Image>
+    </ReportItems>
+    <Height>0.52083in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <TopMargin>0.25in</TopMargin>
+</Report>

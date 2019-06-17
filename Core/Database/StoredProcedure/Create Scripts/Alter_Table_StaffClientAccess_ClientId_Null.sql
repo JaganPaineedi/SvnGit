@@ -1,0 +1,1 @@
+alter table dbo.StaffClientAccess alter column [ClientId] [int] NULL

@@ -1,0 +1,37 @@
+﻿
+<form name="csform">
+    <h3 style="color:red;">{{title}}</h3>
+    <fieldset>
+        <div>
+            <div class="table-responsive">
+                <div class="col-lg-8 col-xs-12 col-centered">
+                    <div ng-bind-html="documentHtml"></div>
+                </div>
+            </div>
+            <div class="pull-right offset3">
+                <button type="submit" id="btnSign" model="signbutton" name="sign" class="btn btn-sm btn-success" ng-click="sign()">SIGN</button>
+            </div>
+        </div>
+        <script type="text/ng-template" id="validatepassword.html">
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="input-group input-group-md">
+                        <!--<signature-pad accept="accept" clear="clear"></signature-pad>-->
+                        <signature-pad accept="accept" clear="clear" height="230px" width="260px" style="border:1px solid black"></signature-pad>
+                    </div>
+                    <div class="form-group">
+                        <div ng-show="errorMessage">{{errorMessage}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!--<button class="btn btn-sm btn-success" type="button" ng-click="validateSign()">SIGN</button>
+                <button class="btn btn-sm btn-default" type="button" ng-click="cancel()">CANCEL</button>-->
+
+                <button class="btn btn-sm btn-default pull-left" ng-click="clear()">Clear</button>
+                <button class="btn btn-sm btn-default" ng-click="$dismiss()">Cancel</button>
+                <button class="btn btn-sm btn-success" ng-click="done()">Sign</button>
+            </div>
+        </script>
+    </fieldset>
+</form>

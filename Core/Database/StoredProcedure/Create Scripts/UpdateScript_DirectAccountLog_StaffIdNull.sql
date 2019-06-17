@@ -1,0 +1,2 @@
+ALTER TABLE dbo.DirectAccountLog
+ALTER COLUMN StaffId INT NULL

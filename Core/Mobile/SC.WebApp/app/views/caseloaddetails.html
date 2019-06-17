@@ -1,0 +1,199 @@
+﻿<h3 style="color:red;">{{caseload.clientName}}</h3>
+
+<div class="panel">
+    <div class="panel-body">
+        <div class="panel-group" id="clienteDetailCollapse" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a ng-click="isClientDetailCollapsed = !isClientDetailCollapsed">
+                            Client Detail
+                        </a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse in" uib-collapse="isClientDetailCollapsed">
+                    <div class="panel-body">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Client Id
+                                    </td>
+                                    <td>
+                                        {{caseload.clientId}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Date of birth
+                                    </td>
+                                    <td>
+                                        {{caseload.dateofBirth | date:"MM/dd/yyyy"}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Gender
+                                    </td>
+                                    <td>
+                                        {{caseload.gender}}
+                                    </td>
+                                </tr>
+                                <!--<tr>
+                                    <td>
+                                        Phone Type
+                                    </td>
+                                    <td>
+                                        {{caseload.phoneTypeText}}
+                                    </td>
+                                </tr>-->
+                                <tr ng-show="caseload.phoneNumber">
+                                    <td>
+                                        Phone ({{caseload.phoneTypeText}})
+                                    </td>
+                                    <td>
+                                        <a class="btn-link" ng-show="caseload.phoneNumber" href="tel:{{caseload.phoneNumber}}">{{caseload.phoneNumber}}</a>
+                                    </td>
+                                </tr>
+                                <!--<tr>
+                                    <td>
+                                        Address Type
+                                    </td>
+                                    <td>
+                                        {{caseload.addressTypeText}}
+                                    </td>
+                                </tr>-->
+                                <tr ng-show="caseload.address">
+                                    <td>
+                                        Address ({{caseload.addressTypeText}})
+                                    </td>
+                                    <td>
+                                        <a ng-show="caseload.address" target="_blank" href="{{getMapUrlFromAddress(caseload.address)}}"> {{caseload.address}}</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Primary Program
+                                    </td>
+                                    <td>
+                                        {{caseload.primaryProgramName}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Primary Clinician
+                                    </td>
+                                    <td>
+                                        {{caseload.primaryClinicianName}}
+                                    </td>
+                                </tr>
+                                <!-- <tr>
+                                     <td>
+                                         Geo Code
+                                     </td>
+                                     <td>
+                                         <a ng-hide="Android || IOS" ng-show="caseload.geographicLocation" ng-click="Click(caseload.geographicLocation,caseload.clientName)"><i class="fa fa-location-arrow"></i> Location</a>
+                                         <a ng-show="caseload.geographicLocation && Android" ng href="geo:{{caseload.geographicLocation}}?q={{caseload.geographicLocation}}({{caseload.clientName}});u=35"><i class="fa fa-location-arrow"></i> Location</a>
+                                         <a ng-show="caseload.geographicLocation && IOS" ng href="map://?q={{caseload.geographicLocation}}"><i class="fa fa-location-arrow"></i> Location</a>
+                                         <a ng-show="caseload.geographicLocation" target="_blank" href="{{getMapUrl(caseload.geographicLocation)}}"><i class="fa fa-location-arrow"></i> Location</a>
+                                     </td>
+                                 </tr>-->
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" ng-show="appointments.length*1>0">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a ng-click="isUpcomingAppointmentsCollapsed = !isUpcomingAppointmentsCollapsed">
+                            Upcoming Appointments
+                        </a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" uib-collapse="isUpcomingAppointmentsCollapsed">
+                    <div class="panel-body">
+                        <table class="table">
+                            <tbody>
+                                <tr ng-repeat="appointment in appointments track by $index">
+                                    <td>
+                                        <u><a ng-href="#/service/{{appointment.appointmentId}}">{{appointment.start | date:'MM/dd/yyyy hh:mm a'}}</a></u>
+                                        <div>
+                                            <table class="customTable">
+                                                <tr><td width="50%">Procedure</td><td width="50%">{{appointment.procedureName}}</td></tr>
+                                                <tr><td width="50%">Location</td><td width="50%">{{appointment.locationName}}</tr>
+                                                <tr><td width="50%">Provider</td><td width="50%">{{appointment.provider}}</td></tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" ng-show="caseload.diagnosis">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a ng-click="isDiagnosisCollapsed = !isDiagnosisCollapsed">
+                            Current Diagnosis
+                        </a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" uib-collapse="isDiagnosisCollapsed">
+                    <div class="panel-body">
+                        <table class="table">
+                            <tbody>
+                                <tr ng-repeat="diag in diagnosis track by $index">
+                                    <td>{{diag.ICD10Code}} {{diag.Description}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" ng-show="caseload.currentmedications">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a ng-click="isCurrentMedCollapsed = !isCurrentMedCollapsed">
+                            Current Medications
+                        </a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" uib-collapse="isCurrentMedCollapsed">
+                    <div class="panel-body">
+                        <table class="table">
+                            <tbody>
+                                <tr ng-repeat="med in currentmedications track by $index">
+                                    <td>{{med.MedicationName}}</td>
+                                    <td>{{med.MedicationInstruction}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="modal fade modal-wide" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Location</h4>
+            </div>
+            <div class="modal-body" id="mapBody">
+            </div>
+        </div>
+    </div>
+</div>

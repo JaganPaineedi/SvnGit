@@ -1,0 +1,1 @@
+Update HealthDataAttributes SET Name='Tobacco Use Cessation Counseling',[Description]='Tobacco Use Cessation Counseling' WHERE Name='Tobacco Use Cessation Couseling' AND Category=8226

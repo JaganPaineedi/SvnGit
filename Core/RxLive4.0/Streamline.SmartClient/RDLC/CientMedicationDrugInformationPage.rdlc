@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="SummitStreamlineMMTest">
+      <DataSourceReference>SummitStreamlineMMTest</DataSourceReference>
+      <rd:DataSourceID>afefb3ed-b1c9-4d46-9d6d-67df76ad9ec2</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>0.25in</BottomMargin>
+  <RightMargin>0.25in</RightMargin>
+  <ReportParameters>
+    <ReportParameter Name="ScriptId">
+      <DataType>Integer</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ScriptId</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="OrderingMethod">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>OrderingMethod</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.025in</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ColumnSpacing>0.05in</ColumnSpacing>
+    <ReportItems>
+      <Table Name="table1">
+        <DataSetName>RDLReportDataSet_csp_PatientMonographText</DataSetName>
+        <TableGroups>
+          <TableGroup>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="PatientEducationMonographText">
+                          <rd:DefaultName>PatientEducationMonographText</rd:DefaultName>
+                          <ZIndex>1</ZIndex>
+                          <Visibility>
+                            <Hidden>=IIF(Fields!PrintDrugInformation.Value is nothing,True,False)</Hidden>
+                          </Visibility>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!PatientEducationMonographText.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.2in</Height>
+                  <Visibility>
+                    <Hidden>=IIF(Fields!PrintDrugInformation.Value is nothing,True,False)</Hidden>
+                  </Visibility>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <Grouping Name="table1_Group1">
+              <GroupExpressions>
+                <GroupExpression>=Fields!MedicationName.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+        </TableGroups>
+        <Visibility>
+          <Hidden>=IIF(Fields!PrintDrugInformation.Value is nothing,True,False)</Hidden>
+        </Visibility>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Rectangle Name="rectangle1">
+                      <Visibility>
+                        <Hidden>=IIF(Fields!PrintDrugInformation.Value is nothing,True,False)</Hidden>
+                      </Visibility>
+                      <PageBreakAtEnd>true</PageBreakAtEnd>
+                    </Rectangle>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.1in</Height>
+              <Visibility>
+                <Hidden>=IIF(Fields!PrintDrugInformation.Value is nothing,True,False)</Hidden>
+              </Visibility>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <TableColumns>
+          <TableColumn>
+            <Width>7.275in</Width>
+            <Visibility>
+              <Hidden>=IIF(Fields!PrintDrugInformation.Value is nothing,True,False)</Hidden>
+            </Visibility>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+    </ReportItems>
+    <Height>0.3in</Height>
+  </Body>
+  <rd:ReportID>cbf73bea-d2d5-498a-859e-88534fc73458</rd:ReportID>
+  <LeftMargin>0.25in</LeftMargin>
+  <DataSets>
+    <DataSet Name="RDLReportDataSet_csp_PatientMonographText">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>csp_PatientMonographText</CommandText>
+        <DataSourceName>SummitStreamlineMMTest</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="ResultId">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ResultId</DataField>
+        </Field>
+        <Field Name="MedicationName">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>MedicationName</DataField>
+        </Field>
+        <Field Name="PatientEducationMonographText">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>PatientEducationMonographText</DataField>
+        </Field>
+        <Field Name="PrintDrugInformation">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PrintDrugInformation</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>7.275in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>0.25in</TopMargin>
+</Report>

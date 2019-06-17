@@ -1,0 +1,11 @@
+﻿<h3 style="color:red;">{{title}}</h3>
+<div class="row" style="margin-top:10%">
+    <div class="col-xs-6 col-md-3" ng-repeat="item in dashboardItems">
+        <a ng-href="{{item.redirectUrl}}" class="thumbnail">
+            <img ng-src="{{baseUrl}}/{{item.dashboardImage}}" class="img-responsive img-thumbnail img-dashboard" alt="{{item.dashboardName}}" width="204" height="236">
+        </a>
+        <div class="caption centered-text">
+            <h6>{{item.dashboardName}}<span ng-if="item.dashboardName=='My Caseload'"> ({{totalcaseload}})</span></h6>
+        </div>
+    </div>
+</div>

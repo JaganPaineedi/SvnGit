@@ -1,0 +1,1 @@
+Update DocumentCodes Set TableList = 'DocumentDiagnosis,DocumentDiagnosisCodes,DocumentDiagnosisFactors' Where DocumentCodeId = 1601

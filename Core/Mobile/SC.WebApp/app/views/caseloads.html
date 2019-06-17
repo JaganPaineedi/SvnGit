@@ -1,0 +1,15 @@
+﻿<h3 style="color:red;">My Caseload</h3>
+<p>
+    <div class="input-group">
+        <input type="text" ng-model="search" class="form-control" id="search" placeholder="Search...">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+    </div>
+</p>
+<ul class="list-group">
+    <li class="list-group-item" data-ng-repeat="caseload in caseloads | filter:search:startsWith | orderBy:'clientName'">
+        <a ng-show="caseload.clientId" href="#/caseloads/{{caseload.clientId}}">
+            {{caseload.clientName}} ({{caseload.clientId}})
+            <div class="pull-right"><i class="fa fa-angle-right"></i></div>
+        </a>
+    </li>
+</ul>

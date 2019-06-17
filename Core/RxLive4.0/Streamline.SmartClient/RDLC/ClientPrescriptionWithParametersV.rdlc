@@ -1,0 +1,1272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="SummitStreamlineMMTest">
+      <ConnectionProperties>
+        <ConnectString>Data Source=vtcdbtest02.ventechcenter.org;Initial Catalog=SummitStreamlineMMTest</ConnectString>
+        <DataProvider>SQL</DataProvider>
+      </ConnectionProperties>
+      <rd:DataSourceID>6c7c6f90-50e7-49ef-9a12-735b4f285953</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>0.25in</BottomMargin>
+  <RightMargin>0.25in</RightMargin>
+  <ReportParameters>
+    <ReportParameter Name="ScriptId">
+      <DataType>Integer</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ScriptId</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="OrderingMethod">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>OrderingMethod</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8in</InteractiveWidth>
+  <rd:GridSpacing>0.025in</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ColumnSpacing>0.025in</ColumnSpacing>
+    <ReportItems>
+      <Table Name="table1">
+        <Footer>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>8</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <ZIndex>8</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Sonia Dhamija is Testing</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Footer>
+        <DataSetName>RDLReportDataSet_ssp_RDLClientPrescriptionMain</DataSetName>
+        <TableGroups>
+          <TableGroup>
+            <Footer>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>8</ColSpan>
+                      <ReportItems>
+                        <Rectangle Name="rectangle12" />
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.125in</Height>
+                </TableRow>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>8</ColSpan>
+                      <ReportItems>
+                        <Rectangle Name="rectangle13">
+                          <ReportItems>
+                            <Image Name="image2">
+                              <Sizing>Fit</Sizing>
+                              <MIMEType>image/bmp</MIMEType>
+                              <Top>0.025in</Top>
+                              <Width>2.3in</Width>
+                              <Source>Database</Source>
+                              <Style />
+                              <Value>=First(Fields!SignatureFacsimile.Value)</Value>
+                            </Image>
+                          </ReportItems>
+                          <ZIndex>1</ZIndex>
+                        </Rectangle>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.77708in</Height>
+                  <Visibility>
+                    <Hidden>=IIF(Fields!OrderingMethod.Value="F",False, True)</Hidden>
+                  </Visibility>
+                </TableRow>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>8</ColSpan>
+                      <ReportItems>
+                        <Rectangle Name="rectangle14">
+                          <ReportItems>
+                            <Line Name="line2">
+                              <Left>0.025in</Left>
+                              <Top>0.025in</Top>
+                              <Width>3.375in</Width>
+                              <Style>
+                                <BorderStyle>
+                                  <Default>Solid</Default>
+                                </BorderStyle>
+                              </Style>
+                              <Height>0in</Height>
+                            </Line>
+                          </ReportItems>
+                          <ZIndex>2</ZIndex>
+                        </Rectangle>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.1in</Height>
+                  <Visibility>
+                    <Hidden>=IIF(Fields!OrderingMethod.Value="X",True, False)</Hidden>
+                  </Visibility>
+                </TableRow>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>8</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox71">
+                          <ZIndex>3</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>="Prescriber Signature: " &amp; First(Fields!Prescriber.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.2in</Height>
+                  <Visibility>
+                    <Hidden>=IIF(Fields!OrderingMethod.Value="X",True, False)</Hidden>
+                  </Visibility>
+                </TableRow>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>8</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox72">
+                          <ZIndex>4</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=First(Fields!Creator.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.2in</Height>
+                  <Visibility>
+                    <Hidden>=IIF(Fields!OrderingMethod.Value="F",False,True)</Hidden>
+                  </Visibility>
+                </TableRow>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>8</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox73">
+                          <ZIndex>5</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>="Prescribed by: " &amp; First(Fields!Prescriber.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.2in</Height>
+                  <Visibility>
+                    <Hidden>=IIF(Fields!OrderingMethod.Value="X", False, True)</Hidden>
+                  </Visibility>
+                </TableRow>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>8</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox1">
+                          <rd:DefaultName>textbox1</rd:DefaultName>
+                          <ZIndex>6</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=First(Fields!Creator.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.2in</Height>
+                  <Visibility>
+                    <Hidden>=IIF(Fields!OrderingMethod.Value="X", False, True)</Hidden>
+                  </Visibility>
+                </TableRow>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>8</ColSpan>
+                      <ReportItems>
+                        <Subreport Name="subreport1">
+                          <Parameters>
+                            <Parameter Name="ScriptId">
+                              <Value>=Parameters!ScriptId.Value</Value>
+                            </Parameter>
+                            <Parameter Name="OrderingMethod">
+                              <Value>=Parameters!OrderingMethod.Value</Value>
+                            </Parameter>
+                          </Parameters>
+                          <ZIndex>7</ZIndex>
+                          <Visibility>
+                            <Hidden>=IIF(Fields!PrintDrugInformation.Value="N",True,False)</Hidden>
+                          </Visibility>
+                          <ReportName>CientMedicationDrugInformationPage</ReportName>
+                        </Subreport>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.175in</Height>
+                </TableRow>
+              </TableRows>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+            </Footer>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>8</ColSpan>
+                      <ReportItems>
+                        <Rectangle Name="rectangle6">
+                          <ReportItems>
+                            <Textbox Name="textbox52">
+                              <ZIndex>6</ZIndex>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingBottom>2pt</PaddingBottom>
+                                <FontFamily>Verdana</FontFamily>
+                                <FontWeight>700</FontWeight>
+                                <FontSize>8pt</FontSize>
+                                <Format>D</Format>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                              </Style>
+                              <CanGrow>true</CanGrow>
+                              <Height>0.175in</Height>
+                              <Value>Prescription</Value>
+                            </Textbox>
+                            <Textbox Name="textbox53">
+                              <Top>0.175in</Top>
+                              <ZIndex>5</ZIndex>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingBottom>2pt</PaddingBottom>
+                                <FontFamily>Verdana</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <Format>D</Format>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                              </Style>
+                              <CanGrow>true</CanGrow>
+                              <Height>0.175in</Height>
+                              <Value>=today()</Value>
+                            </Textbox>
+                            <Textbox Name="textbox54">
+                              <Left>0.1in</Left>
+                              <Top>2.225in</Top>
+                              <ZIndex>4</ZIndex>
+                              <Width>7.275in</Width>
+                              <Style>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingBottom>2pt</PaddingBottom>
+                                <FontFamily>Verdana</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                              </Style>
+                              <CanGrow>true</CanGrow>
+                              <Height>0.17292in</Height>
+                              <Value>="PATIENT ALLERGIES: " &amp; First(Fields!AllergyList.Value)</Value>
+                            </Textbox>
+                            <Rectangle Name="rectangle9">
+                              <Left>0.1in</Left>
+                              <ReportItems>
+                                <Textbox Name="textbox55">
+                                  <ZIndex>3</ZIndex>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                    <FontFamily>Verdana</FontFamily>
+                                    <FontWeight>700</FontWeight>
+                                    <FontSize>8pt</FontSize>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                  </Style>
+                                  <CanGrow>true</CanGrow>
+                                  <Height>0.175in</Height>
+                                  <Value>Pharmacy</Value>
+                                </Textbox>
+                                <Textbox Name="textbox56">
+                                  <Top>0.175in</Top>
+                                  <ZIndex>2</ZIndex>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                    <FontFamily>Verdana</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                  </Style>
+                                  <CanGrow>true</CanGrow>
+                                  <Height>0.175in</Height>
+                                  <Value>=First(Fields!PharmacyName.Value)</Value>
+                                </Textbox>
+                                <Textbox Name="textbox57">
+                                  <Top>0.35in</Top>
+                                  <ZIndex>1</ZIndex>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                    <FontFamily>Verdana</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                  </Style>
+                                  <CanGrow>true</CanGrow>
+                                  <Height>0.175in</Height>
+                                  <Value>=First(Fields!PharmacyAddress.Value)</Value>
+                                </Textbox>
+                                <Textbox Name="textbox58">
+                                  <Top>0.525in</Top>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                    <FontFamily>Verdana</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>d</Format>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                  </Style>
+                                  <CanGrow>true</CanGrow>
+                                  <Value>="Tel: " &amp; First(Fields!PharmacyPhone.Value) &amp; chr(13) &amp; "Fax: " &amp; First(Fields!PharmacyFax.Value)</Value>
+                                </Textbox>
+                              </ReportItems>
+                              <Top>1.45in</Top>
+                              <ZIndex>3</ZIndex>
+                              <Visibility>
+                                <Hidden>=IIF(Fields!OrderingMethod.Value="F",False, True)</Hidden>
+                              </Visibility>
+                              <Width>3.575in</Width>
+                              <Height>0.7in</Height>
+                            </Rectangle>
+                            <Textbox Name="textbox59">
+                              <Left>0.025in</Left>
+                              <Top>1.25in</Top>
+                              <ZIndex>2</ZIndex>
+                              <Width>7.425in</Width>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingBottom>2pt</PaddingBottom>
+                                <FontFamily>Verdana</FontFamily>
+                                <FontWeight>700</FontWeight>
+                                <FontSize>8pt</FontSize>
+                                <Color>Red</Color>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                              </Style>
+                              <CanGrow>true</CanGrow>
+                              <Height>0.175in</Height>
+                              <Value>=IIF(Fields!CopyType.Value="Chart", "CHART COPY ONLY","")</Value>
+                            </Textbox>
+                            <Rectangle Name="rectangle10">
+                              <ReportItems>
+                                <Textbox Name="textbox60">
+                                  <Top>0.025in</Top>
+                                  <ZIndex>3</ZIndex>
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                    <FontFamily>Verdana</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                  </Style>
+                                  <CanGrow>true</CanGrow>
+                                  <Height>0.175in</Height>
+                                  <Value>=First(Fields!LocationName.Value)</Value>
+                                </Textbox>
+                                <Textbox Name="textbox61">
+                                  <Top>0.2in</Top>
+                                  <ZIndex>2</ZIndex>
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                    <FontFamily>Verdana</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                  </Style>
+                                  <CanGrow>true</CanGrow>
+                                  <Height>0.175in</Height>
+                                  <Value>=First(Fields!OrganizationName.Value)</Value>
+                                </Textbox>
+                                <Textbox Name="textbox62">
+                                  <Top>0.375in</Top>
+                                  <ZIndex>1</ZIndex>
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                    <FontFamily>Verdana</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                  </Style>
+                                  <CanGrow>true</CanGrow>
+                                  <Height>0.175in</Height>
+                                  <Value>=First(Fields!LocationAddress.Value)</Value>
+                                </Textbox>
+                                <Textbox Name="textbox63">
+                                  <Top>0.55in</Top>
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                    <FontFamily>Verdana</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                  </Style>
+                                  <CanGrow>true</CanGrow>
+                                  <Value>="Tel: " &amp; Fields!LocationPhone.Value &amp; chr(13) &amp; "Fax: " &amp; First(Fields!LocationFax.Value)</Value>
+                                </Textbox>
+                              </ReportItems>
+                              <Top>0.5in</Top>
+                              <ZIndex>1</ZIndex>
+                              <Height>0.725in</Height>
+                            </Rectangle>
+                            <Rectangle Name="rectangle11">
+                              <Left>3.8in</Left>
+                              <ReportItems>
+                                <Textbox Name="textbox64">
+                                  <ZIndex>3</ZIndex>
+                                  <Style>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                    <FontFamily>Verdana</FontFamily>
+                                    <FontWeight>700</FontWeight>
+                                    <FontSize>8pt</FontSize>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                  </Style>
+                                  <CanGrow>true</CanGrow>
+                                  <Height>0.175in</Height>
+                                  <Value>="Patient : " &amp; First(Fields!ClientName.Value)</Value>
+                                </Textbox>
+                                <Textbox Name="textbox65">
+                                  <Top>0.175in</Top>
+                                  <ZIndex>2</ZIndex>
+                                  <Style>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                    <FontFamily>Verdana</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                  </Style>
+                                  <CanGrow>true</CanGrow>
+                                  <Height>0.175in</Height>
+                                  <Value>=First(Fields!ClientAddress.Value)</Value>
+                                </Textbox>
+                                <Textbox Name="textbox66">
+                                  <Top>0.35in</Top>
+                                  <ZIndex>1</ZIndex>
+                                  <Style>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                    <FontFamily>Verdana</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                  </Style>
+                                  <CanGrow>true</CanGrow>
+                                  <Height>0.175in</Height>
+                                  <Value>="Phone: " &amp; First(Fields!ClientHomePhone.Value)</Value>
+                                </Textbox>
+                                <Textbox Name="textbox67">
+                                  <Top>0.525in</Top>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                    <FontFamily>Verdana</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>d</Format>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                  </Style>
+                                  <CanGrow>true</CanGrow>
+                                  <Value>="DOB: " &amp; First(Fields!ClientDOB.Value)</Value>
+                                </Textbox>
+                              </ReportItems>
+                              <Top>1.45in</Top>
+                              <Width>3.575in</Width>
+                              <Height>0.7in</Height>
+                            </Rectangle>
+                          </ReportItems>
+                          <ZIndex>35</ZIndex>
+                        </Rectangle>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>2.475in</Height>
+                </TableRow>
+              </TableRows>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+            </Header>
+            <Grouping Name="table1_Group1">
+              <PageBreakAtEnd>true</PageBreakAtEnd>
+              <Parent>=Fields!OrderingMethod.Value</Parent>
+              <GroupExpressions>
+                <GroupExpression>=Fields!OrderingMethod.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+          <TableGroup>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox68">
+                          <ZIndex>34</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox70">
+                          <rd:DefaultName>textbox70</rd:DefaultName>
+                          <ZIndex>33</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>="PON:  " &amp; Fields!PON.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ColSpan>3</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox31">
+                          <rd:DefaultName>textbox31</rd:DefaultName>
+                          <ZIndex>32</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!MedicationName.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox50">
+                          <rd:DefaultName>textbox50</rd:DefaultName>
+                          <ZIndex>31</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox51">
+                          <rd:DefaultName>textbox51</rd:DefaultName>
+                          <ZIndex>30</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox69">
+                          <rd:DefaultName>textbox69</rd:DefaultName>
+                          <ZIndex>29</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.225in</Height>
+                </TableRow>
+              </TableRows>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+            </Header>
+            <Grouping Name="Medications">
+              <GroupExpressions>
+                <GroupExpression>=Fields!OrderingMethod.Value</GroupExpression>
+                <GroupExpression>=Fields!PON.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+          <TableGroup>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox14">
+                          <ZIndex>28</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox15">
+                          <ZIndex>27</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ColSpan>6</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox16">
+                          <ZIndex>26</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!DrugSummary.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.2in</Height>
+                </TableRow>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox45">
+                          <ZIndex>25</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox46">
+                          <ZIndex>24</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ColSpan>2</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox47">
+                          <ZIndex>23</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>="Order Date: " &amp; Fields!OrderDate.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ColSpan>2</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox48">
+                          <ZIndex>22</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>="Start Date: " &amp; Fields!StartDate.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ColSpan>2</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox49">
+                          <ZIndex>21</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>="Duration: " &amp; Fields!DurationDays.Value &amp; " days"</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.175in</Height>
+                </TableRow>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox74">
+                          <ZIndex>20</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox75">
+                          <ZIndex>19</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ColSpan>2</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox76">
+                          <ZIndex>18</ZIndex>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>="Refills : " &amp; Fields!Refills.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox77">
+                          <ZIndex>17</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox78">
+                          <ZIndex>16</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox79">
+                          <ZIndex>15</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox80">
+                          <ZIndex>14</ZIndex>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.2in</Height>
+                </TableRow>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox81">
+                          <ZIndex>13</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox82">
+                          <ZIndex>12</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ColSpan>2</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox83">
+                          <ZIndex>11</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!DAW.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ColSpan>4</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox84">
+                          <ZIndex>10</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Verdana</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>="Special Ins.: " &amp; Fields!SpecialInstructions.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.175in</Height>
+                </TableRow>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>8</ColSpan>
+                      <ReportItems>
+                        <Rectangle Name="rectangle2">
+                          <ZIndex>9</ZIndex>
+                        </Rectangle>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.1in</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <Grouping Name="ClientMedicationInstruction">
+              <GroupExpressions>
+                <GroupExpression>=Fields!OrderingMethod.Value</GroupExpression>
+                <GroupExpression>=Fields!PON.Value</GroupExpression>
+                <GroupExpression>=Fields!ClientMedicationInstructionId.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+        </TableGroups>
+        <TableColumns>
+          <TableColumn>
+            <Width>0.32292in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.75in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.05in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.15in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.00625in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+    </ReportItems>
+    <Height>5.77708in</Height>
+  </Body>
+  <rd:ReportID>b0212494-d1e1-4a61-bf1c-1e9bccadd4b7</rd:ReportID>
+  <LeftMargin>0.25in</LeftMargin>
+  <DataSets>
+    <DataSet Name="RDLReportDataSet_ssp_RDLClientPrescriptionMain">
+      <Query>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>ssp_RDLClientPrescriptionMain</CommandText>
+        <DataSourceName>SummitStreamlineMMTest</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="OrganizationName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>OrganizationName</DataField>
+        </Field>
+        <Field Name="ClientMedicationScriptId">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClientMedicationScriptId</DataField>
+        </Field>
+        <Field Name="OrderingMethod">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>OrderingMethod</DataField>
+        </Field>
+        <Field Name="AllergyList">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>AllergyList</DataField>
+        </Field>
+        <Field Name="ClientId">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClientId</DataField>
+        </Field>
+        <Field Name="ClientName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ClientName</DataField>
+        </Field>
+        <Field Name="ClientAddress">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ClientAddress</DataField>
+        </Field>
+        <Field Name="ClientHomePhone">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ClientHomePhone</DataField>
+        </Field>
+        <Field Name="ClientDOB">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>ClientDOB</DataField>
+        </Field>
+        <Field Name="LocationAddress">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>LocationAddress</DataField>
+        </Field>
+        <Field Name="LocationName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>LocationName</DataField>
+        </Field>
+        <Field Name="LocationPhone">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>LocationPhone</DataField>
+        </Field>
+        <Field Name="LocationFax">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>LocationFax</DataField>
+        </Field>
+        <Field Name="PharmacyName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PharmacyName</DataField>
+        </Field>
+        <Field Name="PharmacyAddress">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PharmacyAddress</DataField>
+        </Field>
+        <Field Name="PharmacyPhone">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PharmacyPhone</DataField>
+        </Field>
+        <Field Name="PharmacyFax">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PharmacyFax</DataField>
+        </Field>
+        <Field Name="CopyType">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CopyType</DataField>
+        </Field>
+        <Field Name="PON">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>PON</DataField>
+        </Field>
+        <Field Name="ClientMedicationInstructionId">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClientMedicationInstructionId</DataField>
+        </Field>
+        <Field Name="MedicationName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>MedicationName</DataField>
+        </Field>
+        <Field Name="DrugSummary">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>DrugSummary</DataField>
+        </Field>
+        <Field Name="OrderDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>OrderDate</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="UnitValue">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>UnitValue</DataField>
+        </Field>
+        <Field Name="ScheduleValue">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ScheduleValue</DataField>
+        </Field>
+        <Field Name="SchedValueMultiplier">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SchedValueMultiplier</DataField>
+        </Field>
+        <Field Name="TotalQuantity">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>TotalQuantity</DataField>
+        </Field>
+        <Field Name="StartDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>StartDate</DataField>
+        </Field>
+        <Field Name="EndDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>EndDate</DataField>
+        </Field>
+        <Field Name="Refills">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Refills</DataField>
+        </Field>
+        <Field Name="DurationDays">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>DurationDays</DataField>
+        </Field>
+        <Field Name="DAW">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>DAW</DataField>
+        </Field>
+        <Field Name="SpecialInstructions">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SpecialInstructions</DataField>
+        </Field>
+        <Field Name="PrescriberId">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>PrescriberId</DataField>
+        </Field>
+        <Field Name="Prescriber">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Prescriber</DataField>
+        </Field>
+        <Field Name="Creator">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Creator</DataField>
+        </Field>
+        <Field Name="CreatedBy">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CreatedBy</DataField>
+        </Field>
+        <Field Name="SignatureFacsimile">
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+          <DataField>SignatureFacsimile</DataField>
+        </Field>
+        <Field Name="PrintDrugInformation">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PrintDrugInformation</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <DataTransform>IMAGE</DataTransform>
+  <Code />
+  <Width>7.47917in</Width>
+  <InteractiveHeight>10in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>0.25in</TopMargin>
+</Report>

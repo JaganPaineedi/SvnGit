@@ -1,0 +1,1 @@
+update Screens set ScreenToolbarURL=NULL where ScreenId=176  --Screenname='Immunizations'

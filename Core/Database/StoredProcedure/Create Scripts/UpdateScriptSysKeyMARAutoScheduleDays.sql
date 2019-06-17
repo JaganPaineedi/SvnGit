@@ -1,0 +1,4 @@
+-- update script for SystemConfigurationKeys where [key] = 'MARAutoScheduleDays'
+UPDATE SystemConfigurationKeys
+	SET Description = '+ MARAutoScheduleDays - Client MAR (Medication Administration Record) is the client level banner and it is used by the care provider for recording and viewing the MAR instructions for prescribed drugs with the status (like ‘Given, ‘Refused’, ‘Not Given’ and others).    The MAR record is created by NIGHTLY JOB or ON DEMAND and the system utilizes the value for this key – MARAutoScheduleDays to determine how many days from current should the system create the MAR records. VALUE: The values correspond to number of day(s). Ex: Value of 1 is equal to 1 Day.  • If the value of this key is 1, then the MAR record will be created for the current day  • If the value of this key is 2, then the MAR record will be created for current day plus the next day'
+	WHERE [key] = 'MARAutoScheduleDays'

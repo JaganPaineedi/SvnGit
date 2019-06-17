@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="NewRx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRx" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="spiId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewRxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewRxResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUpdatePrescriberHandler">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StaffId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SurescriptsOrganizationId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrganizationName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ActiveStartTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ActiveEndTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DEANumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NPI" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NamePrefix" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SpecialtyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FaxNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SPI_Id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUpdatePrescriberHandlerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddUpdatePrescriberHandlerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAsynMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SP_Ids" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAsynMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAsynMessageResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendRefillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRefillResponseXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="spiId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendRefillResponseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendRefillResponseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnPharmacyZipData">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReturnPharmacyZipDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnPharmacyZipDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="NewRxSoapIn">
+    <wsdl:part name="parameters" element="tns:NewRx" />
+  </wsdl:message>
+  <wsdl:message name="NewRxSoapOut">
+    <wsdl:part name="parameters" element="tns:NewRxResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUpdatePrescriberHandlerSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUpdatePrescriberHandler" />
+  </wsdl:message>
+  <wsdl:message name="AddUpdatePrescriberHandlerSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUpdatePrescriberHandlerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAsynMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAsynMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetAsynMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAsynMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendRefillResponseSoapIn">
+    <wsdl:part name="parameters" element="tns:SendRefillResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendRefillResponseSoapOut">
+    <wsdl:part name="parameters" element="tns:SendRefillResponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnPharmacyZipDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnPharmacyZipData" />
+  </wsdl:message>
+  <wsdl:message name="ReturnPharmacyZipDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnPharmacyZipDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SureScriptHandlerSoap">
+    <wsdl:operation name="NewRx">
+      <wsdl:input message="tns:NewRxSoapIn" />
+      <wsdl:output message="tns:NewRxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdatePrescriberHandler">
+      <wsdl:input message="tns:AddUpdatePrescriberHandlerSoapIn" />
+      <wsdl:output message="tns:AddUpdatePrescriberHandlerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAsynMessage">
+      <wsdl:input message="tns:GetAsynMessageSoapIn" />
+      <wsdl:output message="tns:GetAsynMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendRefillResponse">
+      <wsdl:input message="tns:SendRefillResponseSoapIn" />
+      <wsdl:output message="tns:SendRefillResponseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPharmacyZipData">
+      <wsdl:input message="tns:ReturnPharmacyZipDataSoapIn" />
+      <wsdl:output message="tns:ReturnPharmacyZipDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SureScriptHandlerSoap" type="tns:SureScriptHandlerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NewRx">
+      <soap:operation soapAction="http://tempuri.org/NewRx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdatePrescriberHandler">
+      <soap:operation soapAction="http://tempuri.org/AddUpdatePrescriberHandler" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsynMessage">
+      <soap:operation soapAction="http://tempuri.org/GetAsynMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendRefillResponse">
+      <soap:operation soapAction="http://tempuri.org/SendRefillResponse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPharmacyZipData">
+      <soap:operation soapAction="http://tempuri.org/ReturnPharmacyZipData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SureScriptHandlerSoap12" type="tns:SureScriptHandlerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NewRx">
+      <soap12:operation soapAction="http://tempuri.org/NewRx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdatePrescriberHandler">
+      <soap12:operation soapAction="http://tempuri.org/AddUpdatePrescriberHandler" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsynMessage">
+      <soap12:operation soapAction="http://tempuri.org/GetAsynMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendRefillResponse">
+      <soap12:operation soapAction="http://tempuri.org/SendRefillResponse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPharmacyZipData">
+      <soap12:operation soapAction="http://tempuri.org/ReturnPharmacyZipData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SureScriptHandler">
+    <wsdl:port name="SureScriptHandlerSoap" binding="tns:SureScriptHandlerSoap">
+      <soap:address location="http://scriptstaging.streamlinehealthcare.com/SureScriptHandler.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SureScriptHandlerSoap12" binding="tns:SureScriptHandlerSoap12">
+      <soap12:address location="http://scriptstaging.streamlinehealthcare.com/SureScriptHandler.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

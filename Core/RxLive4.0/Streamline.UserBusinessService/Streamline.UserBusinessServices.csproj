@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CBA434A8-0740-46C7-9B1A-13BEB246CAA8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Streamline.UserBusinessServices</RootNamespace>
+    <AssemblyName>Streamline.UserBusinessServices</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>C:\Windows\assembly\GAC_MSIL\System\2.0.0.0__b77a5c561934e089\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationCommonFunctions.cs" />
+    <Compile Include="Assessment.cs" />
+    <Compile Include="AssessmentCustom.cs" />
+    <Compile Include="ClientMedications.cs" />
+    <Compile Include="CommonBase.cs" />
+    <Compile Include="DataSets\ClientSearch.cs">
+      <DependentUpon>ClientSearch.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\ClientSearch.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientSearch.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetClientAllergies.cs">
+      <DependentUpon>DataSetClientAllergies.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\DataSetClientAllergies.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetClientAllergies.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetClientMedicationOrders.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetClientMedicationOrders.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetClientMedications.cs">
+      <DependentUpon>DataSetClientMedications.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\DataSetClientMedications.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetClientMedications.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetClientPharmacies.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetClientPharmacies.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetClientScripts.cs">
+      <DependentUpon>DataSetClientScripts.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\DataSetClientScripts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetClientScripts.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetClientSummary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetClientSummary.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetCustomDocuments1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCustomDocuments.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetCustomWebDocument.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCustomWebDocument.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetDiscontinueMedication.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDiscontinueMedication.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetDrugOrderTemplates.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDrugOrderTemplates.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetHarborConsent.cs">
+      <DependentUpon>DataSetHarborConsent.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\DataSetHarborConsent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetHarborConsent.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetHealthData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetHealthData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetKeyPhrases.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetKeyPhrases.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetPharmacies.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPharmacies.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetPrinterDeviceLocations.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPrinterDeviceLocations.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetRDLClientMedicationScript.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRDLClientMedicationScript.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetSureScripts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSureScripts.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetTitrationTemplate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTitrationTemplate.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetUserPrefrences.cs">
+      <DependentUpon>DataSetUserPrefrences.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\DataSetUserPrefrences.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetUserPrefrences.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\MedicationList.cs">
+      <DependentUpon>MedicationList.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\MedicationList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MedicationList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\SharedTables.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SharedTables.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\Test.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Test.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataWizard.cs" />
+    <Compile Include="DataWizardLogin.cs" />
+    <Compile Include="Diagnosis.cs" />
+    <Compile Include="GuardianDetails.cs" />
+    <Compile Include="HealthMaintenanceTemplate.cs" />
+    <Compile Include="MedicationLogin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SharedTables.cs" />
+    <Compile Include="SureScriptRefillRequest.cs" />
+    <Compile Include="UseKeyPhrases.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserPrefernces.cs" />
+    <Compile Include="Web References\ExternalWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="DataSets\ClientSearch.xsc">
+      <DependentUpon>ClientSearch.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ClientSearch.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClientSearch.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\ClientSearch.xss">
+      <DependentUpon>ClientSearch.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ClientSearch.xsx">
+      <DependentUpon>ClientSearch.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetClientAllergies.xsc">
+      <DependentUpon>DataSetClientAllergies.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetClientAllergies.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetClientAllergies.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetClientAllergies.xss">
+      <DependentUpon>DataSetClientAllergies.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetClientMedicationOrders.xsc">
+      <DependentUpon>DataSetClientMedicationOrders.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetClientMedicationOrders.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetClientMedicationOrders.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\DataSetClientMedicationOrders.xss">
+      <DependentUpon>DataSetClientMedicationOrders.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetClientMedicationOrders.xsx">
+      <DependentUpon>DataSetClientMedicationOrders.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetClientPharmacies.xsc">
+      <DependentUpon>DataSetClientPharmacies.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetClientPharmacies.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetClientPharmacies.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetClientPharmacies.xss">
+      <DependentUpon>DataSetClientPharmacies.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetClientScripts.xsc">
+      <DependentUpon>DataSetClientScripts.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetClientScripts.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetClientScripts.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetClientScripts.xss">
+      <DependentUpon>DataSetClientScripts.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetClientSummary.xsc">
+      <DependentUpon>DataSetClientSummary.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetClientSummary.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetClientSummary.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetClientSummary.xss">
+      <DependentUpon>DataSetClientSummary.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetDrugOrderTemplates.xsc">
+      <DependentUpon>DataSetDrugOrderTemplates.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetDrugOrderTemplates.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDrugOrderTemplates.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\DataSetDrugOrderTemplates.xss">
+      <DependentUpon>DataSetDrugOrderTemplates.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetKeyPhrases.xsc">
+      <DependentUpon>DataSetKeyPhrases.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetKeyPhrases.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetKeyPhrases.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\DataSetKeyPhrases.xss">
+      <DependentUpon>DataSetKeyPhrases.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetRDLClientMedicationScript.xsc">
+      <DependentUpon>DataSetRDLClientMedicationScript.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetRDLClientMedicationScript.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRDLClientMedicationScript.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetRDLClientMedicationScript.xss">
+      <DependentUpon>DataSetRDLClientMedicationScript.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\MedicationList.xsc">
+      <DependentUpon>MedicationList.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\MedicationList.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MedicationList.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\MedicationList.xss">
+      <DependentUpon>MedicationList.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\SharedTables.xsc">
+      <DependentUpon>SharedTables.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\SharedTables.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SharedTables.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\SharedTables.xss">
+      <DependentUpon>SharedTables.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\Test.xsc">
+      <DependentUpon>Test.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\Test.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Test.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\Test.xss">
+      <DependentUpon>Test.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Streamline.DataService\Streamline.DataServices.csproj">
+      <Project>{1DBF1C0D-6D9A-4F26-8A8C-32B4C6E51B33}</Project>
+      <Name>Streamline.DataServices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSets\DataSetUserPrefrences.xsc">
+      <DependentUpon>DataSetUserPrefrences.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetUserPrefrences.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetUserPrefrences.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetUserPrefrences.xss">
+      <DependentUpon>DataSetUserPrefrences.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSets\DataSetPharmacies.xsc">
+      <DependentUpon>DataSetPharmacies.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetPharmacies.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPharmacies.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetPharmacies.xss">
+      <DependentUpon>DataSetPharmacies.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSets\DataSetCustomWebDocument.xsc">
+      <DependentUpon>DataSetCustomWebDocument.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetCustomWebDocument.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCustomWebDocument.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetCustomWebDocument.xss">
+      <DependentUpon>DataSetCustomWebDocument.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetHarborConsent.xsc">
+      <DependentUpon>DataSetHarborConsent.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetHarborConsent.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetHarborConsent.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetHarborConsent.xss">
+      <DependentUpon>DataSetHarborConsent.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSets\DataSetClientAllergies.xsx">
+      <DependentUpon>DataSetClientAllergies.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetClientScripts.xsx">
+      <DependentUpon>DataSetClientScripts.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetDiscontinueMedication.xsc">
+      <DependentUpon>DataSetDiscontinueMedication.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetDiscontinueMedication.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDiscontinueMedication.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetDiscontinueMedication.xss">
+      <DependentUpon>DataSetDiscontinueMedication.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetHealthData.xsc">
+      <DependentUpon>DataSetHealthData.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetHealthData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetHealthData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetHealthData.xss">
+      <DependentUpon>DataSetHealthData.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetPrinterDeviceLocations.xsc">
+      <DependentUpon>DataSetPrinterDeviceLocations.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetPrinterDeviceLocations.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPrinterDeviceLocations.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetPrinterDeviceLocations.xss">
+      <DependentUpon>DataSetPrinterDeviceLocations.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetTitrationTemplate.xsc">
+      <DependentUpon>DataSetTitrationTemplate.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetTitrationTemplate.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTitrationTemplate.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetTitrationTemplate.xss">
+      <DependentUpon>DataSetTitrationTemplate.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost/ExterWebService/ExternalWebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ExternalWebService\</RelPath>
+      <UpdateFromURL>http://localhost/ExterWebService/ExternalWebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Streamline_UserBusinessServices_ExternalWebService_ExternalWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSets\DataSetClientMedications.xsc">
+      <DependentUpon>DataSetClientMedications.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetClientMedications.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetClientMedications.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetClientMedications.xss">
+      <DependentUpon>DataSetClientMedications.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetCustomDocuments.xsc">
+      <DependentUpon>DataSetCustomDocuments.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetCustomDocuments.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCustomDocuments1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetCustomDocuments.xss">
+      <DependentUpon>DataSetCustomDocuments.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetSureScripts.xsc">
+      <DependentUpon>DataSetSureScripts.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetSureScripts.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSureScripts.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetSureScripts.xss">
+      <DependentUpon>DataSetSureScripts.xsd</DependentUpon>
+    </None>
+    <None Include="Web References\ExternalWebService\ExternalWebService.disco" />
+    <None Include="Web References\ExternalWebService\ExternalWebService.wsdl" />
+    <None Include="Web References\ExternalWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6ACB261-19CA-464D-B03D-C2C14F7D0F8A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC.Data</RootNamespace>
+    <AssemblyName>SC.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveDirectoryDomains.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ActiveDirectoryStaff.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Appointment.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DiagnosisICD10Codes.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Document.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentCode.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentPDFGenerationQueue.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentServiceNoteGoal.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentServiceNoteObjective.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentVersion.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalCode.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KPIMaster.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Location.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MobileBriefcase.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDashboards.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDevice.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MobileOrigins.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MobileRefreshTokens.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProcedureCodes.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Programs.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\GenericRepository.cs" />
+    <Compile Include="SCEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SCEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SCEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SCEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SCEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Screens.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceDiagnosi.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service\DataService.cs" />
+    <Compile Include="smsp_GetDocuments_Result.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="smsp_GetMobileStaffPreference_Result.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="smsp_GetMyPreference_Result.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Smsp_GetProgramClinicians_Result.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="smsp_GetServiceDropDownValues_Result.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Staff.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StaffClientAccess.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StaffPreferences.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfigurationKey.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfigurations.cs">
+      <DependentUpon>SCEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\CommonDBFunctions.cs" />
+    <Compile Include="Utility\CommonFunctions.cs" />
+    <Compile Include="Web References\SHSADAuthentication\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <EntityDeploy Include="SCEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SCEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SCEntity.edmx.diagram">
+      <DependentUpon>SCEntity.edmx</DependentUpon>
+    </None>
+    <None Include="Web References\SHSADAuthentication\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SHSADAuthentication\SHSADAuthentication.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SCEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SCEntity.edmx</DependentUpon>
+      <LastGenOutput>SCEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SCEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SCEntity.edmx</DependentUpon>
+      <LastGenOutput>SCEntity.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\SHSADAuthentication\SHSADAuthentication.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SC.Base\SC.Base.csproj">
+      <Project>{bdcbe0b6-6fce-414c-858f-44c0d3f53095}</Project>
+      <Name>SC.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:51678/SHSADAuthentication.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SHSADAuthentication\</RelPath>
+      <UpdateFromURL>http://localhost:51678/SHSADAuthentication.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SC_Data_SHSADAuthentication_ADAuthenticationService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

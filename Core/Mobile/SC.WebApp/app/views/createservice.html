@@ -1,0 +1,263 @@
+﻿<form name="csform" novalidate class="css-form" ng-disabled="true" ng-controller="createserviceController as cs">
+    <h3 style="color:red;">{{title}}</h3>
+    <fieldset ng-disabled="isNonEditable">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="panel-group" id="serviceDetailCollapse" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a ng-click="isServiceDetailCollapsed = !isServiceDetailCollapsed">
+                                    Service Detail
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="panel-collapse collapse in" uib-collapse="isServiceDetailCollapsed">
+                            <div class="panel-body">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Client
+                                            </td>
+                                            <td>
+                                                <select required class="form-control-scmobile" id="ddClients" ng-disabled="appointmentId*1>0"
+                                                        ng-model="appointment.service.clientId" ng-options="caseload.clientId as caseload.clientName for caseload in caseloads | orderBy:'clientName'">
+                                                    <option value="">Select Client</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Status
+                                            </td>
+                                            <td>
+                                                <select required class="form-control-scmobile" ng-model="appointment.service.status" ng-options="serviceStatus.globalCodeId as serviceStatus.codeName for serviceStatus in serviceStatuses">
+                                                    <option value="">Select Status</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Start Date/Time
+                                            </td>
+                                            <td>
+                                                <div class="form-inline">
+													<input type="date" class="form-control-scmobile-date" ng-model="appointment.service.dateOfServiceFormatted" required>
+													<input type="time" class="form-control-scmobile-time" ng-model="appointment.service.dateOfServiceFormatted" required ng-disabled="!appointment.service.dateOfServiceFormatted" name="start">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!--<tr>
+                                            <td>
+                                                End Date/Time
+                                            </td>
+                                            <td>
+                                                <div class="form-inline">
+													<input type="date" class="form-control-scmobile-date" ng-model="appointment.service.endDateOfServiceFormatted" required>
+													<input type="time" class="form-control-scmobile-time" ng-model="appointment.service.endDateOfServiceFormatted" required>
+                                                </div>
+                                            </td>
+                                        </tr>-->
+                                        <tr>
+                                            <td>
+                                                Duration
+                                            </td>
+                                            <td>
+                                                <input class="form-control-scmobile" type="number" min="0" id="serviceDuration" ng-model="appointment.service.unit" required>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Program
+                                            </td>
+                                            <td>
+                                                <select required class="form-control-scmobile" ng-model="appointment.service.programId" ng-options="staffProgram.programId as staffProgram.programCode for staffProgram in staffPrograms | orderBy:'programCode'">
+                                                    <option value="">Select Program</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Procedure
+                                            </td>
+                                            <td>
+                                                <select required class="form-control-scmobile" id="ddProcedureCode" ng-model="appointment.service.procedureCodeId" ng-options="staffProcedureCode.procedureCodeId as staffProcedureCode.procedureCodeName for staffProcedureCode in staffProcedureCodes | orderBy:'procedureCodeName'">
+                                                    <option value="">Select Procedure</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Location
+                                            </td>
+                                            <td>
+                                                <select required class="form-control-scmobile" ng-model="appointment.service.locationId" ng-options="staffLocation.locationId as staffLocation.locationName for staffLocation in staffLocations  | orderBy:'locationName'">
+                                                    <option value="">Select Location</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Specific Location
+                                            </td>
+                                            <td>
+                                                <input class="form-control-scmobile" type="text" ng-model="appointment.service.specificLocation" id="specificLocation" value="{{service.specificLocation}}" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Clinician
+                                            </td>
+                                            <td>
+                                                <select ng-disabled="appointment.service.status!=70" class="form-control-scmobile" ng-model="appointment.service.clinicianId" ng-options="clinician.clinicianId as clinician.clinicianName for clinician in clinicians | orderBy:'clinicianName'">
+                                                    <option value="">Select Clinician</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Attending
+                                            </td>
+                                            <td>
+                                                <select class="form-control-scmobile" ng-model="appointment.service.attendingId" ng-options="serviceAttending.staffId as serviceAttending.staffName for serviceAttending in serviceAttendings | orderBy:'staffName'">
+                                                    <option value="">Select Attending</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a ng-click="isGoalsObjectiveCollapsed = !isGoalsObjectiveCollapsed">
+                                    Goals and Objectives
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="panel-collapse collapse" uib-collapse="isGoalsObjectiveCollapsed">
+                            <div class="panel-body">
+                                <div ng-repeat="goal in CurrentGoals">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" ng-model="goal.IsChecked" id="cbGoal_{{goal.GoalNumber | replaceDot}}"
+                                                   ng-checked="goal.IsChecked=='Y'"
+                                                   ng-click="addressGoal(goal.GoalNumber,goal.GoalText,goal.GoalId,goal.CustomGoalActive,goal.IsChecked)">
+                                            {{goal.GoalNumber}}. {{goal.GoalText}}
+                                        </label>
+                                    </div>
+                                    <div ng-repeat="objective in CurrentObjectives | filter:{GoalId:goal.GoalId}">
+                                        <div class="checkbox" style="margin-left:15px;">
+                                            <label>
+                                                <input type="checkbox" ng-model="objective.IsChecked" id="cbObjective_{{objective.ObjectiveNumber | replaceDot}}"
+                                                       ng-checked="objective.IsChecked=='Y'"
+                                                       ng-click="addressObjective(objective.ObjectiveNumber,objective.ObjectiveText,objective.GoalId,objective.CustomObjectiveActive,objective.IsChecked)">
+                                                {{objective.ObjectiveNumber}} {{objective.ObjectiveText}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div ng-show="CurrentGoals.length == 0">No goals linked for the selected procedure</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a ng-click="isNoteCollapsed = !isNoteCollapsed">
+                                    Note
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="panel-collapse collapse" uib-collapse="isNoteCollapsed">
+                            <div class="panel-body">
+                                <div ng-include src="noteTemplateUrl" onload="loadNoteTemplate()" id="divNoteTemplate"></div>
+                                <div ng-hide="noteTemplateUrl">No Note selected</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a ng-click="isDiagnosisCollapsed = !isDiagnosisCollapsed">
+                                    Billing Dx
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="panel-collapse collapse" uib-collapse="isDiagnosisCollapsed">
+                            <div class="panel-body">
+                                <table class="table" ng-hide="appointment.service.diagnosis.length == 0">
+                                    <tbody>
+                                        <tr ng-repeat="diagnosis in appointment.service.diagnosis | orderBy:'order'">
+                                            <td>
+                                                <select id="ddServiceDiagnosis" ng-change="changeDiagnosisOrder(diagnosis)" ng-model="diagnosis.order"
+                                                        ng-options="item as item for item in diagnosisOrder track by item">
+                                                    <option value="">Select Order</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <span>{{diagnosis.icD10Code}} - {{diagnosis.description}}</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div ng-show="appointment.service.diagnosis.length == 0">No data to display</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a ng-click="isCustomFieldCollapsed = !isCustomFieldCollapsed">
+                                    Custom fields
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="panel-collapse collapse" uib-collapse="isCustomFieldCollapsed">
+                            <div class="panel-body">
+                                <div ng-include src="customfieldUrl" onload="loadCFTempalte()" id="divCustomFieldTemplate"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/ng-template" id="validatepassword.html">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="input-group input-group-md">
+                            <span class="input-group-addon">
+                                <i class="fa fa-key" aria-hidden="true"></i>
+                            </span>
+                            <input type="password" class="form-control" id="InputKey" placeholder="Key" ng-model="smartkey">
+                        </div>
+                        <div class="form-group">
+                            <div ng-show="errorMessage">{{errorMessage}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-sm btn-success" type="button" ng-click="validateSign()">SIGN</button>
+                    <button class="btn btn-sm btn-default" type="button" ng-click="cancel()">CANCEL</button>
+                </div>
+            </script>
+            <script type="text/ng-template" id="custom_template.html">
+                <div class="ui-notification custom-template">
+                    <h3>{{notificationHeader}}<i class="glyphicon glyphicon-remove pull-right" style="cursor: pointer;font-size: large;margin-top: -5px"></i></h3>
+                    <div class="message">
+                        <ul>
+                            <li ng-repeat="validation in validations">{{validation.ErrorMessage}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </script>
+        </div>
+        <div class="pull-right offset3">
+            <button type="submit" id="btnSave" ng-disabled="csform.$invalid" model="savebutton" name="save" class="btn btn-sm btn-success" ng-click="save(21)">SAVE</button>
+            <button type="submit" id="btnSign" ng-disabled="csform.$invalid" model="signbutton" name="sign" class="btn btn-sm btn-success" ng-click="sign()">SIGN</button>
+        </div>
+    </fieldset>
+</form>

@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ScannedMedicalRecordId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ImageServerId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="GetImagesData" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="GetPageImageColumn" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStaffList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetStaffListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStaffListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientNameById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClientId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientNameByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClientNameByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDocumentScans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dsDocumentScans">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="ImageServerId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ScannedMedicalRecordId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateImages" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDocumentScansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateDocumentScansResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFilteredData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClientId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StaffId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="RecordType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="EffectiveFrom" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EffectiveTo" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ScannedFrom" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ScannedTo" nillable="true" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFilteredDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFilteredDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImageServerURL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ImageServerId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImageServerURLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetImageServerURLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getImageServers">
+        <s:complexType />
+      </s:element>
+      <s:element name="getImageServersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getImageServersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteScannedMedicalRecordId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ScannedMedicalRecordId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteScannedMedicalRecordIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteScannedMedicalRecords">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ScannedMedicalRecordId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ImageServerId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteImages" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteScannedMedicalRecordsResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllData" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStaffListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStaffList" />
+  </wsdl:message>
+  <wsdl:message name="GetStaffListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStaffListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClientNameByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClientNameById" />
+  </wsdl:message>
+  <wsdl:message name="GetClientNameByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClientNameByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDocumentScansSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDocumentScans" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDocumentScansSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDocumentScansResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFilteredDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFilteredData" />
+  </wsdl:message>
+  <wsdl:message name="GetFilteredDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFilteredDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetImageServerURLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetImageServerURL" />
+  </wsdl:message>
+  <wsdl:message name="GetImageServerURLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetImageServerURLResponse" />
+  </wsdl:message>
+  <wsdl:message name="getImageServersSoapIn">
+    <wsdl:part name="parameters" element="tns:getImageServers" />
+  </wsdl:message>
+  <wsdl:message name="getImageServersSoapOut">
+    <wsdl:part name="parameters" element="tns:getImageServersResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteScannedMedicalRecordIdSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteScannedMedicalRecordId" />
+  </wsdl:message>
+  <wsdl:message name="DeleteScannedMedicalRecordIdSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteScannedMedicalRecordIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteScannedMedicalRecordsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteScannedMedicalRecords" />
+  </wsdl:message>
+  <wsdl:message name="DeleteScannedMedicalRecordsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteScannedMedicalRecordsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ScannedMedicalRecordsSoap">
+    <wsdl:operation name="GetAllData">
+      <wsdl:input message="tns:GetAllDataSoapIn" />
+      <wsdl:output message="tns:GetAllDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStaffList">
+      <wsdl:input message="tns:GetStaffListSoapIn" />
+      <wsdl:output message="tns:GetStaffListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientNameById">
+      <wsdl:input message="tns:GetClientNameByIdSoapIn" />
+      <wsdl:output message="tns:GetClientNameByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocumentScans">
+      <wsdl:input message="tns:UpdateDocumentScansSoapIn" />
+      <wsdl:output message="tns:UpdateDocumentScansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilteredData">
+      <wsdl:input message="tns:GetFilteredDataSoapIn" />
+      <wsdl:output message="tns:GetFilteredDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImageServerURL">
+      <wsdl:input message="tns:GetImageServerURLSoapIn" />
+      <wsdl:output message="tns:GetImageServerURLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getImageServers">
+      <wsdl:input message="tns:getImageServersSoapIn" />
+      <wsdl:output message="tns:getImageServersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteScannedMedicalRecordId">
+      <wsdl:input message="tns:DeleteScannedMedicalRecordIdSoapIn" />
+      <wsdl:output message="tns:DeleteScannedMedicalRecordIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteScannedMedicalRecords">
+      <wsdl:input message="tns:DeleteScannedMedicalRecordsSoapIn" />
+      <wsdl:output message="tns:DeleteScannedMedicalRecordsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ScannedMedicalRecordsSoap" type="tns:ScannedMedicalRecordsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllData">
+      <soap:operation soapAction="http://tempuri.org/GetAllData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStaffList">
+      <soap:operation soapAction="http://tempuri.org/GetStaffList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientNameById">
+      <soap:operation soapAction="http://tempuri.org/GetClientNameById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocumentScans">
+      <soap:operation soapAction="http://tempuri.org/UpdateDocumentScans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilteredData">
+      <soap:operation soapAction="http://tempuri.org/GetFilteredData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageServerURL">
+      <soap:operation soapAction="http://tempuri.org/GetImageServerURL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getImageServers">
+      <soap:operation soapAction="http://tempuri.org/getImageServers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteScannedMedicalRecordId">
+      <soap:operation soapAction="http://tempuri.org/DeleteScannedMedicalRecordId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteScannedMedicalRecords">
+      <soap:operation soapAction="http://tempuri.org/DeleteScannedMedicalRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ScannedMedicalRecordsSoap12" type="tns:ScannedMedicalRecordsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllData">
+      <soap12:operation soapAction="http://tempuri.org/GetAllData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStaffList">
+      <soap12:operation soapAction="http://tempuri.org/GetStaffList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientNameById">
+      <soap12:operation soapAction="http://tempuri.org/GetClientNameById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocumentScans">
+      <soap12:operation soapAction="http://tempuri.org/UpdateDocumentScans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilteredData">
+      <soap12:operation soapAction="http://tempuri.org/GetFilteredData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageServerURL">
+      <soap12:operation soapAction="http://tempuri.org/GetImageServerURL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getImageServers">
+      <soap12:operation soapAction="http://tempuri.org/getImageServers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteScannedMedicalRecordId">
+      <soap12:operation soapAction="http://tempuri.org/DeleteScannedMedicalRecordId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteScannedMedicalRecords">
+      <soap12:operation soapAction="http://tempuri.org/DeleteScannedMedicalRecords" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ScannedMedicalRecords">
+    <wsdl:port name="ScannedMedicalRecordsSoap" binding="tns:ScannedMedicalRecordsSoap">
+      <soap:address location="http://localhost/PMWebServiceRiverwood/ScannedMedicalRecords.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ScannedMedicalRecordsSoap12" binding="tns:ScannedMedicalRecordsSoap12">
+      <soap12:address location="http://localhost/PMWebServiceRiverwood/ScannedMedicalRecords.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

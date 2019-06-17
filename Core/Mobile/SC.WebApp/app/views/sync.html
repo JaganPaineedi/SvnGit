@@ -1,0 +1,59 @@
+﻿<h3 style="color:red;">{{title}}</h3>
+<!--<div class="panel">
+    <div class="panel-body">
+        <table class="table" ng-show="objectstorenames">
+            <tbody ng-repeat="item in objectstorenames" id="syncData">
+                <tr>
+                    <td class="col-md-3">
+                        <input type="checkbox" checked="checked" name="name" id="{{item.objectstorename}}" primarykey="{{item.id}}" />
+                    </td>
+                    <td class="col-md-9">
+                        {{item.localName}}
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>-->
+<!--<uib-accordion close-others="oneAtATime">
+    <div uib-accordion-group class="panel-default" is-open="status.open" ng-repeat="item in objectstorenames">
+        <uib-accordion-heading>
+            <div class="checkbox" style="display:inline">
+                <input type="checkbox"  />
+            </div>
+            {{item.localName}} ({{item.id}}) <i ng-show="item.showDetails" class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+
+        </uib-accordion-heading>
+        <span ng-show="item.showDetails">This is just some content to illustrate fancy headings.</span>
+    </div>
+</uib-accordion>-->
+<div id="syncData">
+    <div ng-repeat="item in objectstorenames">
+        <div class="panel" ng-class="{'panel-danger': item.hasNotification, 'panel-default': !item.hasNotification}">
+            <div class="panel-heading" ng-click="isDetailCollapsed = !isDetailCollapsed">
+                <span>{{item.localName}} ({{item.id}})</span>
+                <!--<div class="checkbox" style="display:inline">
+                    <input type="checkbox" style="float:right;" objectStoreName="{{item.objectstorename}}" primaryKey="{{item.id}}" />
+                </div>-->
+            </div>
+            <div ng-show="item.showDetails" class="panel-collapse collapse in" uib-collapse="isDetailCollapsed">
+                <div class="panel-body" ng-repeat="(key, value) in item.details">
+                    <span ng-hide="key=='Redirect'">{{key}}: </span> <span ng-hide="key=='Redirect'">{{value}}</span>
+                    <a ng-show="key=='Redirect'" ng-if="key=='Redirect'" href="{{value}}">Open Service</a>
+                </div>  
+                <span class="label label-danger" ng-show="item.notification">Validation Errors</span>
+                <ul ng-repeat="notification in item.notification">
+                    <li>{{notification.ErrorMessage}}</li>
+                </ul>          
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pull-right offset3" ng-show="objectstorenames">
+    <button id="btnSync" name="syncbtn" ng-model="sync" class="btn btn-sm btn-success" ng-click="sync(item.objectstorename)">Sync</button>
+</div>
+
+<!--<div class="alert alert-info" role="alert" ng-show="!objectstorenames">No local changes exist!</div>-->
+<span class="label label-default" ng-show="!objectstorenames">No local changes exist!</span>

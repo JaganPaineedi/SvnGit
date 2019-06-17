@@ -1,0 +1,1 @@
+ALTER TABLE [dbo].[ClientMedicationScriptsPreview]  WITH CHECK ADD CHECK  (([ScriptEventType]='N' OR [ScriptEventType]='C' OR [ScriptEventType]='R' OR [ScriptEventType]='H' OR [ScriptEventType]='A'))

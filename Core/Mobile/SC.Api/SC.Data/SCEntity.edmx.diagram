@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="45901715b0ee4232b780c4da5f7485d9" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="SCMobileModel.GlobalCode" Width="3.625" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCMobileModel.Staff" Width="4" PointX="3.5" PointY="0.75" />
+        <AssociationConnector Association="SCMobileModel.Staff_Staff_FK2" />
+        <AssociationConnector Association="SCMobileModel.Staff_Staff_FK3" />
+        <AssociationConnector Association="SCMobileModel.Staff_Staff_FK4" />
+        <EntityTypeShape EntityType="SCMobileModel.SystemConfigurationKey" Width="3.625" PointX="5.625" PointY="0.75" />
+        <EntityTypeShape EntityType="SCMobileModel.MobileDashboards" Width="3.625" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SCMobileModel.Appointment" Width="3.625" PointX="8" PointY="15.75" />
+        <EntityTypeShape EntityType="SCMobileModel.Service" Width="3.625" PointX="5.75" PointY="27.125" />
+        <AssociationConnector Association="SCMobileModel.Services_Appointments_FK" />
+        <AssociationConnector Association="SCMobileModel.Staff_Appointments_FK" />
+        <AssociationConnector Association="SCMobileModel.Staff_Services_FK" />
+        <AssociationConnector Association="SCMobileModel.Staff_Services_FK2" />
+        <AssociationConnector Association="SCMobileModel.Staff_Services_FK3" />
+        <EntityTypeShape EntityType="SCMobileModel.Document" Width="3.625" PointX="10.625" PointY="14.375" />
+        <EntityTypeShape EntityType="SCMobileModel.DocumentVersion" Width="3.625" PointX="7.375" PointY="3.25" />
+        <AssociationConnector Association="SCMobileModel.Documents_DocumentVersions_FK" />
+        <AssociationConnector Association="SCMobileModel.DocumentVersions_Documents_FK" />
+        <AssociationConnector Association="SCMobileModel.DocumentVersions_Documents_FK2" />
+        <AssociationConnector Association="SCMobileModel.Services_Documents_FK" />
+        <AssociationConnector Association="SCMobileModel.Staff_Documents_FK" />
+        <AssociationConnector Association="SCMobileModel.Staff_Documents_FK2" />
+        <AssociationConnector Association="SCMobileModel.Staff_Documents_FK3" />
+        <AssociationConnector Association="SCMobileModel.Staff_DocumentVersions_FK" />
+        <EntityTypeShape EntityType="SCMobileModel.DocumentCode" Width="3.625" PointX="8.375" PointY="25.125" />
+        <AssociationConnector Association="SCMobileModel.DocumentCodes_Documents_FK" />
+        <EntityTypeShape EntityType="SCMobileModel.ServiceDiagnosi" Width="3.625" PointX="9.375" PointY="0.75" />
+        <AssociationConnector Association="SCMobileModel.Services_ServiceDiagnosis_FK" />
+        <EntityTypeShape EntityType="SCMobileModel.DiagnosisICD10Codes" Width="3.625" PointX="9.375" PointY="5.75" />
+        <AssociationConnector Association="SCMobileModel.Documents_GroupTemplates_FK" />
+        <EntityTypeShape EntityType="SCMobileModel.Screens" Width="3.625" PointX="10.625" PointY="27.875" />
+        <AssociationConnector Association="SCMobileModel.DocumentCodes_Screens_FK" />
+        <AssociationConnector Association="SCMobileModel.Screens_Staff_FK" />
+        <AssociationConnector Association="SCMobileModel.Screens_Staff_FK2" />
+        <EntityTypeShape EntityType="SCMobileModel.Programs" Width="3.625" PointX="6.125" PointY="45" />
+        <AssociationConnector Association="SCMobileModel.Programs_Appointments_FK" />
+        <AssociationConnector Association="SCMobileModel.Programs_Services_FK" />
+        <AssociationConnector Association="SCMobileModel.Programs_Staff_FK" />
+        <AssociationConnector Association="SCMobileModel.Staff_Programs_FK" />
+        <EntityTypeShape EntityType="SCMobileModel.DocumentPDFGenerationQueue" Width="3.625" PointX="9.625" PointY="10.875" />
+        <AssociationConnector Association="SCMobileModel.DocumentVersions_DocumentPDFGenerationQueue_FK" />
+        <EntityTypeShape EntityType="SCMobileModel.MobileBriefcase" Width="3.625" PointX="6.125" PointY="40.375" />
+        <AssociationConnector Association="SCMobileModel.Staff_MobileBriefcase_FK" />
+        <EntityTypeShape EntityType="SCMobileModel.ProcedureCodes" Width="3.625" PointX="3.5" PointY="32.625" />
+        <AssociationConnector Association="SCMobileModel.DocumentCodes_ProcedureCodes_FK" />
+        <AssociationConnector Association="SCMobileModel.ProcedureCodes_Services_FK" />
+        <EntityTypeShape EntityType="SCMobileModel.MobileOrigins" Width="3.625" PointX="13.375" PointY="13.75" />
+        <EntityTypeShape EntityType="SCMobileModel.ActiveDirectoryDomains" Width="3.625" PointX="10.875" PointY="48.375" />
+        <EntityTypeShape EntityType="SCMobileModel.ActiveDirectoryStaff" Width="3.625" PointX="13.125" PointY="19.25" />
+        <EntityTypeShape EntityType="SCMobileModel.SystemConfigurations" Width="3.625" PointX="15.375" PointY="0.75" />
+        <AssociationConnector Association="SCMobileModel.ActiveDirectoryDomains_ActiveDirectoryStaff_FK" />
+        <AssociationConnector Association="SCMobileModel.Staff_ActiveDirectoryStaff_FK" />
+        <AssociationConnector Association="SCMobileModel.DocumentCodes_ProcedureCodes_FK2" />
+        <EntityTypeShape EntityType="SCMobileModel.DocumentServiceNoteGoal" Width="3.625" PointX="9.625" PointY="43.5" />
+        <EntityTypeShape EntityType="SCMobileModel.DocumentServiceNoteObjective" Width="3.625" PointX="9.625" PointY="38.875" />
+        <AssociationConnector Association="SCMobileModel.DocumentVersions_DocumentServiceNoteGoals_FK" />
+        <AssociationConnector Association="SCMobileModel.DocumentVersions_DocumentServiceNoteObjectives_FK" />
+        <EntityTypeShape EntityType="SCMobileModel.Client" Width="3.625" PointX="6.125" PointY="56.25" />
+        <AssociationConnector Association="SCMobileModel.Clients_Appointments_FK" />
+        <AssociationConnector Association="SCMobileModel.Clients_Documents_FK" />
+        <AssociationConnector Association="SCMobileModel.Clients_Services_FK" />
+        <AssociationConnector Association="SCMobileModel.Clients_Staff_FK" />
+        <AssociationConnector Association="SCMobileModel.Staff_Clients_FK" />
+        <AssociationConnector Association="SCMobileModel.Staff_Clients_FK2" />
+        <AssociationConnector Association="SCMobileModel.Staff_Clients_FK3" />
+        <AssociationConnector Association="SCMobileModel.Staff_Clients_FK4" />
+        <AssociationConnector Association="SCMobileModel.Staff_Clients_FK5" />
+        <EntityTypeShape EntityType="SCMobileModel.Location" Width="3.625" PointX="0.75" PointY="17.375" />
+        <AssociationConnector Association="SCMobileModel.Locations_Appointments_FK" />
+        <AssociationConnector Association="SCMobileModel.Locations_Services_FK" />
+        <AssociationConnector Association="SCMobileModel.Locations_Staff_FK" />
+        <AssociationConnector Association="SCMobileModel.Staff_Clients_FK6" />
+        <EntityTypeShape EntityType="SCMobileModel.StaffClientAccess" Width="3.625" PointX="12.875" PointY="36.25" />
+        <AssociationConnector Association="SCMobileModel.Clients_StaffClientAccess_FK" />
+        <AssociationConnector Association="SCMobileModel.Screens_StaffClientAccess_FK" />
+        <AssociationConnector Association="SCMobileModel.Staff_StaffClientAccess_FK" />
+        <EntityTypeShape EntityType="SCMobileModel.MobileRefreshTokens" Width="3.625" PointX="6.375" PointY="9.75" />
+        <AssociationConnector Association="SCMobileModel.FK_ActiveDirectoryStaff_ActiveDirectoryStaff" />
+        <EntityTypeShape EntityType="SCMobileModel.MobileDevice" Width="3.625" PointX="6.125" PointY="83.625" />
+        <AssociationConnector Association="SCMobileModel.Staff_MobileDevices_FK" />
+        <EntityTypeShape EntityType="SCMobileModel.StaffPreferences" Width="3.625" PointX="6.125" PointY="88.75" />
+        <AssociationConnector Association="SCMobileModel.Staff_StaffPreferences_FK" />
+        <EntityTypeShape EntityType="SCMobileModel.KPIMaster" Width="3.625" PointX="11.375" PointY="0.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

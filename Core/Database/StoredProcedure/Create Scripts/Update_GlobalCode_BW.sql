@@ -1,0 +1,1 @@
+UPDATE GlobalCodes SET CodeName='Every 2 weeks' WHERE Category='COLLECTIONPAYMENTFRQ' AND  Code='BW'

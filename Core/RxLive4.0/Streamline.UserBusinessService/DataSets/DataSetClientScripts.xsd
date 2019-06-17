@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetClientScripts" targetNamespace="http://tempuri.org/DataSetClientScripts.xsd" xmlns:mstns="http://tempuri.org/DataSetClientScripts.xsd" xmlns="http://tempuri.org/DataSetClientScripts.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="4" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsPropertyName="RiverwoodScrubbed_Dev4_9ConnectionString" ConnectionStringObject="Data Source=STREAMLINE\STREAMLINE;Initial Catalog=RiverwoodScrubbed_Dev4.9;User ID=shc;Password=shc" IsAppSettingsProperty="false" Modifier="Assembly" Name="RiverwoodScrubbed_Dev4.9ConnectionString" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsPropertyName="RiverwoodScrubbed_Dev6_8ConnectionString" ConnectionStringObject="Data Source=STREAMLINE\STREAMLINE;Initial Catalog=RiverwoodScrubbed_Dev6.8;User ID=shc;Password=shc" IsAppSettingsProperty="false" Modifier="Assembly" Name="RiverwoodScrubbed_Dev6.8ConnectionString" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="RiverwoodScrubbed_QA6_9ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="RiverwoodScrubbed_QA6_9ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Streamline.UserBusinessServices.Properties.Settings.GlobalReference.Default.RiverwoodScrubbed_QA6_9ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MedicationDev8_56ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MedicationDev8_56ConnectionString (Settings)" PropertyReference="ApplicationSettings.Streamline.UserBusinessServices.Properties.Settings.GlobalReference.Default.MedicationDev8_56ConnectionString" Provider="System.Data.Odbc" />
+          <Connection ConnectionStringObject="Data Source=dev.smartcarenet.com;Initial Catalog=Cert35x;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="shs-server01.Cert35x.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetClientScripts" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DataSetClientScripts" msprop:Generator_UserDSName="DataSetClientScripts">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ClientMedicationScriptActivities" msprop:Generator_UserTableName="ClientMedicationScriptActivities" msprop:Generator_RowEvArgName="ClientMedicationScriptActivitiesRowChangeEvent" msprop:Generator_TableVarName="tableClientMedicationScriptActivities" msprop:Generator_TablePropName="ClientMedicationScriptActivities" msprop:Generator_RowDeletingName="ClientMedicationScriptActivitiesRowDeleting" msprop:Generator_RowChangingName="ClientMedicationScriptActivitiesRowChanging" msprop:Generator_RowDeletedName="ClientMedicationScriptActivitiesRowDeleted" msprop:Generator_RowEvHandlerName="ClientMedicationScriptActivitiesRowChangeEventHandler" msprop:Generator_TableClassName="ClientMedicationScriptActivitiesDataTable" msprop:Generator_RowChangedName="ClientMedicationScriptActivitiesRowChanged" msprop:Generator_RowClassName="ClientMedicationScriptActivitiesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ClientMedicationScriptActivityId" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnClientMedicationScriptActivityId" msprop:Generator_ColumnPropNameInRow="ClientMedicationScriptActivityId" msprop:Generator_ColumnPropNameInTable="ClientMedicationScriptActivityIdColumn" msprop:Generator_UserColumnName="ClientMedicationScriptActivityId" type="xs:int" />
+              <xs:element name="ClientMedicationScriptId" msprop:Generator_ColumnVarNameInTable="columnClientMedicationScriptId" msprop:Generator_ColumnPropNameInRow="ClientMedicationScriptId" msprop:Generator_ColumnPropNameInTable="ClientMedicationScriptIdColumn" msprop:Generator_UserColumnName="ClientMedicationScriptId" type="xs:int" />
+              <xs:element name="Method" msprop:Generator_ColumnVarNameInTable="columnMethod" msprop:Generator_ColumnPropNameInRow="Method" msprop:Generator_ColumnPropNameInTable="MethodColumn" msprop:Generator_UserColumnName="Method" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IncludeChartCopy" msprop:Generator_ColumnVarNameInTable="columnIncludeChartCopy" msprop:Generator_ColumnPropNameInRow="IncludeChartCopy" msprop:Generator_ColumnPropNameInTable="IncludeChartCopyColumn" msprop:Generator_UserColumnName="IncludeChartCopy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PharmacyId" msprop:Generator_ColumnVarNameInTable="columnPharmacyId" msprop:Generator_ColumnPropNameInRow="PharmacyId" msprop:Generator_ColumnPropNameInTable="PharmacyIdColumn" msprop:Generator_UserColumnName="PharmacyId" type="xs:int" minOccurs="0" />
+              <xs:element name="Reason" msprop:Generator_ColumnVarNameInTable="columnReason" msprop:Generator_ColumnPropNameInRow="Reason" msprop:Generator_ColumnPropNameInTable="ReasonColumn" msprop:Generator_UserColumnName="Reason" type="xs:int" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:int" minOccurs="0" />
+              <xs:element name="StatusDescription" msprop:Generator_ColumnVarNameInTable="columnStatusDescription" msprop:Generator_ColumnPropNameInRow="StatusDescription" msprop:Generator_ColumnPropNameInTable="StatusDescriptionColumn" msprop:Generator_UserColumnName="StatusDescription" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FaxImageData" msprop:Generator_ColumnVarNameInTable="columnFaxImageData" msprop:Generator_ColumnPropNameInRow="FaxImageData" msprop:Generator_ColumnPropNameInTable="FaxImageDataColumn" msprop:Generator_UserColumnName="FaxImageData" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="FaxStatusDate" msprop:Generator_ColumnVarNameInTable="columnFaxStatusDate" msprop:Generator_ColumnPropNameInRow="FaxStatusDate" msprop:Generator_ColumnPropNameInTable="FaxStatusDateColumn" msprop:Generator_UserColumnName="FaxStatusDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FaxExternalIdentifier" msprop:Generator_ColumnVarNameInTable="columnFaxExternalIdentifier" msprop:Generator_ColumnPropNameInRow="FaxExternalIdentifier" msprop:Generator_ColumnPropNameInTable="FaxExternalIdentifierColumn" msprop:Generator_UserColumnName="FaxExternalIdentifier" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FaxDetailedHistory" msprop:Generator_ColumnVarNameInTable="columnFaxDetailedHistory" msprop:Generator_ColumnPropNameInRow="FaxDetailedHistory" msprop:Generator_ColumnPropNameInTable="FaxDetailedHistoryColumn" msprop:Generator_UserColumnName="FaxDetailedHistory" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PrescriberReviewDateTime" msprop:Generator_ColumnVarNameInTable="columnPrescriberReviewDateTime" msprop:Generator_ColumnPropNameInRow="PrescriberReviewDateTime" msprop:Generator_ColumnPropNameInTable="PrescriberReviewDateTimeColumn" msprop:Generator_UserColumnName="PrescriberReviewDateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RowIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnRowIdentifier" msprop:Generator_ColumnPropNameInRow="RowIdentifier" msprop:Generator_ColumnPropNameInTable="RowIdentifierColumn" msprop:Generator_UserColumnName="RowIdentifier" type="xs:string" />
+              <xs:element name="CreatedBy" msprop:Generator_ColumnVarNameInTable="columnCreatedBy" msprop:Generator_ColumnPropNameInRow="CreatedBy" msprop:Generator_ColumnPropNameInTable="CreatedByColumn" msprop:Generator_UserColumnName="CreatedBy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreatedDate" msprop:Generator_ColumnVarNameInTable="columnCreatedDate" msprop:Generator_ColumnPropNameInRow="CreatedDate" msprop:Generator_ColumnPropNameInTable="CreatedDateColumn" msprop:Generator_UserColumnName="CreatedDate" type="xs:dateTime" />
+              <xs:element name="ModifiedBy" msprop:Generator_ColumnVarNameInTable="columnModifiedBy" msprop:Generator_ColumnPropNameInRow="ModifiedBy" msprop:Generator_ColumnPropNameInTable="ModifiedByColumn" msprop:Generator_UserColumnName="ModifiedBy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ModifiedDate" msprop:Generator_ColumnVarNameInTable="columnModifiedDate" msprop:Generator_ColumnPropNameInRow="ModifiedDate" msprop:Generator_ColumnPropNameInTable="ModifiedDateColumn" msprop:Generator_UserColumnName="ModifiedDate" type="xs:dateTime" />
+              <xs:element name="RecordDeleted" msprop:Generator_ColumnVarNameInTable="columnRecordDeleted" msprop:Generator_ColumnPropNameInRow="RecordDeleted" msprop:Generator_ColumnPropNameInTable="RecordDeletedColumn" msprop:Generator_UserColumnName="RecordDeleted" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeletedDate" msprop:Generator_ColumnVarNameInTable="columnDeletedDate" msprop:Generator_ColumnPropNameInRow="DeletedDate" msprop:Generator_ColumnPropNameInTable="DeletedDateColumn" msprop:Generator_UserColumnName="DeletedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DeletedBy" msprop:Generator_ColumnVarNameInTable="columnDeletedBy" msprop:Generator_ColumnPropNameInRow="DeletedBy" msprop:Generator_ColumnPropNameInTable="DeletedByColumn" msprop:Generator_UserColumnName="DeletedBy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PrescriberOrderNumber" msprop:Generator_ColumnVarNameInTable="columnPrescriberOrderNumber" msprop:Generator_ColumnPropNameInRow="PrescriberOrderNumber" msprop:Generator_ColumnPropNameInTable="PrescriberOrderNumberColumn" msprop:Generator_UserColumnName="PrescriberOrderNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SureScriptsOutgoingMessageId" msprop:Generator_ColumnVarNameInTable="columnSureScriptsOutgoingMessageId" msprop:Generator_ColumnPropNameInRow="SureScriptsOutgoingMessageId" msprop:Generator_ColumnPropNameInTable="SureScriptsOutgoingMessageIdColumn" msprop:Generator_UserColumnName="SureScriptsOutgoingMessageId" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SureScriptsOutgoingMessages" msprop:Generator_UserTableName="SureScriptsOutgoingMessages" msprop:Generator_RowEvArgName="SureScriptsOutgoingMessagesRowChangeEvent" msprop:Generator_TableVarName="tableSureScriptsOutgoingMessages" msprop:Generator_TablePropName="SureScriptsOutgoingMessages" msprop:Generator_RowDeletingName="SureScriptsOutgoingMessagesRowDeleting" msprop:Generator_RowChangingName="SureScriptsOutgoingMessagesRowChanging" msprop:Generator_RowDeletedName="SureScriptsOutgoingMessagesRowDeleted" msprop:Generator_RowEvHandlerName="SureScriptsOutgoingMessagesRowChangeEventHandler" msprop:Generator_TableClassName="SureScriptsOutgoingMessagesDataTable" msprop:Generator_RowChangedName="SureScriptsOutgoingMessagesRowChanged" msprop:Generator_RowClassName="SureScriptsOutgoingMessagesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SureScriptsOutgoingMessageId" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSureScriptsOutgoingMessageId" msprop:Generator_ColumnPropNameInRow="SureScriptsOutgoingMessageId" msprop:Generator_ColumnPropNameInTable="SureScriptsOutgoingMessageIdColumn" msprop:Generator_UserColumnName="SureScriptsOutgoingMessageId" type="xs:int" />
+              <xs:element name="SureScriptsMessageId" msprop:Generator_ColumnVarNameInTable="columnSureScriptsMessageId" msprop:Generator_ColumnPropNameInRow="SureScriptsMessageId" msprop:Generator_ColumnPropNameInTable="SureScriptsMessageIdColumn" msprop:Generator_UserColumnName="SureScriptsMessageId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MessageType" msprop:Generator_ColumnVarNameInTable="columnMessageType" msprop:Generator_ColumnPropNameInRow="MessageType" msprop:Generator_ColumnPropNameInTable="MessageTypeColumn" msprop:Generator_UserColumnName="MessageType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SentDateTime" msprop:Generator_ColumnVarNameInTable="columnSentDateTime" msprop:Generator_ColumnPropNameInRow="SentDateTime" msprop:Generator_ColumnPropNameInTable="SentDateTimeColumn" msprop:Generator_UserColumnName="SentDateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="MessageText" msprop:Generator_ColumnVarNameInTable="columnMessageText" msprop:Generator_ColumnPropNameInRow="MessageText" msprop:Generator_ColumnPropNameInTable="MessageTextColumn" msprop:Generator_UserColumnName="MessageText" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MessageStatus" msprop:Generator_ColumnVarNameInTable="columnMessageStatus" msprop:Generator_ColumnPropNameInRow="MessageStatus" msprop:Generator_ColumnPropNameInTable="MessageStatusColumn" msprop:Generator_UserColumnName="MessageStatus" type="xs:int" minOccurs="0" />
+              <xs:element name="ResponseDateTime" msprop:Generator_ColumnVarNameInTable="columnResponseDateTime" msprop:Generator_ColumnPropNameInRow="ResponseDateTime" msprop:Generator_ColumnPropNameInTable="ResponseDateTimeColumn" msprop:Generator_UserColumnName="ResponseDateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ResponseMessageText" msprop:Generator_ColumnVarNameInTable="columnResponseMessageText" msprop:Generator_ColumnPropNameInRow="ResponseMessageText" msprop:Generator_ColumnPropNameInTable="ResponseMessageTextColumn" msprop:Generator_UserColumnName="ResponseMessageText" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ClientMedicationScriptId" msprop:Generator_ColumnVarNameInTable="columnClientMedicationScriptId" msprop:Generator_ColumnPropNameInRow="ClientMedicationScriptId" msprop:Generator_ColumnPropNameInTable="ClientMedicationScriptIdColumn" msprop:Generator_UserColumnName="ClientMedicationScriptId" type="xs:int" minOccurs="0" />
+              <xs:element name="RowIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnRowIdentifier" msprop:Generator_ColumnPropNameInRow="RowIdentifier" msprop:Generator_ColumnPropNameInTable="RowIdentifierColumn" msprop:Generator_UserColumnName="RowIdentifier" type="xs:string" />
+              <xs:element name="CreatedBy" msprop:Generator_ColumnVarNameInTable="columnCreatedBy" msprop:Generator_ColumnPropNameInRow="CreatedBy" msprop:Generator_ColumnPropNameInTable="CreatedByColumn" msprop:Generator_UserColumnName="CreatedBy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreatedDate" msprop:Generator_ColumnVarNameInTable="columnCreatedDate" msprop:Generator_ColumnPropNameInRow="CreatedDate" msprop:Generator_ColumnPropNameInTable="CreatedDateColumn" msprop:Generator_UserColumnName="CreatedDate" type="xs:dateTime" />
+              <xs:element name="ModifiedBy" msprop:Generator_ColumnVarNameInTable="columnModifiedBy" msprop:Generator_ColumnPropNameInRow="ModifiedBy" msprop:Generator_ColumnPropNameInTable="ModifiedByColumn" msprop:Generator_UserColumnName="ModifiedBy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ModifiedDate" msprop:Generator_ColumnVarNameInTable="columnModifiedDate" msprop:Generator_ColumnPropNameInRow="ModifiedDate" msprop:Generator_ColumnPropNameInTable="ModifiedDateColumn" msprop:Generator_UserColumnName="ModifiedDate" type="xs:dateTime" />
+              <xs:element name="RecordDeleted" msprop:Generator_ColumnVarNameInTable="columnRecordDeleted" msprop:Generator_ColumnPropNameInRow="RecordDeleted" msprop:Generator_ColumnPropNameInTable="RecordDeletedColumn" msprop:Generator_UserColumnName="RecordDeleted" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeletedDate" msprop:Generator_ColumnVarNameInTable="columnDeletedDate" msprop:Generator_ColumnPropNameInRow="DeletedDate" msprop:Generator_ColumnPropNameInTable="DeletedDateColumn" msprop:Generator_UserColumnName="DeletedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DeletedBy" msprop:Generator_ColumnVarNameInTable="columnDeletedBy" msprop:Generator_ColumnPropNameInRow="DeletedBy" msprop:Generator_ColumnPropNameInTable="DeletedByColumn" msprop:Generator_UserColumnName="DeletedBy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ClientMedicationScriptActivitiesPending" msprop:Generator_UserTableName="ClientMedicationScriptActivitiesPending" msprop:Generator_RowEvArgName="ClientMedicationScriptActivitiesPendingRowChangeEvent" msprop:Generator_TableVarName="tableClientMedicationScriptActivitiesPending" msprop:Generator_TablePropName="ClientMedicationScriptActivitiesPending" msprop:Generator_RowDeletingName="ClientMedicationScriptActivitiesPendingRowDeleting" msprop:Generator_RowChangingName="ClientMedicationScriptActivitiesPendingRowChanging" msprop:Generator_RowDeletedName="ClientMedicationScriptActivitiesPendingRowDeleted" msprop:Generator_RowEvHandlerName="ClientMedicationScriptActivitiesPendingRowChangeEventHandler" msprop:Generator_TableClassName="ClientMedicationScriptActivitiesPendingDataTable" msprop:Generator_RowChangedName="ClientMedicationScriptActivitiesPendingRowChanged" msprop:Generator_RowClassName="ClientMedicationScriptActivitiesPendingRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ClientMedicationScriptActivityId" msprop:Generator_ColumnVarNameInTable="columnClientMedicationScriptActivityId" msprop:Generator_ColumnPropNameInRow="ClientMedicationScriptActivityId" msprop:Generator_ColumnPropNameInTable="ClientMedicationScriptActivityIdColumn" msprop:Generator_UserColumnName="ClientMedicationScriptActivityId" type="xs:int" />
+              <xs:element name="RowIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnRowIdentifier" msprop:Generator_ColumnPropNameInRow="RowIdentifier" msprop:Generator_ColumnPropNameInTable="RowIdentifierColumn" msprop:Generator_UserColumnName="RowIdentifier" type="xs:string" />
+              <xs:element name="CreatedBy" msprop:Generator_ColumnVarNameInTable="columnCreatedBy" msprop:Generator_ColumnPropNameInRow="CreatedBy" msprop:Generator_ColumnPropNameInTable="CreatedByColumn" msprop:Generator_UserColumnName="CreatedBy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreatedDate" msprop:Generator_ColumnVarNameInTable="columnCreatedDate" msprop:Generator_ColumnPropNameInRow="CreatedDate" msprop:Generator_ColumnPropNameInTable="CreatedDateColumn" msprop:Generator_UserColumnName="CreatedDate" type="xs:dateTime" />
+              <xs:element name="ModifiedBy" msprop:Generator_ColumnVarNameInTable="columnModifiedBy" msprop:Generator_ColumnPropNameInRow="ModifiedBy" msprop:Generator_ColumnPropNameInTable="ModifiedByColumn" msprop:Generator_UserColumnName="ModifiedBy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ModifiedDate" msprop:Generator_ColumnVarNameInTable="columnModifiedDate" msprop:Generator_ColumnPropNameInRow="ModifiedDate" msprop:Generator_ColumnPropNameInTable="ModifiedDateColumn" msprop:Generator_UserColumnName="ModifiedDate" type="xs:dateTime" />
+              <xs:element name="RecordDeleted" msprop:Generator_ColumnVarNameInTable="columnRecordDeleted" msprop:Generator_ColumnPropNameInRow="RecordDeleted" msprop:Generator_ColumnPropNameInTable="RecordDeletedColumn" msprop:Generator_UserColumnName="RecordDeleted" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeletedDate" msprop:Generator_ColumnVarNameInTable="columnDeletedDate" msprop:Generator_ColumnPropNameInRow="DeletedDate" msprop:Generator_ColumnPropNameInTable="DeletedDateColumn" msprop:Generator_UserColumnName="DeletedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DeletedBy" msprop:Generator_ColumnVarNameInTable="columnDeletedBy" msprop:Generator_ColumnPropNameInRow="DeletedBy" msprop:Generator_ColumnPropNameInTable="DeletedByColumn" msprop:Generator_UserColumnName="DeletedBy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ClientMedicationScriptActivities" />
+      <xs:field xpath="mstns:ClientMedicationScriptActivityId" />
+    </xs:unique>
+    <xs:unique name="SureScriptsOutgoingMessages_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SureScriptsOutgoingMessages" />
+      <xs:field xpath="mstns:SureScriptsOutgoingMessageId" />
+    </xs:unique>
+    <xs:unique name="ClientMedicationScriptActivitiesPending_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ClientMedicationScriptActivitiesPending" />
+      <xs:field xpath="mstns:ClientMedicationScriptActivityId" />
+    </xs:unique>
+    <xs:keyref name="ClientMedicationScriptActivities_ClientMedicationScriptActivitiesPending_FK" refer="Constraint1" msprop:rel_Generator_UserChildTable="ClientMedicationScriptActivitiesPending" msprop:rel_Generator_ChildPropName="GetClientMedicationScriptActivitiesPendingRows" msprop:rel_Generator_UserRelationName="ClientMedicationScriptActivities_ClientMedicationScriptActivitiesPending_FK" msprop:rel_Generator_ParentPropName="ClientMedicationScriptActivitiesRow" msprop:rel_Generator_RelationVarName="relationClientMedicationScriptActivities_ClientMedicationScriptActivitiesPending_FK" msprop:rel_Generator_UserParentTable="ClientMedicationScriptActivities">
+      <xs:selector xpath=".//mstns:ClientMedicationScriptActivitiesPending" />
+      <xs:field xpath="mstns:ClientMedicationScriptActivityId" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

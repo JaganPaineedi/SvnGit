@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloChandan">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloChandanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloChandanResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClientId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClientInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientSearchInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="param1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="param2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProviderId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientSearchInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClientSearchInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExternalClientInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExternalClientId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExternalClientInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExternalClientInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateClientExternalViewAudit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SearchId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExternalClientId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModifiedDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateClientExternalViewAuditResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloChandanSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloChandan" />
+  </wsdl:message>
+  <wsdl:message name="HelloChandanSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloChandanResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClientInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClientInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetClientInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClientInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClientSearchInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClientSearchInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetClientSearchInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClientSearchInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExternalClientInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExternalClientInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetExternalClientInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExternalClientInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClientExternalViewAuditSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateClientExternalViewAudit" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClientExternalViewAuditSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateClientExternalViewAuditResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ExternalWebServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloChandan">
+      <wsdl:input message="tns:HelloChandanSoapIn" />
+      <wsdl:output message="tns:HelloChandanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientInfo">
+      <wsdl:input message="tns:GetClientInfoSoapIn" />
+      <wsdl:output message="tns:GetClientInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientSearchInfo">
+      <wsdl:input message="tns:GetClientSearchInfoSoapIn" />
+      <wsdl:output message="tns:GetClientSearchInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalClientInfo">
+      <wsdl:input message="tns:GetExternalClientInfoSoapIn" />
+      <wsdl:output message="tns:GetExternalClientInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClientExternalViewAudit">
+      <wsdl:input message="tns:UpdateClientExternalViewAuditSoapIn" />
+      <wsdl:output message="tns:UpdateClientExternalViewAuditSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExternalWebServiceSoap" type="tns:ExternalWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloChandan">
+      <soap:operation soapAction="http://tempuri.org/HelloChandan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientInfo">
+      <soap:operation soapAction="http://tempuri.org/GetClientInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientSearchInfo">
+      <soap:operation soapAction="http://tempuri.org/GetClientSearchInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalClientInfo">
+      <soap:operation soapAction="http://tempuri.org/GetExternalClientInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClientExternalViewAudit">
+      <soap:operation soapAction="http://tempuri.org/UpdateClientExternalViewAudit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExternalWebServiceSoap12" type="tns:ExternalWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloChandan">
+      <soap12:operation soapAction="http://tempuri.org/HelloChandan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetClientInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientSearchInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetClientSearchInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalClientInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetExternalClientInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClientExternalViewAudit">
+      <soap12:operation soapAction="http://tempuri.org/UpdateClientExternalViewAudit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExternalWebService">
+    <wsdl:port name="ExternalWebServiceSoap" binding="tns:ExternalWebServiceSoap">
+      <soap:address location="http://localhost/ExterWebService/ExternalWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ExternalWebServiceSoap12" binding="tns:ExternalWebServiceSoap12">
+      <soap12:address location="http://localhost/ExterWebService/ExternalWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,22 @@
+		EXEC dbo.ssp_RecodesCategoryCreateUpdate @CATEGORYCODE = 'CQMInterventionCarePlans', -- varchar(100)
+		    @CategoryName = 'CQMInterventionCarePlans', -- varchar(100)
+		    @Description = '', -- varchar(max)
+		    @MappingEntity = 'DocumentCodes.DocumentCodeId', -- varchar(100)
+		    @RecodeType = NULL, -- type_GlobalCode
+		    @RangeType = NULL -- type_GlobalCode
+
+		EXEC dbo.ssp_RecodesCreateEntry @RECODECATEGORYCODE = 'CQMInterventionCarePlans', -- varchar(100)
+		    @IntegerCodeId = 1620, -- int
+		    @CharacterCodeId = null, -- varchar(100)
+		    @CodeName = 'Care Plan', -- varchar(100)
+		    @FromDate = '2017-01-01', -- datetime
+		    @ToDate = null, -- datetime
+		    @IntegerRangeValueStart = null, -- int
+		    @IntegerRangeValueEnd = null, -- int
+		    @DecimalRangeValueStart = NULL, -- decimal
+		    @DecimalRangeValueEnd = NULL, -- decimal
+		    @CharacterRangeValueStart = null, -- varchar(255)
+		    @CharacterRangeValueEnd = null, -- varchar(255)
+		    @UseForNonMatchedEntry = null, -- char(1)
+		    @TranslationValue1 = null, -- varchar(255)
+		    @TranslationValue2 = null -- varchar(255)
