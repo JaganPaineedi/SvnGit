@@ -1,0 +1,24 @@
+**This is not a script of any kind**
+This is a guide to import DSMCodes from Excel.
+Inserting into table: DiagnosisDSMDescriptionCategories
+Fields imported: DiagnosisCategory, DSMCode, DSMNumber
+Current excel files are located at SVN/Sandbox/Team/NDNW/DSMCodes/Scripts/DiagnosisListImport
+
+
+EXEC csp_DSMCodeTransfer
+
+Open DSMCodeTransfer1 SSIS package
+In left pane select "Connection Managers"
+Adjust Connection String for DestinationConnectionOLEDB (pertaining to the customer/environment)
+Adjust Connection STring for SourceConnectionExcel (source of excel file[Diagnosis List - 6-11-14.xlsx])
+Execute
+
+Open DSMCodeTransfer2 SSIS package
+In left pane select "Connection Managers"
+Adjust Connection String for DestinationConnectionOLEDB (pertaining to the customer/environment)
+Adjust Connection STring for SourceConnectionExcel (source of excel file[Diagnosis List with V.xlsx])
+Execute
+
+EXEC csp_DSMCodeTransferInsertDrop
+
+

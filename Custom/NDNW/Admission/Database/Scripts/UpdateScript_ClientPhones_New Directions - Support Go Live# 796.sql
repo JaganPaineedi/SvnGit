@@ -1,0 +1,1 @@
+Update ClientPhones Set RecordDeleted = 'Y',DeletedBy = CreatedBy,DeletedDate = GetDate() Where CreatedBy <> 'AZURE\ndnwiis' AND ClientId IN (268,1067,1863,2780,3351,3721,4429,4660,5068,5359,5708,6120,6449,6739,6783) AND IsNull(RecordDeleted, 'N') = 'N' AND PhoneType = 30

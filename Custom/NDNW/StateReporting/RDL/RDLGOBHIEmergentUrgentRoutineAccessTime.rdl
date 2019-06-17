@@ -1,0 +1,978 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+	<AutoRefresh>0</AutoRefresh>
+	<DataSources>
+		<DataSource Name="Streamline">
+			<DataSourceReference>Streamline</DataSourceReference>
+			<rd:SecurityType>None</rd:SecurityType>
+			<rd:DataSourceID>d3d4113b-64a9-40c4-a765-cea94202c62d</rd:DataSourceID>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="Staff">
+			<Query>
+				<DataSourceName>Streamline</DataSourceName>
+				<CommandText>select	cast('&lt; All Staff &gt;' as varchar(100)) [StaffName]
+	  , cast(null as int) [StaffId]
+union all
+select	case when s.StaffId is null then 'Staff Name Not Available'
+			 else isnull(s.LastName, '') + case	when s.LastName is null then ''
+												else ', '
+										   end + isnull(s.FirstName, '')
+		end [StaffName]
+	  , s.StaffId [StaffId]
+from	dbo.Staff s
+where	isnull(s.RecordDeleted, 'N') = 'N'
+order by 1
+	  , 2;</CommandText>
+			</Query>
+			<Fields>
+				<Field Name="StaffName">
+					<DataField>StaffName</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="StaffId">
+					<DataField>StaffId</DataField>
+					<rd:TypeName>System.Int32</rd:TypeName>
+				</Field>
+			</Fields>
+		</DataSet>
+		<DataSet Name="Requests">
+			<Query>
+				<DataSourceName>Streamline</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@ExecutedByStaffId">
+						<Value>=Parameters!ExecutedByStaffId.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@StartDate">
+						<Value>=Parameters!StartDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@EndDate">
+						<Value>=Parameters!EndDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@AgeGroup">
+						<Value>=Parameters!AgeGroup.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@ServiceLevel">
+						<Value>=Parameters!ServiceLevel.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@StaffId">
+						<Value>=Parameters!StaffId.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+				<CommandType>StoredProcedure</CommandType>
+				<CommandText>csp_RDLGOBHIEmergentUrgentRoutineAccessTime</CommandText>
+			</Query>
+			<Fields>
+				<Field Name="ClientName">
+					<DataField>ClientName</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="ClientId">
+					<DataField>ClientId</DataField>
+					<rd:TypeName>System.Int32</rd:TypeName>
+				</Field>
+				<Field Name="Age">
+					<DataField>Age</DataField>
+					<rd:TypeName>System.Int32</rd:TypeName>
+				</Field>
+				<Field Name="AgeGroup">
+					<DataField>AgeGroup</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="RequestedDate">
+					<DataField>RequestedDate</DataField>
+					<rd:TypeName>System.DateTime</rd:TypeName>
+				</Field>
+				<Field Name="AppointmentDate">
+					<DataField>AppointmentDate</DataField>
+					<rd:TypeName>System.DateTime</rd:TypeName>
+				</Field>
+				<Field Name="AppointmentOfferedDate">
+					<DataField>AppointmentOfferedDate</DataField>
+					<rd:TypeName>System.DateTime</rd:TypeName>
+				</Field>
+				<Field Name="ServiceLevel">
+					<DataField>ServiceLevel</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="OfferedWithinLimit">
+					<DataField>OfferedWithinLimit</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="ReceivedWithinLimit">
+					<DataField>ReceivedWithinLimit</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="Period">
+					<DataField>Period</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="Staff">
+					<DataField>Staff</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="StaffId">
+					<DataField>StaffId</DataField>
+					<rd:TypeName>System.Int32</rd:TypeName>
+				</Field>
+			</Fields>
+		</DataSet>
+	</DataSets>
+	<ReportSections>
+		<ReportSection>
+			<Body>
+				<ReportItems>
+					<Tablix Name="Tablix1">
+						<TablixBody>
+							<TablixColumns>
+								<TablixColumn>
+									<Width>2.27361in</Width>
+								</TablixColumn>
+								<TablixColumn>
+									<Width>1in</Width>
+								</TablixColumn>
+								<TablixColumn>
+									<Width>1.64167in</Width>
+								</TablixColumn>
+								<TablixColumn>
+									<Width>1.25in</Width>
+								</TablixColumn>
+								<TablixColumn>
+									<Width>1.25in</Width>
+								</TablixColumn>
+								<TablixColumn>
+									<Width>1.63333in</Width>
+								</TablixColumn>
+							</TablixColumns>
+							<TablixRows>
+								<TablixRow>
+									<Height>1.025in</Height>
+									<TablixCells>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="Textbox1">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>Client Name</Value>
+																	<Style>
+																		<FontWeight>Bold</FontWeight>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>Textbox1</rd:DefaultName>
+													<Style>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>Silver</BackgroundColor>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="Textbox3">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>Client ID</Value>
+																	<Style>
+																		<FontWeight>Bold</FontWeight>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>Textbox3</rd:DefaultName>
+													<Style>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>Silver</BackgroundColor>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="Textbox10">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>Requested Date</Value>
+																	<Style>
+																		<FontWeight>Bold</FontWeight>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>Textbox10</rd:DefaultName>
+													<Style>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>Silver</BackgroundColor>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="Textbox2">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=iif(Parameters!ServiceLevel.Value = "Emergent", "Appointment Offered Within "+(First(Fields!Period.Value, "Requests")) +" (Y/N)",
+iif(Parameters!ServiceLevel.Value = "Urgent", "Appointment Offered Within "+(First(Fields!Period.Value, "Requests")) +" (Y/N)",
+iif(Parameters!ServiceLevel.Value = "Routine", "Appointment Offered Within "+(First(Fields!Period.Value, "Requests")) +" (Y/N)",
+"Appointment Offered Within Designated Limit (Y/N)")))</Value>
+																	<Style>
+																		<FontWeight>Bold</FontWeight>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>Textbox2</rd:DefaultName>
+													<Style>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>Silver</BackgroundColor>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="Textbox5">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=iif(Parameters!ServiceLevel.Value = "Emergent", "Appointment Received Within " + (First(Fields!Period.Value, "Requests")) + " (Y/N)", 
+iif(Parameters!ServiceLevel.Value = "Urgent", "Appointment Received Within " + (First(Fields!Period.Value, "Requests")) + " (Y/N)", 
+iif(Parameters!ServiceLevel.Value = "Routine", "Appointment Received Within " + (First(Fields!Period.Value, "Requests")) + " (Y/N)", 
+"Appointment Received Within Designated Limit (Y/N)")))</Value>
+																	<Style>
+																		<FontWeight>Bold</FontWeight>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>Textbox2</rd:DefaultName>
+													<Style>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>Silver</BackgroundColor>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="Textbox18">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>Staff</Value>
+																	<Style>
+																		<FontWeight>Bold</FontWeight>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>Textbox18</rd:DefaultName>
+													<Style>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>Silver</BackgroundColor>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+									</TablixCells>
+								</TablixRow>
+								<TablixRow>
+									<Height>0.25in</Height>
+									<TablixCells>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="ClientName">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!ClientName.Value</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Left</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>ClientName</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>LightGrey</Color>
+															<Style>Solid</Style>
+														</Border>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="ClientId">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!ClientId.Value</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>ClientId</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>LightGrey</Color>
+															<Style>Solid</Style>
+														</Border>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="RequestedDate">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!RequestedDate.Value</Value>
+																	<Style>
+																		<Format>g</Format>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>RequestedDate</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>LightGrey</Color>
+															<Style>Solid</Style>
+														</Border>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="OfferedWithinLimit">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!OfferedWithinLimit.Value</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>OfferedWithinLimit</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>LightGrey</Color>
+															<Style>Solid</Style>
+														</Border>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="ReceivedWithinLimit">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!ReceivedWithinLimit.Value</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>ReceivedWithinLimit</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>LightGrey</Color>
+															<Style>Solid</Style>
+														</Border>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="Staff">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!Staff.Value</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Left</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>Staff</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>LightGrey</Color>
+															<Style>Solid</Style>
+														</Border>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+									</TablixCells>
+								</TablixRow>
+							</TablixRows>
+						</TablixBody>
+						<TablixColumnHierarchy>
+							<TablixMembers>
+								<TablixMember />
+								<TablixMember />
+								<TablixMember />
+								<TablixMember />
+								<TablixMember />
+								<TablixMember />
+							</TablixMembers>
+						</TablixColumnHierarchy>
+						<TablixRowHierarchy>
+							<TablixMembers>
+								<TablixMember />
+								<TablixMember>
+									<Group Name="Details" />
+								</TablixMember>
+							</TablixMembers>
+						</TablixRowHierarchy>
+						<DataSetName>Requests</DataSetName>
+						<Height>1.275in</Height>
+						<Width>9.04861in</Width>
+						<Style>
+							<Border>
+								<Style>None</Style>
+							</Border>
+						</Style>
+					</Tablix>
+				</ReportItems>
+				<Height>2in</Height>
+				<Style />
+			</Body>
+			<Width>9.04861in</Width>
+			<Page>
+				<PageHeader>
+					<Height>1.14667in</Height>
+					<PrintOnFirstPage>true</PrintOnFirstPage>
+					<PrintOnLastPage>true</PrintOnLastPage>
+					<ReportItems>
+						<Textbox Name="Textbox7">
+							<CanGrow>true</CanGrow>
+							<KeepTogether>true</KeepTogether>
+							<Paragraphs>
+								<Paragraph>
+									<TextRuns>
+										<TextRun>
+											<Value>=iif(Not IsNothing(Parameters!ServiceLevel.Value), "GOBHI "+Parameters!ServiceLevel.Value+" Access Time", "GOBHI All Service Levels Access Time")</Value>
+											<Style>
+												<FontSize>16pt</FontSize>
+												<FontWeight>Bold</FontWeight>
+												<FontFamily>Segoe UI</FontFamily>
+											</Style>
+										</TextRun>
+									</TextRuns>
+									<Style>
+										<TextAlign>Center</TextAlign>
+									</Style>
+								</Paragraph>
+							</Paragraphs>
+							<rd:DefaultName>Textbox7</rd:DefaultName>
+							<Left>1.27118in</Left>
+							<Height>0.41667in</Height>
+							<Width>6.50626in</Width>
+							<Style>
+								<Border>
+									<Style>None</Style>
+								</Border>
+								<VerticalAlign>Middle</VerticalAlign>
+								<PaddingLeft>2pt</PaddingLeft>
+								<PaddingRight>2pt</PaddingRight>
+								<PaddingTop>2pt</PaddingTop>
+								<PaddingBottom>2pt</PaddingBottom>
+							</Style>
+						</Textbox>
+						<Textbox Name="Textbox22">
+							<CanGrow>true</CanGrow>
+							<KeepTogether>true</KeepTogether>
+							<Paragraphs>
+								<Paragraph>
+									<TextRuns>
+										<TextRun>
+											<Value>=iif(Parameters!ServiceLevel.Value = "Emergent", "Emergent Services", iif(Parameters!ServiceLevel.Value = "Urgent", "Urgent Services", iif(Parameters!ServiceLevel.Value = "Routine", "Routine Services", "All Service Levels")))</Value>
+											<Style>
+												<FontFamily>Segoe UI</FontFamily>
+											</Style>
+										</TextRun>
+									</TextRuns>
+									<Style>
+										<TextAlign>Left</TextAlign>
+									</Style>
+								</Paragraph>
+							</Paragraphs>
+							<rd:DefaultName>Textbox22</rd:DefaultName>
+							<Top>0.77167in</Top>
+							<Left>0.105in</Left>
+							<Height>0.25in</Height>
+							<Width>4.51861in</Width>
+							<ZIndex>1</ZIndex>
+							<Style>
+								<Border>
+									<Style>None</Style>
+								</Border>
+								<VerticalAlign>Middle</VerticalAlign>
+								<PaddingLeft>5pt</PaddingLeft>
+								<PaddingRight>5pt</PaddingRight>
+								<PaddingTop>2pt</PaddingTop>
+								<PaddingBottom>2pt</PaddingBottom>
+							</Style>
+						</Textbox>
+						<Textbox Name="Textbox37">
+							<CanGrow>true</CanGrow>
+							<KeepTogether>true</KeepTogether>
+							<Paragraphs>
+								<Paragraph>
+									<TextRuns>
+										<TextRun>
+											<Value>Pct of Appt Received within Lmt:</Value>
+											<Style>
+												<FontFamily>Segoe UI</FontFamily>
+											</Style>
+										</TextRun>
+									</TextRuns>
+									<Style>
+										<TextAlign>Right</TextAlign>
+									</Style>
+								</Paragraph>
+							</Paragraphs>
+							<rd:DefaultName>Textbox37</rd:DefaultName>
+							<Top>0.77167in</Top>
+							<Left>4.705in</Left>
+							<Height>0.25in</Height>
+							<Width>2.15833in</Width>
+							<ZIndex>2</ZIndex>
+							<Style>
+								<Border>
+									<Style>None</Style>
+								</Border>
+								<VerticalAlign>Middle</VerticalAlign>
+								<PaddingLeft>2pt</PaddingLeft>
+								<PaddingRight>2pt</PaddingRight>
+								<PaddingTop>2pt</PaddingTop>
+								<PaddingBottom>2pt</PaddingBottom>
+							</Style>
+						</Textbox>
+						<Textbox Name="Textbox23">
+							<CanGrow>true</CanGrow>
+							<KeepTogether>true</KeepTogether>
+							<Paragraphs>
+								<Paragraph>
+									<TextRuns>
+										<TextRun>
+											<Value>=iif(Parameters!AgeGroup.Value = "Child", "Age Group: Child (0-17)", iif(Parameters!AgeGroup.Value = "Adult", "Age Group: Adult (18+)", "Age Group: All Ages"))</Value>
+											<Style>
+												<FontFamily>Segoe UI</FontFamily>
+											</Style>
+										</TextRun>
+									</TextRuns>
+									<Style>
+										<TextAlign>Left</TextAlign>
+									</Style>
+								</Paragraph>
+							</Paragraphs>
+							<rd:DefaultName>Textbox22</rd:DefaultName>
+							<Top>0.48611in</Top>
+							<Left>0.105in</Left>
+							<Height>0.25in</Height>
+							<Width>4.51861in</Width>
+							<ZIndex>3</ZIndex>
+							<Style>
+								<Border>
+									<Style>None</Style>
+								</Border>
+								<VerticalAlign>Middle</VerticalAlign>
+								<PaddingLeft>5pt</PaddingLeft>
+								<PaddingRight>5pt</PaddingRight>
+								<PaddingTop>2pt</PaddingTop>
+								<PaddingBottom>2pt</PaddingBottom>
+							</Style>
+						</Textbox>
+						<Textbox Name="Textbox38">
+							<CanGrow>true</CanGrow>
+							<KeepTogether>true</KeepTogether>
+							<Paragraphs>
+								<Paragraph>
+									<TextRuns>
+										<TextRun>
+											<Value>Pct of Appt Offered within Lmt:</Value>
+											<Style>
+												<FontFamily>Segoe UI</FontFamily>
+											</Style>
+										</TextRun>
+									</TextRuns>
+									<Style>
+										<TextAlign>Right</TextAlign>
+									</Style>
+								</Paragraph>
+							</Paragraphs>
+							<rd:DefaultName>Textbox37</rd:DefaultName>
+							<Top>0.48611in</Top>
+							<Left>4.705in</Left>
+							<Height>0.25in</Height>
+							<Width>2.15833in</Width>
+							<ZIndex>4</ZIndex>
+							<Style>
+								<Border>
+									<Style>None</Style>
+								</Border>
+								<VerticalAlign>Middle</VerticalAlign>
+								<PaddingLeft>2pt</PaddingLeft>
+								<PaddingRight>2pt</PaddingRight>
+								<PaddingTop>2pt</PaddingTop>
+								<PaddingBottom>2pt</PaddingBottom>
+							</Style>
+						</Textbox>
+						<Textbox Name="Textbox39">
+							<CanGrow>true</CanGrow>
+							<KeepTogether>true</KeepTogether>
+							<Paragraphs>
+								<Paragraph>
+									<TextRuns>
+										<TextRun>
+											<Value>=sum(iif(Fields!OfferedWithinLimit.Value = "Y", 1, 0), "Requests")/sum(iif(Fields!OfferedWithinLimit.Value &lt;&gt; "X", 1, 0), "Requests")</Value>
+											<Style>
+												<Format>0.0%</Format>
+												<FontFamily>Segoe UI</FontFamily>
+											</Style>
+										</TextRun>
+									</TextRuns>
+									<Style>
+										<TextAlign>Center</TextAlign>
+									</Style>
+								</Paragraph>
+							</Paragraphs>
+							<rd:DefaultName>Textbox36</rd:DefaultName>
+							<Top>0.48611in</Top>
+							<Left>6.975in</Left>
+							<Height>0.25in</Height>
+							<Width>1.23333in</Width>
+							<ZIndex>5</ZIndex>
+							<Style>
+								<Border>
+									<Style>None</Style>
+								</Border>
+								<BottomBorder>
+									<Style>Solid</Style>
+								</BottomBorder>
+								<VerticalAlign>Middle</VerticalAlign>
+								<PaddingLeft>5pt</PaddingLeft>
+								<PaddingRight>5pt</PaddingRight>
+								<PaddingTop>2pt</PaddingTop>
+								<PaddingBottom>2pt</PaddingBottom>
+							</Style>
+						</Textbox>
+						<Textbox Name="Textbox40">
+							<CanGrow>true</CanGrow>
+							<KeepTogether>true</KeepTogether>
+							<Paragraphs>
+								<Paragraph>
+									<TextRuns>
+										<TextRun>
+											<Value>=Sum(iif(Fields!ReceivedWithinLimit.Value = "Y", 1, 0), "Requests") / Sum(iif(Fields!ReceivedWithinLimit.Value &lt;&gt; "X", 1, 0), "Requests")</Value>
+											<Style>
+												<Format>0.0%</Format>
+												<FontFamily>Segoe UI</FontFamily>
+											</Style>
+										</TextRun>
+									</TextRuns>
+									<Style>
+										<TextAlign>Center</TextAlign>
+									</Style>
+								</Paragraph>
+							</Paragraphs>
+							<rd:DefaultName>Textbox36</rd:DefaultName>
+							<Top>0.77778in</Top>
+							<Left>6.975in</Left>
+							<Height>0.25in</Height>
+							<Width>1.23333in</Width>
+							<ZIndex>6</ZIndex>
+							<Style>
+								<Border>
+									<Style>None</Style>
+								</Border>
+								<BottomBorder>
+									<Style>Solid</Style>
+								</BottomBorder>
+								<VerticalAlign>Middle</VerticalAlign>
+								<PaddingLeft>5pt</PaddingLeft>
+								<PaddingRight>5pt</PaddingRight>
+								<PaddingTop>2pt</PaddingTop>
+								<PaddingBottom>2pt</PaddingBottom>
+							</Style>
+						</Textbox>
+					</ReportItems>
+					<Style>
+						<Border>
+							<Style>None</Style>
+						</Border>
+					</Style>
+				</PageHeader>
+				<LeftMargin>1in</LeftMargin>
+				<RightMargin>1in</RightMargin>
+				<TopMargin>1in</TopMargin>
+				<BottomMargin>1in</BottomMargin>
+				<Style />
+			</Page>
+		</ReportSection>
+	</ReportSections>
+	<ReportParameters>
+		<ReportParameter Name="ExecutedByStaffId">
+			<DataType>Integer</DataType>
+			<Prompt>Executed By Staff Id</Prompt>
+			<Hidden>true</Hidden>
+		</ReportParameter>
+		<ReportParameter Name="StartDate">
+			<DataType>DateTime</DataType>
+			<Prompt>Start Date</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="EndDate">
+			<DataType>DateTime</DataType>
+			<Prompt>End Date</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="AgeGroup">
+			<DataType>String</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>Age Group</Prompt>
+			<ValidValues>
+				<ParameterValues>
+					<ParameterValue>
+						<Label>&lt; All Ages &gt;</Label>
+					</ParameterValue>
+					<ParameterValue>
+						<Value>Adult</Value>
+						<Label>Adult</Label>
+					</ParameterValue>
+					<ParameterValue>
+						<Value>Child</Value>
+						<Label>Child</Label>
+					</ParameterValue>
+				</ParameterValues>
+			</ValidValues>
+		</ReportParameter>
+		<ReportParameter Name="ServiceLevel">
+			<DataType>String</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>Service Level</Prompt>
+			<ValidValues>
+				<ParameterValues>
+					<ParameterValue>
+						<Label>&lt; All Service Levels &gt;</Label>
+					</ParameterValue>
+					<ParameterValue>
+						<Value>Emergent</Value>
+						<Label>Emergent</Label>
+					</ParameterValue>
+					<ParameterValue>
+						<Value>Urgent</Value>
+						<Label>Urgent</Label>
+					</ParameterValue>
+					<ParameterValue>
+						<Value>Routine</Value>
+						<Label>Routine</Label>
+					</ParameterValue>
+				</ParameterValues>
+			</ValidValues>
+		</ReportParameter>
+		<ReportParameter Name="StaffId">
+			<DataType>Integer</DataType>
+			<Nullable>true</Nullable>
+			<DefaultValue>
+				<Values>
+					<Value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+				</Values>
+			</DefaultValue>
+			<Prompt>Staff Id</Prompt>
+			<ValidValues>
+				<DataSetReference>
+					<DataSetName>Staff</DataSetName>
+					<ValueField>StaffId</ValueField>
+					<LabelField>StaffName</LabelField>
+				</DataSetReference>
+			</ValidValues>
+		</ReportParameter>
+	</ReportParameters>
+	<rd:ReportUnitType>Inch</rd:ReportUnitType>
+	<rd:ReportID>e920018d-668d-4eca-a2b6-893166e19dca</rd:ReportID>
+</Report>

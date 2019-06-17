@@ -1,0 +1,929 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+	<AutoRefresh>0</AutoRefresh>
+	<DataSources>
+		<DataSource Name="Streamline">
+			<DataSourceReference>Streamline</DataSourceReference>
+			<rd:SecurityType>None</rd:SecurityType>
+			<rd:DataSourceID>d3d4113b-64a9-40c4-a765-cea94202c62d</rd:DataSourceID>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="CrisisCallResponse">
+			<Query>
+				<DataSourceName>Streamline</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@ExecutedByStaffId">
+						<Value>=Parameters!ExecutedByStaffId.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@StartDate">
+						<Value>=Parameters!StartDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@EndDate">
+						<Value>=Parameters!EndDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@AgeGroup">
+						<Value>=Parameters!AgeGroup.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@StaffId">
+						<Value>=Parameters!StaffId.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+				<CommandType>StoredProcedure</CommandType>
+				<CommandText>csp_RDLGOBHICrisisCallResponseTime</CommandText>
+			</Query>
+			<Fields>
+				<Field Name="ClientName">
+					<DataField>ClientName</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="ClientId">
+					<DataField>ClientId</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="Age">
+					<DataField>Age</DataField>
+					<rd:TypeName>System.Int32</rd:TypeName>
+				</Field>
+				<Field Name="AgeGroup">
+					<DataField>AgeGroup</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="DateOfService">
+					<DataField>DateOfService</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="InitialCallTime">
+					<DataField>InitialCallTime</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="ConsumerAvailableForScreen">
+					<DataField>ConsumerAvailableForScreen</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="ResponseTime_Min_">
+					<DataField>ResponseTime(Min)</DataField>
+					<rd:TypeName>System.Int32</rd:TypeName>
+				</Field>
+				<Field Name="Staff">
+					<DataField>Staff</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="StaffId">
+					<DataField>StaffId</DataField>
+					<rd:TypeName>System.Int32</rd:TypeName>
+				</Field>
+			</Fields>
+		</DataSet>
+		<DataSet Name="Staff">
+			<Query>
+				<DataSourceName>Streamline</DataSourceName>
+				<CommandText>select	cast('&lt; All Staff &gt;' as varchar(100)) [StaffName]
+	  , cast(null as int) [StaffId]
+union all
+select	case when s.StaffId is null then 'Staff Name Not Available'
+			 else isnull(s.LastName, '') + case	when s.LastName is null then ''
+												else ', '
+										   end + isnull(s.FirstName, '')
+		end [StaffName]
+	  , s.StaffId [StaffId]
+from	dbo.Staff s
+where	isnull(s.RecordDeleted, 'N') = 'N'
+order by 1
+	  , 2;</CommandText>
+			</Query>
+			<Fields>
+				<Field Name="StaffName">
+					<DataField>StaffName</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="StaffId">
+					<DataField>StaffId</DataField>
+					<rd:TypeName>System.Int32</rd:TypeName>
+				</Field>
+			</Fields>
+		</DataSet>
+	</DataSets>
+	<ReportSections>
+		<ReportSection>
+			<Body>
+				<ReportItems>
+					<Tablix Name="Tablix1">
+						<TablixBody>
+							<TablixColumns>
+								<TablixColumn>
+									<Width>1.64167in</Width>
+								</TablixColumn>
+								<TablixColumn>
+									<Width>1in</Width>
+								</TablixColumn>
+								<TablixColumn>
+									<Width>1.35in</Width>
+								</TablixColumn>
+								<TablixColumn>
+									<Width>1.25833in</Width>
+								</TablixColumn>
+								<TablixColumn>
+									<Width>1.475in</Width>
+								</TablixColumn>
+								<TablixColumn>
+									<Width>1.23333in</Width>
+								</TablixColumn>
+								<TablixColumn>
+									<Width>1.63333in</Width>
+								</TablixColumn>
+							</TablixColumns>
+							<TablixRows>
+								<TablixRow>
+									<Height>0.51667in</Height>
+									<TablixCells>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="Textbox1">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>Client Name</Value>
+																	<Style>
+																		<FontWeight>Bold</FontWeight>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>Textbox1</rd:DefaultName>
+													<Style>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>Silver</BackgroundColor>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="Textbox3">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>Client ID</Value>
+																	<Style>
+																		<FontWeight>Bold</FontWeight>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>Textbox3</rd:DefaultName>
+													<Style>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>Silver</BackgroundColor>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="Textbox12">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>Date Of Service</Value>
+																	<Style>
+																		<FontWeight>Bold</FontWeight>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>Textbox12</rd:DefaultName>
+													<Style>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>Silver</BackgroundColor>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="Textbox10">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>Initial Call Time</Value>
+																	<Style>
+																		<FontWeight>Bold</FontWeight>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>Textbox10</rd:DefaultName>
+													<Style>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>Silver</BackgroundColor>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="Textbox16">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>Consumer Available</Value>
+																	<Style>
+																		<FontWeight>Bold</FontWeight>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>For Screen</Value>
+																	<Style>
+																		<FontWeight>Bold</FontWeight>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>Textbox16</rd:DefaultName>
+													<Style>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>Silver</BackgroundColor>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="Textbox20">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>Response Time </Value>
+																	<Style>
+																		<FontWeight>Bold</FontWeight>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>(Minutes)</Value>
+																	<Style>
+																		<FontWeight>Bold</FontWeight>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>Textbox20</rd:DefaultName>
+													<Style>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>Silver</BackgroundColor>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="Textbox18">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>Staff</Value>
+																	<Style>
+																		<FontWeight>Bold</FontWeight>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>Textbox18</rd:DefaultName>
+													<Style>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>Silver</BackgroundColor>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+									</TablixCells>
+								</TablixRow>
+								<TablixRow>
+									<Height>0.25in</Height>
+									<TablixCells>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="ClientName">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!ClientName.Value</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Left</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>ClientName</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>LightGrey</Color>
+															<Style>Solid</Style>
+														</Border>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="ClientId">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!ClientId.Value</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>ClientId</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>LightGrey</Color>
+															<Style>Solid</Style>
+														</Border>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="DateOfService">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!DateOfService.Value</Value>
+																	<Style>
+																		<Format>d</Format>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>DateOfService</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>LightGrey</Color>
+															<Style>Solid</Style>
+														</Border>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="InitialCallTime">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!InitialCallTime.Value</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>InitialCallTime</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>LightGrey</Color>
+															<Style>Solid</Style>
+														</Border>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="ConsumerAvailableForScreen">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!ConsumerAvailableForScreen.Value</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>ConsumerAvailableForScreen</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>LightGrey</Color>
+															<Style>Solid</Style>
+														</Border>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="ResponseTime_Min_">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!ResponseTime_Min_.Value</Value>
+																	<Style>
+																		<Format>0</Format>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Center</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>ResponseTime_Min_</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>LightGrey</Color>
+															<Style>Solid</Style>
+														</Border>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="Staff">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!Staff.Value</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style>
+																<TextAlign>Left</TextAlign>
+															</Style>
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>Staff</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>LightGrey</Color>
+															<Style>Solid</Style>
+														</Border>
+														<VerticalAlign>Middle</VerticalAlign>
+														<PaddingLeft>5pt</PaddingLeft>
+														<PaddingRight>5pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+									</TablixCells>
+								</TablixRow>
+							</TablixRows>
+						</TablixBody>
+						<TablixColumnHierarchy>
+							<TablixMembers>
+								<TablixMember />
+								<TablixMember />
+								<TablixMember />
+								<TablixMember />
+								<TablixMember />
+								<TablixMember />
+								<TablixMember />
+							</TablixMembers>
+						</TablixColumnHierarchy>
+						<TablixRowHierarchy>
+							<TablixMembers>
+								<TablixMember />
+								<TablixMember>
+									<Group Name="Details" />
+								</TablixMember>
+							</TablixMembers>
+						</TablixRowHierarchy>
+						<DataSetName>CrisisCallResponse</DataSetName>
+						<Height>0.76667in</Height>
+						<Width>9.59166in</Width>
+						<Style>
+							<Border>
+								<Style>None</Style>
+							</Border>
+						</Style>
+					</Tablix>
+				</ReportItems>
+				<Height>2in</Height>
+				<Style />
+			</Body>
+			<Width>9.64167in</Width>
+			<Page>
+				<PageHeader>
+					<Height>1.14667in</Height>
+					<PrintOnFirstPage>true</PrintOnFirstPage>
+					<PrintOnLastPage>true</PrintOnLastPage>
+					<ReportItems>
+						<Textbox Name="Textbox7">
+							<CanGrow>true</CanGrow>
+							<KeepTogether>true</KeepTogether>
+							<Paragraphs>
+								<Paragraph>
+									<TextRuns>
+										<TextRun>
+											<Value>GOBHI Crisis Response Time</Value>
+											<Style>
+												<FontSize>16pt</FontSize>
+												<FontWeight>Bold</FontWeight>
+												<FontFamily>Segoe UI</FontFamily>
+											</Style>
+										</TextRun>
+									</TextRuns>
+									<Style>
+										<TextAlign>Center</TextAlign>
+									</Style>
+								</Paragraph>
+							</Paragraphs>
+							<rd:DefaultName>Textbox7</rd:DefaultName>
+							<Top>0.29167in</Top>
+							<Left>3.1125in</Left>
+							<Height>0.41667in</Height>
+							<Width>3.41667in</Width>
+							<Style>
+								<Border>
+									<Style>None</Style>
+								</Border>
+								<VerticalAlign>Middle</VerticalAlign>
+								<PaddingLeft>2pt</PaddingLeft>
+								<PaddingRight>2pt</PaddingRight>
+								<PaddingTop>2pt</PaddingTop>
+								<PaddingBottom>2pt</PaddingBottom>
+							</Style>
+						</Textbox>
+						<Textbox Name="Textbox22">
+							<CanGrow>true</CanGrow>
+							<KeepTogether>true</KeepTogether>
+							<Paragraphs>
+								<Paragraph>
+									<TextRuns>
+										<TextRun>
+											<Value>=iif(Parameters!AgeGroup.Value = "Child", "Age Group: Child (0-17)", iif(Parameters!AgeGroup.Value = "Adult", "Age Group: Adult (18+)", "Age Group: All Ages"))</Value>
+											<Style>
+												<FontFamily>Segoe UI</FontFamily>
+											</Style>
+										</TextRun>
+									</TextRuns>
+									<Style>
+										<TextAlign>Left</TextAlign>
+									</Style>
+								</Paragraph>
+							</Paragraphs>
+							<rd:DefaultName>Textbox22</rd:DefaultName>
+							<Top>0.77167in</Top>
+							<Left>0.105in</Left>
+							<Height>0.25in</Height>
+							<Width>4.51861in</Width>
+							<ZIndex>1</ZIndex>
+							<Style>
+								<Border>
+									<Style>None</Style>
+								</Border>
+								<VerticalAlign>Middle</VerticalAlign>
+								<PaddingLeft>5pt</PaddingLeft>
+								<PaddingRight>5pt</PaddingRight>
+								<PaddingTop>2pt</PaddingTop>
+								<PaddingBottom>2pt</PaddingBottom>
+							</Style>
+						</Textbox>
+						<Textbox Name="Textbox36">
+							<CanGrow>true</CanGrow>
+							<KeepTogether>true</KeepTogether>
+							<Paragraphs>
+								<Paragraph>
+									<TextRuns>
+										<TextRun>
+											<Value>=Avg(Fields!ResponseTime_Min_.Value, "CrisisCallResponse")</Value>
+											<Style>
+												<Format>0.0</Format>
+												<FontFamily>Segoe UI</FontFamily>
+											</Style>
+										</TextRun>
+									</TextRuns>
+									<Style>
+										<TextAlign>Center</TextAlign>
+									</Style>
+								</Paragraph>
+							</Paragraphs>
+							<rd:DefaultName>Textbox36</rd:DefaultName>
+							<Top>0.77167in</Top>
+							<Left>6.725in</Left>
+							<Height>0.25in</Height>
+							<Width>1.23333in</Width>
+							<ZIndex>2</ZIndex>
+							<Style>
+								<Border>
+									<Style>None</Style>
+								</Border>
+								<BottomBorder>
+									<Style>Solid</Style>
+								</BottomBorder>
+								<VerticalAlign>Middle</VerticalAlign>
+								<PaddingLeft>5pt</PaddingLeft>
+								<PaddingRight>5pt</PaddingRight>
+								<PaddingTop>2pt</PaddingTop>
+								<PaddingBottom>2pt</PaddingBottom>
+							</Style>
+						</Textbox>
+						<Textbox Name="Textbox37">
+							<CanGrow>true</CanGrow>
+							<KeepTogether>true</KeepTogether>
+							<Paragraphs>
+								<Paragraph>
+									<TextRuns>
+										<TextRun>
+											<Value>Avg Response Time (Min):</Value>
+											<Style>
+												<FontFamily>Segoe UI</FontFamily>
+											</Style>
+										</TextRun>
+									</TextRuns>
+									<Style>
+										<TextAlign>Right</TextAlign>
+									</Style>
+								</Paragraph>
+							</Paragraphs>
+							<rd:DefaultName>Textbox37</rd:DefaultName>
+							<Top>0.77167in</Top>
+							<Left>4.705in</Left>
+							<Height>0.25in</Height>
+							<Width>1.90833in</Width>
+							<ZIndex>3</ZIndex>
+							<Style>
+								<Border>
+									<Style>None</Style>
+								</Border>
+								<VerticalAlign>Middle</VerticalAlign>
+								<PaddingLeft>2pt</PaddingLeft>
+								<PaddingRight>5pt</PaddingRight>
+								<PaddingTop>2pt</PaddingTop>
+								<PaddingBottom>2pt</PaddingBottom>
+							</Style>
+						</Textbox>
+					</ReportItems>
+					<Style>
+						<Border>
+							<Style>None</Style>
+						</Border>
+					</Style>
+				</PageHeader>
+				<LeftMargin>1in</LeftMargin>
+				<RightMargin>1in</RightMargin>
+				<TopMargin>1in</TopMargin>
+				<BottomMargin>1in</BottomMargin>
+				<Style />
+			</Page>
+		</ReportSection>
+	</ReportSections>
+	<ReportParameters>
+		<ReportParameter Name="ExecutedByStaffId">
+			<DataType>Integer</DataType>
+			<Prompt>Executed By Staff Id</Prompt>
+			<Hidden>true</Hidden>
+		</ReportParameter>
+		<ReportParameter Name="StartDate">
+			<DataType>DateTime</DataType>
+			<Prompt>Start Date</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="EndDate">
+			<DataType>DateTime</DataType>
+			<Prompt>End Date</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="AgeGroup">
+			<DataType>String</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>Age Group</Prompt>
+			<ValidValues>
+				<ParameterValues>
+					<ParameterValue>
+						<Label>&lt; All Ages &gt;</Label>
+					</ParameterValue>
+					<ParameterValue>
+						<Value>Adult</Value>
+						<Label>Adult</Label>
+					</ParameterValue>
+					<ParameterValue>
+						<Value>Child</Value>
+						<Label>Child</Label>
+					</ParameterValue>
+				</ParameterValues>
+			</ValidValues>
+		</ReportParameter>
+		<ReportParameter Name="StaffId">
+			<DataType>Integer</DataType>
+			<Nullable>true</Nullable>
+			<DefaultValue>
+				<Values>
+					<Value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+				</Values>
+			</DefaultValue>
+			<Prompt>Staff Id</Prompt>
+			<ValidValues>
+				<DataSetReference>
+					<DataSetName>Staff</DataSetName>
+					<ValueField>StaffId</ValueField>
+					<LabelField>StaffName</LabelField>
+				</DataSetReference>
+			</ValidValues>
+		</ReportParameter>
+	</ReportParameters>
+	<rd:ReportUnitType>Inch</rd:ReportUnitType>
+	<rd:ReportID>e920018d-668d-4eca-a2b6-893166e19dca</rd:ReportID>
+</Report>

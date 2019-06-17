@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="Streamline">
+      <DataSourceReference>Streamline</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>34a96ea1-3b1b-4c9e-a35a-2f2a386684d5</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="csp_RDLEligibilityUpdateClientCoverage">
+      <Query>
+        <DataSourceName>Streamline</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RequestId">
+            <Value>=Parameters!RequestId.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@BatchId">
+            <Value>=Parameters!QueueForUpdateBatchId.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ExecutedByStaffId">
+            <Value>=Parameters!ExecutedByStaffId.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>csp_RDLEligibilityUpdateClientCoverage</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="UserMessage">
+          <DataField>UserMessage</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Programs">
+      <SharedDataSet>
+        <SharedDataSetReference>Programs</SharedDataSetReference>
+      </SharedDataSet>
+      <Fields>
+        <Field Name="ProgramId">
+          <DataField>ProgramId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ProgramCode">
+          <DataField>ProgramCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ProgramType">
+      <SharedDataSet>
+        <SharedDataSetReference>ProgramType</SharedDataSetReference>
+      </SharedDataSet>
+      <Fields>
+        <Field Name="ProgramType">
+          <DataField>ProgramType</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CodeName">
+          <DataField>CodeName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Subreport Name="Subreport1">
+            <ReportName>RDLBatchEligibilityChangeReview</ReportName>
+            <Parameters>
+              <Parameter Name="BatchId">
+                <Value>=Parameters!BatchId.Value</Value>
+              </Parameter>
+              <Parameter Name="ExecutedByStaffId">
+                <Value>=Parameters!ExecutedByStaffId.Value</Value>
+              </Parameter>
+              <Parameter Name="ClientsWithChanges">
+                <Value>=Parameters!ClientsWithChanges.Value</Value>
+              </Parameter>
+              <Parameter Name="Programs">
+                <Value>=Parameters!Programs.Value</Value>
+              </Parameter>
+              <Parameter Name="ProgramTypes">
+                <Value>=Parameters!ProgramTypes.Value</Value>
+              </Parameter>
+              <Parameter Name="EnrolledOrPrimary">
+                <Value>=Parameters!EnrolledOrPrimary.Value</Value>
+              </Parameter>
+              <Parameter Name="ClientsWithInvalidData">
+                <Value>=Parameters!ClientsWithInvalidData.Value</Value>
+              </Parameter>
+            </Parameters>
+            <Top>0.01389in</Top>
+            <Height>3in</Height>
+            <Width>6.68625in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Subreport>
+        </ReportItems>
+        <Height>3.01389in</Height>
+        <Style />
+      </Body>
+      <Width>6.68625in</Width>
+      <Page>
+        <PageHeader>
+          <Height>0.5382in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox1">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=First(Fields!UserMessage.Value, "csp_RDLEligibilityUpdateClientCoverage")</Value>
+                      <Style>
+                        <FontSize>16pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>NOTE:</Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value> To change filter parameters, please close and reopen the report.</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>0.01389in</Top>
+              <Height>0.52431in</Height>
+              <Width>6.68625in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="BatchId">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>BatchId</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="RequestId">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Request Id</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="ExecutedByStaffId">
+      <DataType>Integer</DataType>
+      <Prompt>Executed By Staff Id</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="QueueForUpdateBatchId">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>QueueForUpdateBatchId</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="ClientsWithChanges">
+      <DataType>String</DataType>
+      <Prompt>Clients With Changes</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>Y</Value>
+            <Label>Clients with Changes</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>N</Value>
+            <Label>Clients without Changes</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>A</Value>
+            <Label>All Clients</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Programs">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Programs</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Programs</DataSetName>
+          <ValueField>ProgramId</ValueField>
+          <LabelField>ProgramCode</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="ProgramTypes">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Program Types</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ProgramType</DataSetName>
+          <ValueField>ProgramType</ValueField>
+          <LabelField>CodeName</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="EnrolledOrPrimary">
+      <DataType>String</DataType>
+      <Prompt>Enrolled Or Primary</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>E</Value>
+            <Label>Clients Currently Enrolled in Program(s)</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>P</Value>
+            <Label>Clients with Program(s) as their Primary Program</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="ClientsWithInvalidData">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Clients With Invalid Data</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Label>Show All Clients</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>S</Value>
+            <Label>Show only clients with Invalid Data</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>E</Value>
+            <Label>Exclude Clients with Invalid Data</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>5b42ce34-9b63-4d51-8623-663c25bcaa6e</rd:ReportID>
+</Report>

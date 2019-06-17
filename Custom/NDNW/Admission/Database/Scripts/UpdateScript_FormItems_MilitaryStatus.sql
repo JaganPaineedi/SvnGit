@@ -1,0 +1,4 @@
+IF EXISTS (SELECT 1 FROM Formitems WHERE FormItemId = 3250)
+BEGIN
+UPDATE Formitems SET ItemWidth=150 WHERE FormItemId = 3250
+END

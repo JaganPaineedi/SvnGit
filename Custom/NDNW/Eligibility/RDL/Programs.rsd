@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <Description />
+  <DataSet Name="Programs">
+    <Query>
+      <DataSourceReference>Streamline</DataSourceReference>
+      <CommandText>
+	SELECT	p.ProgramId ,
+			p.ProgramCode
+	FROM	dbo.Programs p
+	WHERE	ISNULL(p.RecordDeleted, 'N') &lt;&gt; 'Y'
+	ORDER BY p.ProgramCode;
+</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="ProgramId">
+        <DataField>ProgramId</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ProgramCode">
+        <DataField>ProgramCode</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <Description />
+  <DataSet Name="ProgramType">
+    <Query>
+      <DataSourceReference>Streamline</DataSourceReference>
+      <CommandText>
+	SELECT DISTINCT
+			p.ProgramType
+			,gc.CodeName
+	FROM	dbo.Programs p
+			JOIN dbo.GlobalCodes gc ON gc.GlobalCodeId = p.ProgramType
+	WHERE	ISNULL(p.RecordDeleted, 'N') &lt;&gt; 'Y'
+order by gc.CodeName;</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="ProgramType">
+        <DataField>ProgramType</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="CodeName">
+        <DataField>CodeName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

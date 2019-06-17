@@ -1,0 +1,1 @@
+Update DocumentNavigations Set Active = 'N' Where ScreenId IN (1298,11001)
