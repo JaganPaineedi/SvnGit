@@ -1,4 +1,4 @@
-﻿
+﻿//TESTING
 var _DocumentVersionId = 0;
 var _CoverageInfoId = 0;
 var data = { emptydetails: [{ RegistrationCoveragePlanId: 0, DocumentVersionId: 0, CoveragePlanId: -1, InsuredId: '', GroupId: '', Comments: ''}] };
